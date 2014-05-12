@@ -23,3 +23,6 @@
 *.synctex.gz
 *~
 *.pdf
+*.bcf
+*.ptc
+*.xml
