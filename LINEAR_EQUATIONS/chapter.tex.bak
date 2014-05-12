@@ -1,0 +1,10 @@
+\chapterimage{chapter_head_2.pdf} % Chapter heading image
+\chapter{LINEAR EQUATIONS}
+\input{Systems_of_Linear_Equations}
+\input{Row_Reduction_and_Echelon_Forms}
+\input{Vector_Equations}
+\input{Matrix_Equations}
+\input{Solution_Sets_of_Linear_Systems}
+\input{Linear_Independence}
+\input{Introduction_to_Linear_Transformations}
+\input{The_Standard_Matrix_of_a_Linear_Transformation}
