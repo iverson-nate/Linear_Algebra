@@ -154,3 +154,37 @@ $A=\left[ \begin{array}{rrr}
 is a $2 \times 3$ matrix $a_{12}=-3$ and  $\vec{a}_1=\left(\begin{array}{r} 2 \\ -5 \end{array}\right)$
 \end{example}
 
+\subsection{Matrix-Vector Multiplication}
+
+\begin{definition}\index{Matrix-Vector Multiplication}
+Given an $m \times n$ matrix $A=[\vec{a}_1 \vec{a}_2 \ldots \vec{a}_n]$ and column vector $\vec{v} \in \mathbb{R}^n$. We define the \emph{Matrix-Vector} product to be the linear combination 
+\[
+A\vec{v}=[\vec{a}_1 \vec{a}_2 \ldots \vec{a}_n]\begin{pmatrix}v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix}=v_1\vec{a}_1+v_2\vec{a}_2+\cdots+v_n\vec{a}_n
+\]
+\end{definition} 
+\begin{remark}
+It is important to note that the product is only defined if the number of columns in $A$ matches the number of coordinates in $\vec{v}$.
+\end{remark}
+
+\begin{example}
+\begin{align*}
+\left[\begin{array}{rrr}
+2 & {-3} & 0 \\
+{-5} & 0 & 1 \end{array}\right]\begin{pmatrix}1\\ 2 \\ 3 \end{pmatrix}
+&=1\left(\begin{array}{r}2\\{-5}\end{array}\right)+2\left(\begin{array}{r}{-3}\\0\end{array}\right)+3\left(\begin{array}{r}0\\1\end{array}\right)\\
+&=\left(\begin{array}{r}2\\{-5}\end{array}\right)+\left(\begin{array}{r}{-6}\\ 0\end{array}\right)+\left(\begin{array}{r}0\\3\end{array}\right)\\
+&=\left(\begin{array}{r}{-4}\\{-2}\end{array}\right)
+\end{align*}
+\end{example}
+
+\begin{example}
+\begin{align*}
+\left[\begin{array}{rrr}
+2 & {-3} & 0 \\
+{-5} & 0 & 1 \end{array}\right]\begin{pmatrix}v_1\\ v_2 \\ v_3 \end{pmatrix}
+&=v_1\left(\begin{array}{r}2\\{-5}\end{array}\right)+v_2\left(\begin{array}{r}{-3}\\0\end{array}\right)+v_3\left(\begin{array}{r}0\\1\end{array}\right)\\
+&=\left(\begin{array}{r}2v_1\\{-5v_1}\end{array}\right)+\left(\begin{array}{r}{-3v_2}\\ 0\end{array}\right)+\left(\begin{array}{r}0\\v_3\end{array}\right)\\
+&=\left(\begin{array}{c}2v_1-3v_2\\-5v_1+v_3\end{array}\right)
+\end{align*}
+\end{example}
+
