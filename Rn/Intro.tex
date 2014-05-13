@@ -154,7 +154,7 @@ A real matrix $A$ is a rectangular array of real numbers $a_{i,j} \in
 \mathbb{R}$ (usually the comma is omitted $a_{ij}$)  where the $i$ is the row 
 and $j$ is the column number. That is:
 \[
-A=[a_{ij}]=[\vec{a}_1 \vec{a}_2 \ldots \vec{a}_n]=
+A=[a_{ij}]=[\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n]=
 \begin{bmatrix}
 a_{11} & a_{12} & \cdots & a_{1n} \\
 a_{21} & a_{22} & \cdots & a_{2n} \\
@@ -166,7 +166,7 @@ The \emph{dimension} of the matrix are $m\times n$ where $m$ is the number of
 rows and $n$ is the number of columns. 
 \end{definition}
 The matrix $A$ can be also seen as a collection of vectors. Namely, 
-$A=[a_{ij}]=[\vec{a}_1 \vec{a}_2 \ldots \vec{a}_n]$ where 
+$A=[a_{ij}]=[\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n]$ where 
  $\vec{a}_1, \vec{a}_2,\ldots, \vec{a}_n \in \mathbb{R}^n$ are the \emph{column 
 vectors} of $A$. In particular, 
 \[
@@ -188,9 +188,11 @@ $\vec{a}_1=\begin{bmatrix*}[r] 2 \\ -5 \end{bmatrix*} $
 \subsection{Matrix-Vector Multiplication}
 
 \begin{definition}\index{Matrix-Vector Multiplication}
-Given an $m \times n$ matrix $A=[\vec{a}_1 \vec{a}_2 \ldots \vec{a}_n]$ and column vector $\vec{v} \in \mathbb{R}^n$. We define the \emph{Matrix-Vector} product to be the linear combination 
+Given an $m \times n$ matrix $A=[\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n]$ and 
+column vector $\vec{v} \in \mathbb{R}^n$. We define the \emph{Matrix-Vector} 
+product to be the linear combination 
 \[
-A\vec{v}=[\vec{a}_1 \vec{a}_2 \ldots \vec{a}_n]\begin{bmatrix}v_1 \\ v_2 \\ 
+A\vec{v}=[\vec{a}_1, \vec{a}_2, \ldots ,\vec{a}_n]\begin{bmatrix}v_1 \\ v_2 \\ 
 \vdots \\ v_n \end{bmatrix}=v_1\vec{a}_1+v_2\vec{a}_2+\cdots+v_n\vec{a}_n
 \]
 \end{definition} 
