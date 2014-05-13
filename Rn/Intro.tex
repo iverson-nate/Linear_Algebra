@@ -6,12 +6,11 @@ We will assume that all readers are already familiar with a concept of real and 
 \begin{definition}
 We define $\mathbb{R}^n$ to be the set of real column vectors in $n$-coordinates. That is 
 \[
-\mathbb{R}^n=\left\{ \begin{bmatrix}
+\mathbb{R}^n=\left\{ 
+\begin{bmatrix}
 x_1\\ x_2 \\ \vdots \\ x_n
-\end{bmatrix}
-\mid
-x_i \in \mathbb{R}\text{ for all }i=1,2, \ldots, n
-\right\}
+\end{bmatrix} 
+: x_i \in \mathbb{R}\text{ for all }i=1,2, \ldots, n \right\}
 \]
 
 We will refer to the members of $\mathbb{R}^n$ as \emph{vectors} and the 
@@ -67,41 +66,51 @@ r\begin{bmatrix}v_1\\ v_2 \\ \vdots \\ v_n\end{bmatrix}=
 The order of operations is scalar multiplication first then vector addition.
 
 \begin{example}
-Consider  $\vec{x}=\begin{bmatrix}1\\ 0  \\ -3\end{bmatrix}$ and 
-$\vec{y}=\begin{bmatrix}-4\\ 2 \\ 1\end{bmatrix}$ in $\mathbb{R}^3$.
-
+Consider  $\vec{x}=\begin{bmatrix*}[r]1\\ 0  \\ -3\end{bmatrix*}$ and 
+$\vec{y}=\begin{bmatrix*}[r]-4\\ 2 \\ 1\end{bmatrix*}$ in $\mathbb{R}^3$.
 \[
 2\vec{x}+(-1)\vec{y}=
-2\begin{bmatrix}1\\ 0  \\ -3\end{bmatrix}+
-(-1)\begin{bmatrix}-4\\ 2 \\ 1\end{bmatrix}=
+2\begin{bmatrix*}[r]1\\ 0  \\ -3\end{bmatrix*}+
+(-1)\begin{bmatrix*}[r]-4\\ 2 \\ 1\end{bmatrix*}=
 %\begin{bmatrix}2(1)\\ 2(0)  \\ 2(-3)\end{bmatrix}+
 %\begin{bmatrix}(-1)(-4)\\ (-1)(2) \\ (-1)(1)\end{bmatrix}=
-\begin{bmatrix}2\\ 0  \\ -6\end{bmatrix}+
-\begin{bmatrix}4\\ -2 \\ -1\end{bmatrix}=
+\begin{bmatrix*}[r]2\\ 0  \\ -6\end{bmatrix*}+
+\begin{bmatrix*}[r]4\\ -2 \\ -1\end{bmatrix*}=
 \begin{bmatrix}2+4\\ 0+(-2)  \\ -6+(-1)\end{bmatrix}=
-\begin{bmatrix}6\\ -2  \\ -5\end{bmatrix}
+\begin{bmatrix*}[r]6\\ -2  \\ -5\end{bmatrix*}
 \]
 This is actually also an example of our next definition.
 \end{example}
 \begin{definition}\index{linear combination}
-A \emph{linear combination} of vectors $\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n$ 
-is 
-\[
-\begin{bmatrix}v_1 \\ v_2 \\ 
-v_3\end{bmatrix}=x_1\vec{a}_1+x_2\vec{a}+\cdots+x_n\vec{a}_n
-\]  
-for some choice of scalar multiples $x_1,x_2, \ldots, x_n \in \mathbb{R}$
+A \emph{linear combination} of vectors $\vec{a}_1, \vec{a}_2, \ldots, 
+\vec{a}_n$ is the sum  
+\[c_1\vec{a}_1+c_2\vec{a}+\cdots+c_n\vec{a}_n\]  
+for some choice of scalar multiples $c_1,c_2, \ldots, c_n \in \mathbb{R}$
 \end{definition}
 
 
 \begin{example}
-Note that any vector in $\mathbb{R}^3$ can be written as a linear combination
+Any vector in $\mathbb{R}^2$ can be written as a linear combination of 
+$\begin{bmatrix}1 \\ 0\end{bmatrix}$ and $\begin{bmatrix}1 \\ 1 \end{bmatrix}$ 
+because 
 \[
-\begin{bmatrix}v_1 \\ v_2 \\ v_3\end{bmatrix}=
-v_1 \begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}+
-v_2 \begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix}+
-v_3 \begin{bmatrix}0 \\ 0 \\ 1\end{bmatrix}
+\begin{bmatrix}v_1 \\ v_2\end{bmatrix}=
+(v_1-v_2) \begin{bmatrix}1 \\ 0\end{bmatrix}+
+v_2 \begin{bmatrix}1 \\ 1 \end{bmatrix}
 \]
+\end{example}
+
+\begin{example}
+The vector $\begin{bmatrix}1 \\ 1\end{bmatrix}$ is not a linear combination 
+of $\begin{bmatrix}1 \\ 0\end{bmatrix}$ and $\begin{bmatrix}2 \\ 
+0\end{bmatrix}$. If it were then, we would have 
+\[
+\begin{bmatrix}1 \\ 1\end{bmatrix}=
+a \begin{bmatrix}1 \\ 0\end{bmatrix}+
+b \begin{bmatrix}2 \\ 0 \end{bmatrix}
+\]
+for some constants $a,b\in \mathbb{R}$. Considering the second components, this 
+implies that $1=0$ which is a contradiction.
 \end{example}
 
 \begin{definition}
@@ -154,7 +163,7 @@ A real matrix $A$ is a rectangular array of real numbers $a_{i,j} \in
 \mathbb{R}$ (usually the comma is omitted $a_{ij}$)  where the $i$ is the row 
 and $j$ is the column number. That is:
 \[
-A=[a_{ij}]=[\vec{a}_1 \vec{a}_2 \ldots \vec{a}_n]=
+A=[a_{ij}]=[\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n]=
 \begin{bmatrix}
 a_{11} & a_{12} & \cdots & a_{1n} \\
 a_{21} & a_{22} & \cdots & a_{2n} \\
@@ -166,32 +175,36 @@ The \emph{dimension} of the matrix are $m\times n$ where $m$ is the number of
 rows and $n$ is the number of columns. 
 \end{definition}
 The matrix $A$ can be also seen as a collection of vectors. Namely, 
-$A=[a_{ij}]=[\vec{a}_1 \vec{a}_2 \ldots \vec{a}_n]$ where 
+$A=[a_{ij}]=[\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n]$ where 
  $\vec{a}_1, \vec{a}_2,\ldots, \vec{a}_n \in \mathbb{R}^n$ are the \emph{column 
 vectors} of $A$. In particular, 
 \[
-\vec{a}_1=\begin{bmatrix}a_{11}\\a_{21}\\ \vdots \\ a_{m1}\end{bmatrix},
-\vec{a}_2=\begin{bmatrix}a_{12}\\a_{22}\\ \vdots \\ a_{m2}\end{bmatrix}, \cdots,
-\vec{a}_k=\begin{bmatrix}a_{1k}\\a_{2k}\\ \vdots \\ a_{mk}\end{bmatrix}, \cdots,
+\vec{a}_1=\begin{bmatrix}a_{11}\\a_{21}\\ \vdots \\ a_{m1}\end{bmatrix}, \quad 
+\vec{a}_2=\begin{bmatrix}a_{12}\\a_{22}\\ \vdots \\ a_{m2}\end{bmatrix}, 
+\cdots, \quad 
+\vec{a}_k=\begin{bmatrix}a_{1k}\\a_{2k}\\ \vdots \\ a_{mk}\end{bmatrix}, 
+\cdots, \quad 
 \vec{a}_n=\begin{bmatrix}a_{1n}\\a_{2n}\\ \vdots \\ a_{mn}\end{bmatrix}
 \]
 
 \begin{example}
-$A=\begin{bmatrix}
+$A=\begin{bmatrix*}[r]
 2 & -3 & 0 \\
 -5 & 0 & 1 
-\end{bmatrix}$
+\end{bmatrix*}$
 is a $2 \times 3$ matrix, $a_{12}=-3$, and  
-$\vec{a}_1=\begin{bmatrix} 2 \\ -5 
-\end{bmatrix}$
+$\vec{a}_1=\begin{bmatrix*}[r] 2 \\ -5 \end{bmatrix*} $
 \end{example}
 
 \subsection{Matrix-Vector Multiplication}
 
 \begin{definition}\index{Matrix-Vector Multiplication}
-Given an $m \times n$ matrix $A=[\vec{a}_1 \vec{a}_2 \ldots \vec{a}_n]$ and column vector $\vec{v} \in \mathbb{R}^n$. We define the \emph{Matrix-Vector} product to be the linear combination 
+Given an $m \times n$ matrix $A=[\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n]$ and 
+column vector $\vec{v} \in \mathbb{R}^n$. We define the \emph{Matrix-Vector} 
+product to be the linear combination 
 \[
-A\vec{v}=[\vec{a}_1 \vec{a}_2 \ldots \vec{a}_n]\begin{pmatrix}v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix}=v_1\vec{a}_1+v_2\vec{a}_2+\cdots+v_n\vec{a}_n
+A\vec{v}=[\vec{a}_1, \vec{a}_2, \ldots ,\vec{a}_n]\begin{bmatrix}v_1 \\ v_2 \\ 
+\vdots \\ v_n \end{bmatrix}=v_1\vec{a}_1+v_2\vec{a}_2+\cdots+v_n\vec{a}_n
 \]
 \end{definition} 
 \begin{remark}
@@ -200,23 +213,34 @@ It is important to note that the product is only defined if the number of column
 
 \begin{example}
 \begin{align*}
-\left[\begin{array}{rrr}
-2 & {-3} & 0 \\
-{-5} & 0 & 1 \end{array}\right]\begin{pmatrix}1\\ 2 \\ 3 \end{pmatrix}
-&=1\left(\begin{array}{r}2\\{-5}\end{array}\right)+2\left(\begin{array}{r}{-3}\\0\end{array}\right)+3\left(\begin{array}{r}0\\1\end{array}\right)\\
-&=\left(\begin{array}{r}2\\{-5}\end{array}\right)+\left(\begin{array}{r}{-6}\\ 0\end{array}\right)+\left(\begin{array}{r}0\\3\end{array}\right)\\
-&=\left(\begin{array}{r}{-4}\\{-2}\end{array}\right)
+\begin{bmatrix*}[r]
+2 & -3 & 0 \\
+-5 & 0 & 1 
+\end{bmatrix*} 
+\begin{bmatrix}1\\ 2 \\ 3 \end{bmatrix}
+&=1\begin{bmatrix*}[r]2\\-5\end{bmatrix*} 
++2\begin{bmatrix*}[r]-3\\0\end{bmatrix*} 
++3\begin{bmatrix}0\\1\end{bmatrix}\\
+&=\begin{bmatrix*}[r]2\\-5\end{bmatrix*}
++\begin{bmatrix*}[r]-6\\0\end{bmatrix*}+\begin{bmatrix}0\\3\end{bmatrix}\\
+&=\begin{bmatrix*}[r]-4\\-2\end{bmatrix*}
 \end{align*}
 \end{example}
 
 \begin{example}
 \begin{align*}
-\left[\begin{array}{rrr}
-2 & {-3} & 0 \\
-{-5} & 0 & 1 \end{array}\right]\begin{pmatrix}v_1\\ v_2 \\ v_3 \end{pmatrix}
-&=v_1\left(\begin{array}{r}2\\{-5}\end{array}\right)+v_2\left(\begin{array}{r}{-3}\\0\end{array}\right)+v_3\left(\begin{array}{r}0\\1\end{array}\right)\\
-&=\left(\begin{array}{r}2v_1\\{-5v_1}\end{array}\right)+\left(\begin{array}{r}{-3v_2}\\ 0\end{array}\right)+\left(\begin{array}{r}0\\v_3\end{array}\right)\\
-&=\left(\begin{array}{c}2v_1-3v_2\\-5v_1+v_3\end{array}\right)
+\begin{bmatrix*}[r]
+2 & -3 & 0 \\
+-5 & 0 & 1 
+\end{bmatrix*}
+\begin{bmatrix}v_1\\ v_2 \\ v_3 \end{bmatrix}
+&=v_1\begin{bmatrix*}[r]2\\-5 \end{bmatrix*}
++v_2\begin{bmatrix*}[r]-3 \\0\end{bmatrix*}
++v_3\begin{bmatrix}0\\1\end{bmatrix}\\
+&=\begin{bmatrix*}[r]2v_1\\-5v_1\end{bmatrix*}
++\begin{bmatrix}-3v_2\\ 0\end{bmatrix} 
++\begin{bmatrix}0\\v_3\end{bmatrix}\\
+&=\begin{bmatrix}2v_1-3v_2\\-5v_1+v_3\end{bmatrix}
 \end{align*}
 \end{example}
 
