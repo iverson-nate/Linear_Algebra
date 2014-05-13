@@ -67,8 +67,8 @@ r\begin{bmatrix}v_1\\ v_2 \\ \vdots \\ v_n\end{bmatrix}=
 The order of operations is scalar multiplication first then vector addition.
 
 \begin{example}
-Consider  $\vec{x}=\begin{bmatrix*}[r]1\\ 0  \\ -3\end{bmatrix*}$ and 
-$\vec{y}=\begin{bmatrix*}[r]-4\\ 2 \\ 1\end{bmatrix*}$ in $\mathbb{R}^3$.
+Consider  $\vec{x}=\begin{bmatrix*}[r]1\\ 0  \\ \minus3\end{bmatrix*}$ and 
+$\vec{y}=\begin{bmatrix*}[r]\minus4\\ 2 \\ 1\end{bmatrix*}$ in $\mathbb{R}^3$.
 \[
 2\vec{x}+(-1)\vec{y}=
 2\begin{bmatrix*}[r]1\\ 0  \\ -3\end{bmatrix*}+
@@ -83,8 +83,7 @@ $\vec{y}=\begin{bmatrix*}[r]-4\\ 2 \\ 1\end{bmatrix*}$ in $\mathbb{R}^3$.
 This is actually also an example of our next definition.
 \end{example}
 \begin{definition}\index{linear combination}
-A \emph{linear combination} of vectors $\vec{a}_1, \vec{a}_2, \ldots, 
-\vec{a}_n$ 
+A \emph{linear combination} of vectors $\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n$ 
 is 
 \[
 \begin{bmatrix}v_1 \\ v_2 \\ 
@@ -178,11 +177,11 @@ vectors} of $A$. In particular,
 
 \begin{example}
 $A=\begin{bmatrix*}[r]
-2 & -3 & 0 \\
--5 & 0 & 1 
+2 & \minus3 & 0 \\
+\minus5 & 0 & 1 
 \end{bmatrix*}$
 is a $2 \times 3$ matrix, $a_{12}=-3$, and  
-$\vec{a}_1=\begin{bmatrix*}[r] 2 \\ -5 \end{bmatrix*} $
+$\vec{a}_1=\begin{bmatrix*}[r] 2 \\ \minus5 \end{bmatrix*} $
 \end{example}
 
 \subsection{Matrix-Vector Multiplication}
@@ -200,33 +199,30 @@ It is important to note that the product is only defined if the number of column
 
 \begin{example}
 \begin{align*}
-\begin{bmatrix*}[r]
-2 & -3 & 0 \\
--5 & 0 & 1 
-\end{bmatrix*} 
+\begin{bmatrix}
+2 & {-3} & 0 \\
+{-5} & 0 & 1 \end{bmatrix} 
 \begin{bmatrix}1\\ 2 \\ 3 \end{bmatrix}
-&=1\begin{bmatrix*}[r]2\\-5\end{bmatrix*} 
-+2\begin{bmatrix*}[r]-3\\0\end{bmatrix*} 
+&=1\begin{bmatrix}2\\-5\end{bmatrix}+2\begin{bmatrix}-3\\0\end{bmatrix} 
 +3\begin{bmatrix}0\\1\end{bmatrix}\\
-&=\begin{bmatrix*}[r]2\\-5\end{bmatrix*}
-+\begin{bmatrix*}[r]-6\\0\end{bmatrix*}+\begin{bmatrix}0\\3\end{bmatrix}\\
-&=\begin{bmatrix*}[r]-4\\-2\end{bmatrix*}
+&=\begin{bmatrix}2\\-5\end{bmatrix}+\begin{bmatrix}-6\\ 
+0\end{bmatrix}+\begin{bmatrix}0\\3\end{bmatrix}\\
+&=\begin{bmatrix}-4\\-2\end{bmatrix}
 \end{align*}
 \end{example}
 
 \begin{example}
 \begin{align*}
-\begin{bmatrix*}[r]
-2 & -3 & 0 \\
--5 & 0 & 1 
-\end{bmatrix*}
+\begin{bmatrix}
+2 & {-3} & 0 \\
+{-5} & 0 & 1 
+\end{bmatrix}
 \begin{bmatrix}v_1\\ v_2 \\ v_3 \end{bmatrix}
-&=v_1\begin{bmatrix*}[r]2\\-5 \end{bmatrix*}
-+v_2\begin{bmatrix*}[r]-3 \\0\end{bmatrix*}
+&=v_1\begin{bmatrix}2\\-5 \end{bmatrix}
++v_2\begin{bmatrix}-3 \\0\end{bmatrix}
 +v_3\begin{bmatrix}0\\1\end{bmatrix}\\
-&=\begin{bmatrix*}[r]2v_1\\-5v_1\end{bmatrix*}
-+\begin{bmatrix}-3v_2\\ 0\end{bmatrix} 
-+\begin{bmatrix}0\\v_3\end{bmatrix}\\
+&=\begin{bmatrix}2v_1\\-5v_1\end{bmatrix}+\begin{bmatrix}-3v_2\\ 
+0\end{bmatrix}+\begin{bmatrix}0\\v_3\end{bmatrix}\\
 &=\begin{bmatrix}2v_1-3v_2\\-5v_1+v_3\end{bmatrix}
 \end{align*}
 \end{example}
