@@ -6,78 +6,89 @@ We will assume that all readers are already familiar with a concept of real and 
 \begin{definition}
 We define $\mathbb{R}^n$ to be the set of real column vectors in $n$-coordinates. That is 
 \[
-\mathbb{R}^n=\left\{ \begin{pmatrix}
+\mathbb{R}^n=\left\{ \begin{bmatrix}
 x_1\\ x_2 \\ \vdots \\ x_n
-\end{pmatrix}
+\end{bmatrix}
 \mid
 x_i \in \mathbb{R}\text{ for all }i=1,2, \ldots, n
 \right\}
 \]
 
-We will refer to the members of $\mathbb{R}^n$ as \emph{vectors} and the elements of $\mathbb{R}$ as \emph{scalars}. When we want to refer to row vectors instead of column vectors we will use the notation $\mathbb{R}^n_\text{row}$.
+We will refer to the members of $\mathbb{R}^n$ as \emph{vectors} and the 
+elements of $\mathbb{R}$ as \emph{scalars}. When we want to refer to row vectors 
+instead of column vectors we will use the notation $\mathbb{R}^n_\text{row}$.
 \end{definition}
 
-For convience we may refer to each $\vec{x} \in \mathbb{R}^n$ as a single bold letter where we will for allow each coordinate be labeled as the same subscriped letter. For example
+For convenience we may refer to each $\vec{x} \in \mathbb{R}^n$ as a single 
+bold letter where we will for allow each coordinate be labeled as the same 
+subscriped letter. For example
 \[
-\vec{x}=\begin{pmatrix}x_1\\ x_2 \\ \vdots \\ x_n\end{pmatrix}
-\vec{y}=\begin{pmatrix}y_1\\ y_2 \\ \vdots \\ y_n\end{pmatrix}
-\vec{v}=\begin{pmatrix}v_1\\ v_2 \\ \vdots \\ v_n\end{pmatrix}
+\vec{x}=\begin{bmatrix}x_1\\ x_2 \\ \vdots \\ x_n\end{bmatrix}
+\vec{y}=\begin{bmatrix}y_1\\ y_2 \\ \vdots \\ y_n\end{bmatrix}
+\vec{v}=\begin{bmatrix}v_1\\ v_2 \\ \vdots \\ v_n\end{bmatrix}
 \]
 
 \begin{remark}
-Sometimes it is useful to describe a vector as a function on it's coordinates. For example if 
-$\vec{v}=\left(\begin{array}{r}1 \\ 4 \\ 9
-\end{array}\right)$ We may say $\vec{v}(2)=4$ that is the 2nd coordinate of $\vec{v}$ is $4$.
+Sometimes it is useful to describe a vector as a function on it's coordinates. 
+For example if 
+$\vec{v}=\begin{bmatrix}1 \\ 4 \\ 9 \end{bmatrix}$ We may say 
+$\vec{v}(2)=4$ that is the 2nd coordinate of $\vec{v}$ is $4$.
 \end{remark}
 
 
 \begin{definition}\index{vector equality}
-Vectors $\vec{v}, \vec{w} \in \mathbb{R}^n$ are \emph{equal},  if they are equal coordinatewise. That is, $v_i=v(i)=w(i)=w_i$ for all $i=1,2,\ldots, n$. We denote this with  $\vec{v}=\vec{w}$.
+Vectors $\vec{v}, \vec{w} \in \mathbb{R}^n$ are \emph{equal},  if they are equal 
+coordinatewise. That is, $v_i=v(i)=w(i)=w_i$ for all $i=1,2,\ldots, n$. We 
+denote this with  $\vec{v}=\vec{w}$.
 \end{definition}
 
 
 \begin{definition}\index{vector addition}
-We define \emph{vector addition} on $\mathbb{R}^n$ coordinatewise. That is for $\vec{v},\vec{w} \in \mathbb{R}^n$ we define
+We define \emph{vector addition} on $\mathbb{R}^n$ coordinatewise. That is for 
+$\vec{v},\vec{w} \in \mathbb{R}^n$ we define
 \[
 \vec{v}+\vec{w}=
-\begin{pmatrix}v_1\\ v_2 \\ \vdots \\ v_n\end{pmatrix}+
-\begin{pmatrix}w_1\\ w_2 \\ \vdots \\ w_n\end{pmatrix}=
-\begin{pmatrix}v_1+w_1\\ v_2+w_2 \\ \vdots \\ v_n+w_n\end{pmatrix}
+\begin{bmatrix}v_1\\ v_2 \\ \vdots \\ v_n\end{bmatrix}+
+\begin{bmatrix}w_1\\ w_2 \\ \vdots \\ w_n\end{bmatrix}=
+\begin{bmatrix}v_1+w_1\\ v_2+w_2 \\ \vdots \\ v_n+w_n\end{bmatrix}
 \]
 \end{definition}
 
-\begin{definition}]\index{scalar multiplcation}
-We define \emph{scalar multiplcation} on $\mathbb{R}^n$ coordinatewise. That is for $\vec{v} \in \mathbb{R}^n$ and $r \in \mathbb{R}$ we define
+\begin{definition}]\index{scalar multiplication}
+We define \emph{scalar multiplication} on $\mathbb{R}^n$ coordinatewise. That 
+is for $\vec{v} \in \mathbb{R}^n$ and $r \in \mathbb{R}$ we define
 \[
 r\vec{v}=
-r\begin{pmatrix}v_1\\ v_2 \\ \vdots \\ v_n\end{pmatrix}=
-\begin{pmatrix}rv_1\\ rv_2 \\ \vdots \\ rv_n\end{pmatrix}
+r\begin{bmatrix}v_1\\ v_2 \\ \vdots \\ v_n\end{bmatrix}=
+\begin{bmatrix}rv_1\\ rv_2 \\ \vdots \\ rv_n\end{bmatrix}
 \]
 \end{definition}
 
 The order of operations is scalar multiplication first then vector addition.
 
 \begin{example}
-Consider  $\vec{x}=\begin{pmatrix}1\\ 0  \\ -3\end{pmatrix}$ and 
-$\vec{y}=\begin{pmatrix}-4\\ 2 \\ 1\end{pmatrix}$ in $\mathbb{R}^3$.
+Consider  $\vec{x}=\begin{bmatrix}1\\ 0  \\ -3\end{bmatrix}$ and 
+$\vec{y}=\begin{bmatrix}-4\\ 2 \\ 1\end{bmatrix}$ in $\mathbb{R}^3$.
 
 \[
 2\vec{x}+(-1)\vec{y}=
-2\begin{pmatrix}1\\ 0  \\ -3\end{pmatrix}+
-(-1)\begin{pmatrix}-4\\ 2 \\ 1\end{pmatrix}=
-%\begin{pmatrix}2(1)\\ 2(0)  \\ 2(-3)\end{pmatrix}+
-%\begin{pmatrix}(-1)(-4)\\ (-1)(2) \\ (-1)(1)\end{pmatrix}=
-\begin{pmatrix}2\\ 0  \\ -6\end{pmatrix}+
-\begin{pmatrix}4\\ -2 \\ -1\end{pmatrix}=
-\begin{pmatrix}2+4\\ 0+(-2)  \\ -6+(-1)\end{pmatrix}=
-\begin{pmatrix}6\\ -2  \\ -5\end{pmatrix}
+2\begin{bmatrix}1\\ 0  \\ -3\end{bmatrix}+
+(-1)\begin{bmatrix}-4\\ 2 \\ 1\end{bmatrix}=
+%\begin{bmatrix}2(1)\\ 2(0)  \\ 2(-3)\end{bmatrix}+
+%\begin{bmatrix}(-1)(-4)\\ (-1)(2) \\ (-1)(1)\end{bmatrix}=
+\begin{bmatrix}2\\ 0  \\ -6\end{bmatrix}+
+\begin{bmatrix}4\\ -2 \\ -1\end{bmatrix}=
+\begin{bmatrix}2+4\\ 0+(-2)  \\ -6+(-1)\end{bmatrix}=
+\begin{bmatrix}6\\ -2  \\ -5\end{bmatrix}
 \]
 This is actually also an example of our next definition.
 \end{example}
 \begin{definition}\index{linear combination}
-A \emph{linear combination} of vectors $\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n$ is 
+A \emph{linear combination} of vectors $\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n$ 
+is 
 \[
-\begin{pmatrix}v_1 \\ v_2 \\ v_3\end{pmatrix}=x_1\vec{a}_1+x_2\vec{a}+\cdots+x_n\vec{a}_n
+\begin{bmatrix}v_1 \\ v_2 \\ 
+v_3\end{bmatrix}=x_1\vec{a}_1+x_2\vec{a}+\cdots+x_n\vec{a}_n
 \]  
 for some choice of scalar multiples $x_1,x_2, \ldots, x_n \in \mathbb{R}$
 \end{definition}
@@ -86,16 +97,17 @@ for some choice of scalar multiples $x_1,x_2, \ldots, x_n \in \mathbb{R}$
 \begin{example}
 Note that any vector in $\mathbb{R}^3$ can be written as a linear combination
 \[
-\begin{pmatrix}v_1 \\ v_2 \\ v_3\end{pmatrix}=
-v_1 \begin{pmatrix}1 \\ 0 \\ 0\end{pmatrix}+
-v_2 \begin{pmatrix}0 \\ 1 \\ 0\end{pmatrix}+
-v_3 \begin{pmatrix}0 \\ 0 \\ 1\end{pmatrix}
+\begin{bmatrix}v_1 \\ v_2 \\ v_3\end{bmatrix}=
+v_1 \begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}+
+v_2 \begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix}+
+v_3 \begin{bmatrix}0 \\ 0 \\ 1\end{bmatrix}
 \]
 \end{example}
 
 \begin{definition}
 \index{standard basis for $\mathbb{R}^n$}
-The \emph{standard basis for} $\mathbb{R}^n$ is a collection of $n$-vectors $\vec{e}_1, \vec{e}_2, \ldots \vec{e}_n$ such that
+The \emph{standard basis for} $\mathbb{R}^n$ is a set of $n$-vectors 
+$\{\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n\}$ such that
 $\vec{e}_j(k)=\begin{cases}
 1 & \text{ if } k=j\\
 0 & \text{ if } k\neq j
@@ -104,32 +116,43 @@ for each $j,k \in \{1, 2, \ldots, n\}$
 \end{definition}
 
 \begin{example}
-In $\mathbb{R}^3 $ every vector is a linear combination of the standard basis $\vec{e}_1,\vec{e}_2,\vec{e}_3$
+In $\mathbb{R}^3 $ every vector is a linear combination of the standard basis 
+$\{\vec{e}_1,\vec{e}_2,\vec{e}_3\}$
 \[
-\begin{pmatrix}v_1 \\ v_2 \\ v_3\end{pmatrix}=
-v_1 \begin{pmatrix}1 \\ 0 \\ 0\end{pmatrix}+
-v_2 \begin{pmatrix}0 \\ 1 \\ 0\end{pmatrix}+
-v_3 \begin{pmatrix}0 \\ 0 \\ 1\end{pmatrix}
+\begin{bmatrix}v_1 \\ v_2 \\ v_3\end{bmatrix}=
+v_1 \begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}+
+v_2 \begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix}+
+v_3 \begin{bmatrix}0 \\ 0 \\ 1\end{bmatrix}
 =v_1\vec{e}_1+v_3\vec{e}_3+v_3\vec{e}_3
 \]
 \end{example}
 
-\begin{example}
-In $\mathbb{R}^n$ every vector is a linear combination of the standard basis $\vec{e}_1, \vec{e}_2, \ldots \vec{e}_n$.
+\begin{proposition}
+In $\mathbb{R}^n$ every vector is a linear combination of the standard basis 
+$\{\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n\}$.
+\end{proposition}
+
 \begin{proof}
-Let $\vec{v} \in \mathbb{R}^n$. 
-Note $\vec{v}(k)=v_k=v_k\cdot 1=v_k \vec{e}_k(k)$ for all $k = 1,2,\ldots,n$. 
-We can also add in $k-1$ zeros before and $n-k$ zeros after
-$\vec{v}{k}=0+ \cdots + 0+v_k\vec{e}_k(k)+0+\cdots+0$ for all $k = 1,2,\ldots,n$.  
-Since $\vec{e}_j(k)=0$ for all $j\neq k$ $\vec{v}(k)=v_1\vec{e}_1(k)+v_2\vec{e}_2(k)+\cdots+ v_k\vec{e}_k(k)+ \cdots + v_n\vec{e}_n(k)$  for all $k = 1,2,\ldots,n$.  
+Let $\vec{v} \in \mathbb{R}^n$ and $1\leq k\leq n$. Then we observe that  
+\[\vec{v}(k)=v_k=v_k\cdot 1=v_k \vec{e}_k(k).\]
+We can rewrite this equation by adding $k-1$ zeros before and $n-k$ zeros 
+after $\vec{v}(k)$. That is,  
+\[\vec{v}(k)=0+ \cdots + 0+v_k\vec{e}_k(k)+0+\cdots+0.\] 
+Since $\vec{e}_j(k)=0$ for all $j\neq k$ we have 
+\[\vec{v}(k)=v_1\vec{e}_1(k)+v_2\vec{e}_2(k)+\cdots+ v_k\vec{e}_k(k)+ \cdots + 
+v_n\vec{e}_n(k).\]
+Since the above equation is true for any $1\leq k\leq n$ we have,  
+\[\vec{v}=v_1\vec{e}_1+v_2\vec{e}_2+\cdots+ v_n\vec{e}_n.\]
 \end{proof}
-\end{example}
+
 
 \subsection{Real Matrices}
 \index{Real Matrices}
 
 \begin{definition}
-A real matrix $A$ is a rectangular array of real numbers $a_{i,j} \in \mathbb{R}$ (usually the comma is omitted $a_{ij}$)  where the $i$ is the row and $j$ is the column number. That is:
+A real matrix $A$ is a rectangular array of real numbers $a_{i,j} \in 
+\mathbb{R}$ (usually the comma is omitted $a_{ij}$)  where the $i$ is the row 
+and $j$ is the column number. That is:
 \[
 A=[a_{ij}]=[\vec{a}_1 \vec{a}_2 \ldots \vec{a}_n]=
 \begin{bmatrix}
@@ -139,18 +162,27 @@ a_{21} & a_{22} & \cdots & a_{2n} \\
 a_{m1} & a_{m2} & \cdots & a_{mn} 
 \end{bmatrix}
 \]
-The \emph{dimensions} of the matrix are $m\times n$ where $m$ is the number of rows and $n$ is the number of columns. The vectors $\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n \in \mathbb{R}^n$ are the \emph{column vectors} of $A$. In particular, 
-\[
-\vec{a}_1=\begin{pmatrix}a_{11}\\a_{21}\\ \vdots \\ a_{m1}\end{pmatrix},
-\vec{a}_2=\begin{pmatrix}a_{12}\\a_{22}\\ \vdots \\ a_{m2}\end{pmatrix}, \cdots,
-\vec{a}_k=\begin{pmatrix}a_{1k}\\a_{2k}\\ \vdots \\ a_{mk}\end{pmatrix}, \cdots,
-\vec{a}_n=\begin{pmatrix}a_{1n}\\a_{2n}\\ \vdots \\ a_{mn}\end{pmatrix}
-\]
+The \emph{dimension} of the matrix are $m\times n$ where $m$ is the number of 
+rows and $n$ is the number of columns. 
 \end{definition}
+The matrix $A$ can be also seen as a collection of vectors. Namely, 
+$A=[a_{ij}]=[\vec{a}_1 \vec{a}_2 \ldots \vec{a}_n]$ where 
+ $\vec{a}_1, \vec{a}_2,\ldots, \vec{a}_n \in \mathbb{R}^n$ are the \emph{column 
+vectors} of $A$. In particular, 
+\[
+\vec{a}_1=\begin{bmatrix}a_{11}\\a_{21}\\ \vdots \\ a_{m1}\end{bmatrix},
+\vec{a}_2=\begin{bmatrix}a_{12}\\a_{22}\\ \vdots \\ a_{m2}\end{bmatrix}, \cdots,
+\vec{a}_k=\begin{bmatrix}a_{1k}\\a_{2k}\\ \vdots \\ a_{mk}\end{bmatrix}, \cdots,
+\vec{a}_n=\begin{bmatrix}a_{1n}\\a_{2n}\\ \vdots \\ a_{mn}\end{bmatrix}
+\]
+
 \begin{example}
-$A=\left[ \begin{array}{rrr}
+$A=\begin{bmatrix}
 2 & -3 & 0 \\
--5 & 0 & 1 \end{array}\right]$
-is a $2 \times 3$ matrix $a_{12}=-3$ and  $\vec{a}_1=\left(\begin{array}{r} 2 \\ -5 \end{array}\right)$
+-5 & 0 & 1 
+\end{bmatrix}$
+is a $2 \times 3$ matrix, $a_{12}=-3$, and  
+$\vec{a}_1=\begin{bmatrix} 2 \\ -5 
+\end{bmatrix}$
 \end{example}
 
