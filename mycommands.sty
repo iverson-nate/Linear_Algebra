@@ -1,2 +1,12 @@
 \renewcommand{\vec}[1]{\textbf{#1}}
 \newcommand{\ph}{\phantom{-}}
+
+\newcommand*{\minus}{%                                                         
+  \leavevmode
+  \hphantom{0}%                                                                
+  \llap{%                                                                      
+    \settowidth{\dimen0 }{$0$}%                                                
+    \resizebox{0.8\dimen0 }{\height}{$-$}%                                     
+  }%                                                                           
+}
+\newcommand{\phm}{\phantom{\minus}}
