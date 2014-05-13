@@ -6,12 +6,11 @@ We will assume that all readers are already familiar with a concept of real and 
 \begin{definition}
 We define $\mathbb{R}^n$ to be the set of real column vectors in $n$-coordinates. That is 
 \[
-\mathbb{R}^n=\left\{ \begin{bmatrix}
+\mathbb{R}^n=\left\{ 
+\begin{bmatrix}
 x_1\\ x_2 \\ \vdots \\ x_n
-\end{bmatrix}
-\mid
-x_i \in \mathbb{R}\text{ for all }i=1,2, \ldots, n
-\right\}
+\end{bmatrix} 
+: x_i \in \mathbb{R}\text{ for all }i=1,2, \ldots, n \right\}
 \]
 
 We will refer to the members of $\mathbb{R}^n$ as \emph{vectors} and the 
@@ -84,24 +83,34 @@ This is actually also an example of our next definition.
 \end{example}
 \begin{definition}\index{linear combination}
 A \emph{linear combination} of vectors $\vec{a}_1, \vec{a}_2, \ldots, 
-\vec{a}_n$ 
-is 
-\[
-\begin{bmatrix}v_1 \\ v_2 \\ 
-v_3\end{bmatrix}=x_1\vec{a}_1+x_2\vec{a}+\cdots+x_n\vec{a}_n
-\]  
-for some choice of scalar multiples $x_1,x_2, \ldots, x_n \in \mathbb{R}$
+\vec{a}_n$ is the sum  
+\[c_1\vec{a}_1+c_2\vec{a}+\cdots+c_n\vec{a}_n\]  
+for some choice of scalar multiples $c_1,c_2, \ldots, c_n \in \mathbb{R}$
 \end{definition}
 
 
 \begin{example}
-Note that any vector in $\mathbb{R}^3$ can be written as a linear combination
+Any vector in $\mathbb{R}^2$ can be written as a linear combination of 
+$\begin{bmatrix}1 \\ 0\end{bmatrix}$ and $\begin{bmatrix}1 \\ 1 \end{bmatrix}$ 
+because 
 \[
-\begin{bmatrix}v_1 \\ v_2 \\ v_3\end{bmatrix}=
-v_1 \begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}+
-v_2 \begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix}+
-v_3 \begin{bmatrix}0 \\ 0 \\ 1\end{bmatrix}
+\begin{bmatrix}v_1 \\ v_2\end{bmatrix}=
+(v_1-v_2) \begin{bmatrix}1 \\ 0\end{bmatrix}+
+v_2 \begin{bmatrix}1 \\ 1 \end{bmatrix}
 \]
+\end{example}
+
+\begin{example}
+The vector $\begin{bmatrix}1 \\ 1\end{bmatrix}$ is not a linear combination 
+of $\begin{bmatrix}1 \\ 0\end{bmatrix}$ and $\begin{bmatrix}2 \\ 
+0\end{bmatrix}$. If it were then, we would have 
+\[
+\begin{bmatrix}1 \\ 1\end{bmatrix}=
+a \begin{bmatrix}1 \\ 0\end{bmatrix}+
+b \begin{bmatrix}2 \\ 0 \end{bmatrix}
+\]
+for some constants $a,b\in \mathbb{R}$. Considering the second components, this 
+implies that $1=0$ which is a contradiction.
 \end{example}
 
 \begin{definition}
@@ -170,9 +179,11 @@ $A=[a_{ij}]=[\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n]$ where
  $\vec{a}_1, \vec{a}_2,\ldots, \vec{a}_n \in \mathbb{R}^n$ are the \emph{column 
 vectors} of $A$. In particular, 
 \[
-\vec{a}_1=\begin{bmatrix}a_{11}\\a_{21}\\ \vdots \\ a_{m1}\end{bmatrix},
-\vec{a}_2=\begin{bmatrix}a_{12}\\a_{22}\\ \vdots \\ a_{m2}\end{bmatrix}, \cdots,
-\vec{a}_k=\begin{bmatrix}a_{1k}\\a_{2k}\\ \vdots \\ a_{mk}\end{bmatrix}, \cdots,
+\vec{a}_1=\begin{bmatrix}a_{11}\\a_{21}\\ \vdots \\ a_{m1}\end{bmatrix}, \quad 
+\vec{a}_2=\begin{bmatrix}a_{12}\\a_{22}\\ \vdots \\ a_{m2}\end{bmatrix}, 
+\cdots, \quad 
+\vec{a}_k=\begin{bmatrix}a_{1k}\\a_{2k}\\ \vdots \\ a_{mk}\end{bmatrix}, 
+\cdots, \quad 
 \vec{a}_n=\begin{bmatrix}a_{1n}\\a_{2n}\\ \vdots \\ a_{mn}\end{bmatrix}
 \]
 
