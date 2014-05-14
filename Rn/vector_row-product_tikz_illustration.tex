@@ -36,14 +36,13 @@ w\matrix (w) [xshift=3.5cm,%
   \vdots \\
   a_{m1}v_1+a_{m2}v_2+\cdots+a_{mn}v_n\\
 };
-\draw[<->,red](A-2-1) to[in=180,out=90]
-node[draw,sloped,midway,fill=white] (x) {$a_{21}v_{1}$} (v-1-1);
-\draw[<->,red](A-2-2) to[in=180,out=-90]
-node[draw,sloped,midway,fill=white] (y) {$a_{22}v_{2}$} (v-2-1);
-\draw[<->,red](A-2-4) to[in=180,out=270]
-node[draw,sloped,midway,fill=white] (z) {$a_{2n}v_{n}$} (v-4-1);
-\draw[->,blue] (x) to (X);
-\draw[->,blue] (y) to (X);
-\draw[->,blue] (z) to (X);
+\draw[<->,red](A-2-1) to[in=80,out=100]
+node[draw,midway,fill=white] (x) {$a_{21}v_{1}$} (v-1-1);
+\draw[<->,red](A-2-2) to[in=140,out=40]
+node[draw,midway,fill=white] (y) {$a_{22}v_{2}$} (v-2-1);
+\draw[<->,red](A-2-4) to[in=270,out=270]
+node[draw,midway,fill=white] (z) {$a_{2n}v_{n}$} (v-4-1);
+\draw[-,blue] (x) to node[draw,midway,fill=white] (Y) {$+$} (y);
+\draw[-,blue] (y) to node[draw,midway,fill=white] (Z) {$\vdots$}  (z);
 \end{tikzpicture}
 
