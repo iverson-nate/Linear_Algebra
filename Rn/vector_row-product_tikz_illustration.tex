@@ -1,0 +1,49 @@
+% tikz picture giving vector row-product illustration.
+%
+\usetikzlibrary{matrix,shapes,arrows,decorations.pathmorphing}
+\begin{tikzpicture}
+% les matrices
+\matrix (A) [matrix of math nodes,%
+             nodes = {circle},%
+             left delimiter  = {[},%
+             right delimiter = {]}] at (0,0)
+{%
+  a_{11} & a_{12} & \ldots & a_{1n}  \\
+  \node[draw] {a_{21}};%
+         & \node[draw] {a_{22}};%
+                  & \ldots%
+                           & \node[draw] {a_{2n}}; \\
+  \vdots & \vdots & \ddots & \vdots  \\
+  a_{m1} & a_{m2} & \ldots & a_{mn}  \\
+};
+v\matrix (v) [xshift=1cm,matrix of math nodes,nodes = {circle},% 
+              left delimiter  = [,right delimiter ={]}] at (A.east)
+{%
+  \node[draw] {v_1};\\
+  \node[draw] {v_2};\\
+                       \vdots \\
+  \node[draw] {v_n};\\
+};
+\node[circle,xshift=0.5cm] (E) at (v.east) {$=$}; 
+w\matrix (w) [xshift=3.5cm,%
+             matrix of math nodes,%
+             nodes = {ellipse},%
+             left delimiter  = [,%
+             right delimiter ={]}] at (E.east)
+{%
+  a_{11}v_1+a_{12}v_2+\cdots+a_{1n}v_n\\\\
+  \node[draw,blue] (X) {a_{21}v_1+a_{22}v_2+\cdots+a_{2n}v_n};\\
+  \vdots \\
+  a_{m1}v_1+a_{m2}v_2+\cdots+a_{mn}v_n\\
+};
+\draw[<->,red](A-2-1) to[in=180,out=90]
+node[draw,sloped,midway,fill=white] (x) {$a_{21}v_{1}$} (v-1-1);
+\draw[<->,red](A-2-2) to[in=180,out=-90]
+node[draw,sloped,midway,fill=white] (y) {$a_{22}v_{2}$} (v-2-1);
+\draw[<->,red](A-2-4) to[in=180,out=270]
+node[draw,sloped,midway,fill=white] (z) {$a_{2n}v_{n}$} (v-4-1);
+\draw[->,blue] (x) to (X);
+\draw[->,blue] (y) to (X);
+\draw[->,blue] (z) to (X);
+\end{tikzpicture}
+

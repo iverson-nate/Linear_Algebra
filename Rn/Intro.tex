@@ -201,6 +201,21 @@ It is important to note that the product is only defined if the number of column
 Notice we put some zero values back in on the final result. This is not strictly necessary but helps motivate the row-column algorithm for matrix multiplication.
 \end{example}
 
-\begin{proposition}[The Row Column Algorithm]
-
+\begin{proposition}[The Row-Column Algorithm] For an $m \times n$ matrix $A=[a_{ij}]$ and vector $\vec{v} \in \mathbb{R}^n$ call the of matrix multiplication $\vec{w}=A\vec{v}$ then $\vec{w}(k)=a_{k1}w_1+a_{k2}w_2+\cdots+a_{kn}w_n$ for all $k$ with $1 \le k \le n$.\\
 \end{proposition}
+\begin{remark} This can be visualized by taking each row in $A$ and multiplying each of it's entries by the corresponding coordinate in $\vec{v}$. The sum of these entries is the same row in the result as the row in $A$.\\
+\input{Rn/vector_row-product_tikz_illustration.tex}
+\end{remark}
+\begin{proof}
+Suppose we have $m\times n$ matrix $A=[a_{ij}]=[\vec{a}_1,\vec{a}_2,\ldots,\vec{a}_n]$ and vector $\vec{v} \in \mathbb{R}^n$. Then 
+\[
+w=A\vec{v}=[\vec{a}_1,\vec{a}_2,\ldots,\vec{a}_n] \begin{bmatrix}v_1\\ v_2 \\ \vdots \\ v_n\end{bmatrix}=v_1\vec{a}_1+v_2\vec{a}_2+\cdots+v_n\vec{a}_n
+\]
+Let $k$ be an integer with $1 \le k \le n$. Since $w=A\vec{v}=v_1\vec{a}_1+v_2\vec{a}_2+\cdots+v_n\vec{a}_n$ as vectors they are also equal at the $k$-th coordinate.
+
+$w(k)=v_1\vec{a}_1(k)+v_2\vec{a}_2(k)+\cdots+v_n\vec{a}_n(k)$ as vectors they are also equal at the $k$-th coordinate. 
+
+By definition of the column vector $\vec{a}_j=\begin{bmatrix}a_{1j}\\ a_{2j}\\ \vdots \\ a_{nj}\end{bmatrix}$ for each $j$ with $1\le j \le n$. Thus 
+$\vec{a}_j(k)=a_{kj}$ for all $k$ and $j$ with $1 \le k,j \le n$. Therefore, $
+\vec{w}(k)=v_1a_{k1}+v_2a_{k2}+\cdots+v_na_{kn}$.
+\end{proof}
