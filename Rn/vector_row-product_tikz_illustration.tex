@@ -4,7 +4,7 @@
 \begin{tikzpicture}
 % les matrices
 \matrix (A) [matrix of math nodes,%
-             nodes = {circle},%
+             nodes = {},%
              left delimiter  = {[},%
              right delimiter = {]}] at (0,0)
 {%
@@ -16,7 +16,7 @@
   \vdots & \vdots & \ddots & \vdots  \\
   a_{m1} & a_{m2} & \ldots & a_{mn}  \\
 };
-v\matrix (v) [xshift=1cm,matrix of math nodes,nodes = {circle},% 
+v\matrix (v) [xshift=1cm,matrix of math nodes,nodes = {},% 
               left delimiter  = [,right delimiter ={]}] at (A.east)
 {%
   \node[draw] {v_1};\\
@@ -27,12 +27,12 @@ v\matrix (v) [xshift=1cm,matrix of math nodes,nodes = {circle},%
 \node[circle,xshift=0.5cm] (E) at (v.east) {$=$}; 
 w\matrix (w) [xshift=3.5cm,%
              matrix of math nodes,%
-             nodes = {ellipse},%
+             nodes = {},%
              left delimiter  = [,%
              right delimiter ={]}] at (E.east)
 {%
   a_{11}v_1+a_{12}v_2+\cdots+a_{1n}v_n\\\\
-  \node[draw,blue] (X) {a_{21}v_1+a_{22}v_2+\cdots+a_{2n}v_n};\\
+  \node[draw,ellipse,blue] (X) {a_{21}v_1+a_{22}v_2+\cdots+a_{2n}v_n};\\
   \vdots \\
   a_{m1}v_1+a_{m2}v_2+\cdots+a_{mn}v_n\\
 };
