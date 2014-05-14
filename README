@@ -1,17 +1,31 @@
 Intronduction to Linear Algebra
-Authors: 
+
+*************
+Authors:
+*************
+
 Nate Iverson <nathaniel.iverson@utoledo.edu>
 Sonmez Sahutoglu <sahutsonmez@yahoo.com>
 
-Goal: Create a usable linear algebra textbook for the University of Toledo 
+*************
+Goal: 
+*************
+Create a usable linear algebra textbook for the University of Toledo 
 Math 1890. It should contain proofs, but still be example driven. 
 So far our goal has been to introduce linear transformations early and motivate
 the rest of the book with linear transformations. Our plan is to cover at 
 least till spectral theory. Some optional topics we would like to include once the math 1890 part is taken care of: Jordan Normal Form, SVD, Power Method, Eigencentrality, Least Squares (linear algebra point of view), pseudo inverses. 
 
-Prerequisites: The template we're using uses a fairly complete set of latex macros. In particular you may need to install biblatex and a few other extras.
+*************
+Prerequisites:
+************* 
 
+The template we're using uses a fairly complete set of latex macros. In particular you may need to install biblatex and a few other extras.
+
+
+*************
 Command Summary:
+*************
 
 To update your local repo:
 git pull
