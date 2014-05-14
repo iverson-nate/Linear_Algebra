@@ -19,16 +19,16 @@ git pull
 To compile the files
 make
 
-To see changes:
+To see changes you have made:
 git status
 
-To stage all changes (change the . to a filename to only stage 1 file change):
+To stage all changes you have made(change the . to a filename to only stage 1 file change):
 git add .
 
-To commit changes
+To commit changes you have made
 git commit -m "Put a descriptive short message here describing changes"
 
-To update remote repository
+To update remote repository with your changes
 git push
 
 *************
