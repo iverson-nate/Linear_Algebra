@@ -13,7 +13,6 @@ x_1\\ x_2 \\ \vdots \\ x_n
 \end{bmatrix} 
 : x_i \in \mathbb{R}\text{ for all }i=1,2, \ldots, n \right\}
 \]
-
 We will refer to the members of $\mathbb{R}^n$ as \emph{vectors} and the 
 elements of $\mathbb{R}$ as \emph{scalars}. When we want to refer to row 
 vectors instead of column vectors we will use the notation 
@@ -122,8 +121,7 @@ A real matrix $A$ is a rectangular array of real numbers $a_{i,j} \in
 \mathbb{R}$ (usually the comma is omitted $a_{ij}$)  where the $i$ is the row 
 and $j$ is the column number. That is:
 \[
-A=[a_{ij}]=[\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n]=
-\begin{bmatrix}
+A=[a_{ij}]=\begin{bmatrix}
 a_{11} & a_{12} & \cdots & a_{1n} \\
 a_{21} & a_{22} & \cdots & a_{2n} \\
 \vdots & \vdots & \ddots & \vdots \\
@@ -202,8 +200,9 @@ It is important to note that the product is only defined if the number of column
 &=\begin{bmatrix}2v_1-3v_2\\-5v_1+v_3\end{bmatrix}\\
 &=\begin{bmatrix}2v_1-3v_2+0v_3\\-5v_1+0v_2+v_3\end{bmatrix}
 \end{align*}
-Notice we put some zero values back in on the final result. This is not strictly 
-necessary but helps motivate the row-column algorithm for matrix multiplication.
+Notice that we put some zero values back in on the final result. This is not 
+strictly necessary but helps motivate the row-column algorithm for matrix 
+multiplication.
 \end{example}
 
 \begin{proposition}[The Row-Column Algorithm] 
@@ -212,7 +211,8 @@ Then $\vec{w}=A\vec{v} \in \mathbb{R}^m$ where
 \[\vec{w}(k)=a_{k1}v_1+a_{k2}v_2+\cdots+a_{kn}v_n\] 
 for all $k$ with $1 \le k \le n$.
 \end{proposition}
-\begin{remark} This can be visualized by taking each row in $A$ and multiplying 
+\begin{remark} 
+This can be visualized by taking each row in $A$ and multiplying 
 each of it's entries by the corresponding coordinate in $\vec{v}$. The sum of 
 these entries is the same row in the result as the row in $A$.\\
 \input{Rn/vector_row-product_tikz_illustration.tex}
