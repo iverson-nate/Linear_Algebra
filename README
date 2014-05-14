@@ -1,0 +1,61 @@
+Intronduction to Linear Algebra
+Authors: 
+Nate Iverson <nathaniel.iverson@utoledo.edu>
+Sonmez Sahutoglu <sahutsonmez@yahoo.com>
+
+Prerequisites: The template we're using uses a fairly complete set of latex macros. In particular you may need to install biblatex and a few other extras.
+
+Command Summary:
+
+To update your local repo:
+git pull
+
+To compile the files
+make
+
+To see changes:
+git status
+
+To stage all changes (change the . to a filename to only stage 1 file change):
+git add .
+
+To commit changes
+git commit -m "Put a descriptive short message here describing changes"
+
+To update remote repository
+git push
+
+*************
+File Structure:
+*************
+
+mycommands.sty (Put the special commands you want and packages in here)
+authors.tex (Authors names separated by \\ for now )
+Pictures/      (pdfs for chapter heading pictures and cover picture)
+structure.tex	(Part of The Legrand Orange Book Template do not edit)
+backmatter.tex  ( place that loads bibliography needs to be fixed)
+linear_algebra.tex  (main file, avoid editing most in subdirectory and subfiles)
+preamble.tex	    (Part of The Legrand Orange Book Template do not edit)
+template.txt  	    (Part of The Legrand Orange Book Template do not edit)
+bibliography.bib  (bibliography use standard keys from mathscinet)
+makefile	  (Sets up make to compile using pdflatex)   
+README		  (This file)
+frontmatter.tex   (Part of The Legrand Orange Book Template do not edit)
+Rn/		  (Subdirectory of Real vector spaces stuff currently chapter1)
+title.tex	  (Part of The Legrand Orange Book Template do not edit)
+ut
+
+*************
+Coding style:
+*************
+
+We use \begin{bmatrix} or \begin{bmatrix*}[r] to right justify (sometimes fixes minus sign alignment issues). We use bracketed symbols for both matrices and 
+vectors.
+
+\phm does \phantom{-} can also be used to correct minus sign allignment issues
+(put on each entry without a unary minux in a column containy a unary minus)
+
+To say $n$-th use \nth{n} 5th is \nth{5}
+
+We use $\vec{v}$ to denote a vector v
+ 
