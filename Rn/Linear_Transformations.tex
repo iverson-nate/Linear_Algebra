@@ -6,29 +6,36 @@ A function $f:A \to B$ is a map the associates each value $a$ in the
 \emph{domain} $A$ with exactly one value $b$ in the \emph{codomain} $B$. 
 We would write $f(a)=b$. We will call all the elements in $B$ actually mapped 
 to by $f$ the \emph{image} of $A$ under $f$ and denote it 
-$f(A)=\{ b \in B \mid f(a)=b\text{ for some } a \in A  \}$.
+$f(A)=\{ f(a):\text{ for } a \in A  \}$.
 \end{definition}
-\begin{example}$f:\mathbb{R} \to \mathbb{R}$ defined by $f(x)=x^2$ is a function. The domain  and range are both $\mathbb{R}$ where the image $f(\mathbb{R})=[0,\infty )$.
+\begin{example}$f:\mathbb{R} \to \mathbb{R}$ defined by $f(x)=x^2$ is a 
+function. The domain  and the codomain are both $\mathbb{R}$ while the 
+image is $f(\mathbb{R})=[0,\infty )$.
 \end{example}
 \begin{remark}
-We are intentionally avoiding the term \emph{range} of a function because it is ambiguous. Some authors call the range the image and others call it the codomain.
+We are intentionally avoiding the term \emph{range} of a function because it is 
+ambiguous. Some authors call the range the image and others call it the 
+codomain.
 \end{remark}
 \begin{definition}[Linear Transformation]
-A real \emph{linear transformation} is a function\\ $T: \mathbb{R}^n \to \mathbb{R}^m$ such that vector addition and scalar multiplication are preserved.
-That is 
-\begin{itemize}
-\item $T(\vec{v}+\vec{w})=T(\vec{v})+T(\vec{w})$ for all $\vec{v},\vec{w} \in \mathbb{R}^n$\hfill \emph{(preserves vector addition)}
-\item $T(a\vec{v})=aT(\vec{v})$ for all $\vec{v}\in \mathbb{R}^n$ and for $a \in \mathbb{R}$\hfill \emph{(preserves scalar multiplication)}
-\end{itemize}
+A real \emph{linear transformation} is a function\\ 
+$T: \mathbb{R}^n \to \mathbb{R}^m$ such that vector addition and scalar 
+multiplication are preserved. That is, 
+\begin{enumerate}
+\item $T(\vec{v}+\vec{w})=T(\vec{v})+T(\vec{w})$ for all 
+$\vec{v},\vec{w} \in \mathbb{R}^n$\hfill \emph{(preserves vector addition)}
+\item $T(a\vec{v})=aT(\vec{v})$ for all $\vec{v}\in \mathbb{R}^n$ 
+and for $a \in \mathbb{R}$\hfill \emph{(preserves scalar multiplication)}
+\end{enumerate}
 \end{definition}
 
-\begin{proposition} If $A \in M_{m \times n}(\mathbb{R})$ then the function $T:\mathbb{R}^n \to \mathbb{R}^m$ defined by $T(\vec{v})=A\vec{v}$ is a linear transformation. This map is commonly refered to as $\vec{v} \to A\vec{v}$.
+\begin{proposition} If $A \in M_{m \times n}(\mathbb{R})$ then the function 
+$T:\mathbb{R}^n \to \mathbb{R}^m$ defined by $T(\vec{v})=A\vec{v}$ is a linear 
+transformation. This map is commonly referred to as $\vec{v} \to A\vec{v}$.
 \end{proposition}
 \begin{proof}
 Let $\vec{v},\vec{w} \in \mathbb{R}^n$ and $a \in \mathbb{R}$. 
-
 We will start with scalar multiplication 
-
 \begin{align*}
 T(a\vec{v})
 %=A\begin{bmatrix}av_1\\ \vdots \\ av_n\end{bmatrix}
@@ -37,13 +44,9 @@ T(a\vec{v})
 &=(av_1)\vec{a}_1+\cdots+(av_n)\vec{a}_n\\
 &=a(v_1\vec{a}_1+\cdots+v_n\vec{a}_n)\\
 &=a(A\vec{v})\\
-&=aT(\vec{v})\\
+&=aT(\vec{v})
 \end{align*}
-
-
 Now we show vector addition is preserved:
-
-
 \begin{align*}
 T(\vec{v}+\vec{w})
 %&=A\begin{bmatrix}v_1+w_1\\ \vdots \\ v_n+w_n\end{bmatrix}\\
@@ -53,11 +56,10 @@ T(\vec{v}+\vec{w})
 &=A\vec{v}+A\vec{w}\\
 &=T(\vec{v})+T(\vec{w})
 \end{align*}
-
 Note that the vector associative and distributive properties used above 
 follow from the associative and distributive properties in $\mathbb{R}$ 
 by applying them on each coordinate.
 
-Since the choices of $\vec{v},\vec{w}$ and $a$ were arbitrary the proof works for all $\vec{v},\vec{w} \in \mathbb{R}^n$, $a \in \mathbb{R}$.
-
+Since the choices of $\vec{v},\vec{w}$ and $a$ were arbitrary the proof works 
+for all $\vec{v},\vec{w} \in \mathbb{R}^n$, $a \in \mathbb{R}$.
 \end{proof}
