@@ -131,7 +131,8 @@ a_{m1} & a_{m2} & \cdots & a_{mn}
 \end{bmatrix}
 \]
 The \emph{dimension} of the matrix is $m\times n$ where $m$ is the number of 
-rows and $n$ is the number of columns. 
+rows and $n$ is the number of columns. The set of all such matrices is denoted 
+by $M_{m\times n}(\mathbb{R})$. 
 \end{definition}
 The matrix $A$ can be also seen as a collection of vectors. Namely, 
 $A=[a_{ij}]=[\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n]$ where 
@@ -158,9 +159,8 @@ $\vec{a}_1=\begin{bmatrix*}[r] 2 \\ -5 \end{bmatrix*} $
 \subsection{Matrix-Vector Multiplication}
 
 \begin{definition}[Matrix-Vector Multiplication]\index{Matrix-Vector Multiplication}
-Given an $m \times n$ matrix $A=[\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n]$ and 
-column vector $\vec{v} \in \mathbb{R}^n$. We define the \emph{Matrix-Vector} 
-product to be the linear combination 
+Let $A=[a_{ij}]\in M_{m\times n}(\mathbb{R})$ and $\vec{v} \in \mathbb{R}^n$.  
+We define the \emph{Matrix-Vector} product to be the linear combination 
 \[
 A\vec{v}=[\vec{a}_1, \vec{a}_2, \ldots ,\vec{a}_n]\begin{bmatrix}v_1 \\ v_2 \\ 
 \vdots \\ v_n \end{bmatrix}=v_1\vec{a}_1+v_2\vec{a}_2+\cdots+v_n\vec{a}_n
@@ -207,10 +207,10 @@ necessary but helps motivate the row-column algorithm for matrix multiplication.
 \end{example}
 
 \begin{proposition}[The Row-Column Algorithm] 
-For an $m \times n$ matrix $A=[a_{ij}]$ and vector $\vec{v} \in \mathbb{R}^n$ 
-call the of matrix multiplication $\vec{w}=A\vec{v}$ then 
-$\vec{w}(k)=a_{k1}w_1+a_{k2}w_2+\cdots+a_{kn}w_n$ for all $k$ with 
-$1 \le k \le n$.
+Let $A=[a_{ij}]\in M_{m\times n}(\mathbb{R})$ and $\vec{v} \in \mathbb{R}^n$. 
+Then $\vec{w}=A\vec{v} \in \mathbb{R}^m$ where  
+\[\vec{w}(k)=a_{k1}v_1+a_{k2}v_2+\cdots+a_{kn}v_n\] 
+for all $k$ with $1 \le k \le n$.
 \end{proposition}
 \begin{remark} This can be visualized by taking each row in $A$ and multiplying 
 each of it's entries by the corresponding coordinate in $\vec{v}$. The sum of 
@@ -218,9 +218,8 @@ these entries is the same row in the result as the row in $A$.\\
 \input{Rn/vector_row-product_tikz_illustration.tex}
 \end{remark}
 \begin{proof}
-Suppose we have $m\times n$ matrix 
-$A=[a_{ij}]=[\vec{a}_1,\vec{a}_2,\ldots,\vec{a}_n]$ 
-and vector $\vec{v} \in \mathbb{R}^n$. Then 
+Suppose $A=[a_{ij}]=[\vec{a}_1,\vec{a}_2,\ldots,\vec{a}_n]$ and  
+$\vec{v} \in \mathbb{R}^n$. Then 
 \[
 w=A\vec{v}=[\vec{a}_1,\vec{a}_2,\ldots,\vec{a}_n] \begin{bmatrix}v_1\\ 
 v_2 \\ 
@@ -229,12 +228,11 @@ v_n\end{bmatrix}=v_1\vec{a}_1+v_2\vec{a}_2+\cdots+v_n\vec{a}_n
 \]
 Let $k$ be an integer with $1 \le k \le n$. Since 
 $w=A\vec{v}=v_1\vec{a}_1+v_2\vec{a}_2+\cdots+v_n\vec{a}_n$ as vectors they are 
-also equal at the $k^{\tiny\text{th}}$ coordinate.
-
-$w(k)=v_1\vec{a}_1(k)+v_2\vec{a}_2(k)+\cdots+v_n\vec{a}_n(k)$ as vectors they 
-are also equal at the $k^{\tiny\text{th}}$ coordinate. 
-
-By definition of the column vector $\vec{a}_j=\begin{bmatrix}a_{1j}\\ a_{2j}\\ \vdots \\ a_{nj}\end{bmatrix}$ for each $j$ with $1\le j \le n$. Thus 
-$\vec{a}_j(k)=a_{kj}$ for all $k$ and $j$ with $1 \le k,j \le n$. Therefore, $
-\vec{w}(k)=v_1a_{k1}+v_2a_{k2}+\cdots+v_na_{kn}$.
+also equal at the $k^{\tiny\text{th}}$ coordinate. That is, 
+$w(k)=v_1\vec{a}_1(k)+v_2\vec{a}_2(k)+\cdots+v_n\vec{a}_n(k)$. 
+Note that the column vector 
+$\vec{a}_j=\begin{bmatrix}a_{1j}\\ a_{2j}\\ \vdots \\ a_{nj}\end{bmatrix}$ for 
+each $j$. That is, $\vec{a}_j(k)=a_{kj}$. Therefore, 
+\[\vec{w}(k)=v_1a_{k1}+v_2a_{k2}+\cdots+v_na_{kn}=a_{k1}v_1+a_{k2}v_2+\cdots+a_{
+kn}v_n.\]
 \end{proof}
