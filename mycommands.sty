@@ -9,10 +9,9 @@
 % http://tex.stackexchange.com/questions/178710/matrix-alignment-with-preceeding-unary-minus
 
 \usepackage{array}
-\makeatletter
 \def\zz\ignorespaces{\@ifnextchar-{}{\phantom{-}}}
 \newcolumntype{C}{>{\zz}{c}}
-\makeatother
+
 
 
 \newcommand{\phm}{\phantom{\minus}}
