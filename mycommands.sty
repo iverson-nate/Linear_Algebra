@@ -1,14 +1,16 @@
 \renewcommand{\vec}[1]{\textbf{#1}}
-\newcommand{\ph}{\phantom{-}}
 
-\newcommand*{\minus}{%                                                         
-  \leavevmode
-  \hphantom{0}%                                                                
-  \llap{%                                                                      
-    \settowidth{\dimen0 }{$0$}%                                                
-    \resizebox{0.8\dimen0 }{\height}{$-$}%                                     
-  }%                                                                           
-}
+% below makes a new column allignment environment that adds a phantom{-}
+% to every entry without a - preceding. This means to correctly format
+% a matrix with preceding unary -, use \begin{bmatrix}*{C} \end{bmatrix}
+% as usual if there are no preceding unary -'s use \begin{bmatrix} \end{bmatrix}
+
+\usepackage{array}
+\makeatletter
+\def\zz\ignorespaces{\@ifnextchar-{}{\phantom{-}}}
+\newcolumntype{C}{>{\zz}{c}}
+\makeatother
+
 \newcommand{\phm}{\phantom{\minus}}
 \usepackage[super]{nth} %use it as \nth{1}, \nth{2}, \nth{5} etc
 \usepackage{tikz}
