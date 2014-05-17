@@ -62,9 +62,61 @@ is, for $\vec{v} \in \mathbb{R}^n$ and $r \in \mathbb{R}$ we define
 \[
 r\vec{v}=
 r\begin{bmatrix}v_1\\ v_2 \\ \vdots \\ v_n\end{bmatrix}=
-\begin{bmatrix}v_1\\ rv_2 \\ \vdots \\ rv_n\end{bmatrix}
+\begin{bmatrix}rv_1\\ rv_2 \\ \vdots \\ rv_n\end{bmatrix}
 \]
 \end{definition}
+
+The order of operations is scalar multiplication first then vector addition.
+
+\begin{example}
+Consider $\vec{x}=\begin{bmatrix*}[C]1\\ 0 \\ -3\end{bmatrix*}$ and
+$\vec{y}=\begin{bmatrix*}[C]-4\\ 2 \\ 1\end{bmatrix*}$ in $\mathbb{R}^3$.
+\[
+2\vec{x}+(-1)\vec{y}=
+2\begin{bmatrix*}[C]1\\ 0 \\ -3\end{bmatrix*}+
+(-1)\begin{bmatrix*}[C]-4\\ 2 \\ 1\end{bmatrix*}=
+%\begin{bmatrix}2(1)\\ 2(0) \\ 2(-3)\end{bmatrix}+
+%\begin{bmatrix}(-1)(-4)\\ (-1)(2) \\ (-1)(1)\end{bmatrix}=
+\begin{bmatrix*}[C]2\\ 0 \\ -6\end{bmatrix*}+
+\begin{bmatrix*}[C]4\\ -2 \\ -1\end{bmatrix*}=
+\begin{bmatrix}2+4\\ 0+(-2) \\ -6+(-1)\end{bmatrix}=
+\begin{bmatrix*}[C]6\\ -2 \\ -5\end{bmatrix*}
+\]
+This is actually also an example of our next definition.
+\end{example}
+
+\begin{definition}\index{linear combination}
+A \emph{linear combination} of vectors $\vec{a}_1, \vec{a}_2, \ldots,
+\vec{a}_n$ is the sum
+\[c_1\vec{a}_1+c_2\vec{a}+\cdots+c_n\vec{a}_n\]
+for some choice of scalar multiples $c_1,c_2, \ldots, c_n \in \mathbb{R}$
+\end{definition}
+
+
+\begin{example}
+Any vector in $\mathbb{R}^2$ can be written as a linear combination of
+$\begin{bmatrix}1 \\ 0\end{bmatrix}$ and $\begin{bmatrix}1 \\ 1 \end{bmatrix}$
+because
+\[
+\begin{bmatrix}v_1 \\ v_2\end{bmatrix}=
+(v_1-v_2) \begin{bmatrix}1 \\ 0\end{bmatrix}+
+v_2 \begin{bmatrix}1 \\ 1 \end{bmatrix}
+\]
+\end{example}
+
+\begin{example}
+The vector $\begin{bmatrix}1 \\ 1\end{bmatrix}$ is not a linear combination
+of $\begin{bmatrix}1 \\ 0\end{bmatrix}$ and $\begin{bmatrix}2 \\
+0\end{bmatrix}$. If it were then, we would have
+\[
+\begin{bmatrix}1 \\ 1\end{bmatrix}=
+a \begin{bmatrix}1 \\ 0\end{bmatrix}+
+b \begin{bmatrix}2 \\ 0 \end{bmatrix}
+\]
+for some constants $a,b\in \mathbb{R}$. Considering the second components, this
+implies that $1=0$ which is a contradiction.
+\end{example}
+
 \begin{remark}For each integer $n\geq 1$ the standard basis of $\mathbb{R}^n$ 
 can also be written as $n$ vectors:
 \[
