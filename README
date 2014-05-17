@@ -69,11 +69,8 @@ ut
 Coding style:
 *************
 
-We use \begin{bmatrix} or \begin{bmatrix*}[r] to right justify (sometimes fixes minus sign alignment issues). We use bracketed symbols for both matrices and 
-vectors.
-
-\phm does \phantom{-} can also be used to correct minus sign allignment issues
-(put on each entry without a unary minux in a column containy a unary minus)
+We use \begin{bmatrix} or \begin{bmatrix*}[C] for a matrix with preceding 
+unary minues.We use bracketed symbols for both matrices and vectors.
 
 To say $n$-th use \nth{n} 5th is \nth{5}
 
