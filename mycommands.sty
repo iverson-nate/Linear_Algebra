@@ -4,12 +4,16 @@
 % to every entry without a - preceding. This means to correctly format
 % a matrix with preceding unary -, use \begin{bmatrix}*{C} \end{bmatrix}
 % as usual if there are no preceding unary -'s use \begin{bmatrix} \end{bmatrix}
+%
+% Thanks to David Carlisle for this solution.
+% http://tex.stackexchange.com/questions/178710/matrix-alignment-with-preceeding-unary-minus
 
 \usepackage{array}
 \makeatletter
 \def\zz\ignorespaces{\@ifnextchar-{}{\phantom{-}}}
 \newcolumntype{C}{>{\zz}{c}}
 \makeatother
+
 
 \newcommand{\phm}{\phantom{\minus}}
 \usepackage[super]{nth} %use it as \nth{1}, \nth{2}, \nth{5} etc
