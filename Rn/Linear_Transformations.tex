@@ -349,3 +349,99 @@ T(S(a\vec{v}+b\vec{w}))&=T(aS(\vec{v})+bS(\vec{w}))\\
 \end{align*}
 Therefore $T\circ S$ is a linear transformation.
 \end{proof}
+
+Next we may ask since composition of linear transformation is linear, what
+can we say about the standard matrix of a composition?
+
+\begin{example}
+Let $T:\mathbb{R}^2 \to \mathbb{R}^3$ and $S:\mathbb{R}^4 \to \mathbb{R}^2$
+defined by $T(\vec{v})=A\vec{v}$ and $S(\vec{w})=B\vec{w}$ with
+\begin{gather*}
+A=\begin{bmatrix*}[C]
+1 & 2 \\
+-1 & 1 \\
+3 & 2 
+\end{bmatrix*}
+B=\begin{bmatrix*}[C]
+-3 & 0 & 2 & -7 \\
+1 & 1 & -1 & 0 
+\end{bmatrix*}
+\end{gather*}
+$T\circ S:\mathbb{R}^4 \to \mathbb{R}^3$ so we just need to consider it's action on the basis $\{\vec{e}_1,\vec{e}_2,\vec{e}_3,\vec{e}_4\}$.\\
+%
+$T\circ S(\vec{e}_1)=T(S(\vec{e}_1))=T(B\vec{e}_1)=A(B\vec{e}_1)
+=A\begin{bmatrix*}[C]-3 \\ 1\end{bmatrix*}
+=\begin{bmatrix*}[C] -1 \\ 4 \\ -7\end{bmatrix*}
+$\\
+$T\circ S(\vec{e}_2)=T(S(\vec{e}_2))=T(B\vec{e}_2)=A(B\vec{e}_2)
+=A\begin{bmatrix*}[C]0 \\ 1\end{bmatrix*}
+=\begin{bmatrix*}[C] 2 \\ 1 \\ 2\end{bmatrix*}
+$\\
+$T\circ S(\vec{e}_3)=T(S(\vec{e}_3))=T(B\vec{e}_3)=A(B\vec{e}_3)
+=A\begin{bmatrix*}[C]2 \\ -1\end{bmatrix*}
+=\begin{bmatrix*}[C] 0 \\ -3 \\ 4\end{bmatrix*}
+$\\
+$T\circ S(\vec{e}_4)=T(S(\vec{e}_4))=T(B\vec{e}_4)=A(B\vec{e}_4)
+=A\begin{bmatrix*}[C]-7 \\ 0\end{bmatrix*}
+=\begin{bmatrix*}[C] -7 \\ 7 \\ 21 \end{bmatrix*}
+$
+
+This gives a a standard matrix of 
+\[\begin{bmatrix*}
+-1 & 2 &  0 & -7 \\
+ 4 & 1 & -3 &  7 \\
+-7 & 2 &  4 & 21 
+\end{bmatrix*}
+\]
+But more importantly we notice that the standard matrix was made of 
+$[A\vec{b}_1, A\vec{b}_2, A\vec{b}_3,A\vec{b}_4]$ where 
+$B=[\vec{b}_1,\vec{b}_2, \vec{b}_3,\vec{b}_4]$. Also notice that we write 
+$A(B\vec{v})$ quite a bit. In this spirit we have the following definition.
+\end{example}
+
+
+\begin{definition}[Matrix-Matrix Multiplication]
+Let $A \in M_{m \times n}$ and $B \in M_{n \times p}$ we define the matrix 
+product $AB=[A\vec{b}_1,A\vec{b}_2,\ldots,A\vec{b}_m]$.
+\end{definition}
+
+\begin{remark} 
+\begin{enumerate}
+\item The matrix product $AB$ only exists when the number of columns in $A$ is
+equal to the number of rows in $B$. 
+\item This definition is based on compositions of functions. Composite 
+operations rarely commute (like putting on your socks and shoes). Thus in 
+general $AB$ is not usually equal to $BA$. In fact only one may exist.
+\end{enumerate}
+\end{remark}
+
+\begin{example}
+Some examples here...
+\end{example}
+
+\begin{theorem} 
+Let $T:\mathbb{R}^n \to \mathbb{R}^m$ and $S:\mathbb{R}^p \to \mathbb{R}^n$
+defined by $T(\vec{v})=A\vec{v}$ and $S(\vec{w})=B\vec{w}$ for some
+$A \in M_{m\times n}(\mathbb{R})$ and $B \in M_{n\times p}(\mathbb{R})$.
+Then the standard matrix of $T \circ S$ is $AB$.
+\end{theorem}
+\begin{proof}
+$T \circ S:\mathbb{R}^p \to \mathbb{R}^m$ so let's start with standard basis
+$\mathcal{E}=\{\vec{e}_1,\vec{e}_2,\ldots,\vec{e}_p\}$. Let  $k$ be an 
+arbitrary integer with $1 \le k \le p$. Note that we have:
+\[
+B\vec{e}_k
+=0\vec{b}_1+\cdots+0\vec{b}_{k-1}+1\vec{b}_k+0\vec{b}_{k+1}+\cdots+0\vec{b}_p
+=\vec{b}_k
+\]
+Thus we can expand 
+\[
+T \circ S(\vec{e}_k) =T(S(\vec{e}_k))=T(B(\vec{e}_k))=T(\vec{b}_k)=A\vec{b}_k
+\]
+
+Since $k$ was arbitrary this holds for all $k$ with $1 \le k \le p$. 
+Therefore, the standard matrix for $T \circ S$ is 
+$[A\vec{b}_1,\ldots, A\vec{b}_p]$ which is by definition $AB$
+\end{proof}
+
+\input{Rn/Linear_Transformations_Composition_exercises.tex}
