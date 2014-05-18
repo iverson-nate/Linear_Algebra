@@ -251,3 +251,32 @@ T(\vec{v})
 &=A\vec{v}
 \end{align*}
 \end{proof}
+
+\begin{example} Let's find the standard matrix for the linear transformation
+$T:\mathbb{R}^2 \to \mathbb{R}^3$ 
+defined by 
+$T\begin{bmatrix}v_1 \\ v_2 \end{bmatrix}=
+\begin{bmatrix}v_1-3v_2\\v_2\\5v_1-3v_2\end{bmatrix}$.
+
+Since the domain is $\mathbb{R}^2$ we use the standard basis $\{\vec{e}_1,\vec{e}_2\}$ for $\mathbb{R}^2$. 
+\begin{alignat*}{9}
+\vec{a}_1
+&=T(\vec{e}_1) 
+&= T\begin{bmatrix}1 \\ 0\end{bmatrix} &=\begin{bmatrix}1\\0\\5\end{bmatrix}
+&\hspace*{1.5cm} &\vec{a}_2
+&=T(\vec{e}_2) 
+&= T\begin{bmatrix}0 \\ 1\end{bmatrix} 
+&=\begin{bmatrix*}[C]-3\\1\\-3\end{bmatrix*}
+\end{alignat*}
+So $A=\begin{bmatrix*}[c]1 & -3 \\0 & 1 \\5 & -3\\\end{bmatrix*}$
+We can test our work simply by multiplying:
+\[
+A\begin{bmatrix}v_1 \\ v_2 \end{bmatrix}
+=\begin{bmatrix*}[c]1 & -3 \\0 & 1 \\5 & -3\\\end{bmatrix*}
+\begin{bmatrix}v_1 \\ v_2 \end{bmatrix}
+=\begin{bmatrix}
+v_1-3v_2 \\ v_2 \\ 5v_1-3v_2
+\end{bmatrix}
+\]
+
+\end{example}
