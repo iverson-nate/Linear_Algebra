@@ -1,5 +1,6 @@
 \section{Linear Transformations in $\mathbb{R}^n$}
 \index{Linear Transformations}
+\subsection{Definition}
 
 \begin{definition}[Function]
 A function $f:A \to B$ is a map the associates each value $a$ in the  
@@ -211,3 +212,42 @@ linear transformation.
 \end{enumerate}
 \end{proof}
 
+\input{Rn/Linear_Transformations_Definition_exercises.tex}
+
+\subsection{The Standard Matrix of a Linear Transformation}
+\index{The Standard Matrix of a Linear Transformation}
+
+\begin{definition}
+If linear transformation $T:\mathbb{R}^n \to \mathbb{R}^m$ has a matrix 
+$A \in M_{m\times n}(\mathbb{R})$ such that $T(\vec{v})=A\vec{v}$ then $A$ 
+is called \emph{the standard matrix} of $T$.
+\end{definition}
+
+\begin{theorem} Every linear transformation $T:\mathbb{R}^n \to \mathbb{R}^m$ 
+has a standard matrix $A=[\vec{a}_1,\vec{a}_2, \ldots, \vec{a}_n]$. In fact,
+$\vec{a}_k=T(\vec{e}_k)$ for each integer $k$ with $1 \le k \le n$ 
+where $\{\vec{e}_1,\vec{e}_2,\ldots,\vec{e}_n\}$ are the standard basis for 
+$\mathbb{R}^n$.\label{thm:standard_matrix}
+\end{theorem}
+
+\begin{proof}
+It suffices to show that $T(\vec{v})=A\vec{v}$ for all 
+$\vec{v} \in \mathbb{R}^n$.
+Let $\vec{v} \in \mathbb{R}^n$ be an arbitrary, but fixed, vector. By 
+Proposition~\ref{prop:e_k_spans_Rn} $\vec{v}$ is a linear combination of the 
+standard basis. In fact, it can be written:
+\[
+\vec{v}=v_1\vec{e}_1+v_2\vec{e}_2+\cdots+v_n\vec{e}_n
+\]
+
+where the each $v_k$ is the $k^{\text{th}}$ coordinate of $\vec{v}$. Thus
+\begin{align*}
+T(\vec{v}) 
+&=T(v_1\vec{e}_1+v_2\vec{e}_2+\cdots+v_n\vec{e}_n)\\
+&=v_1T(\vec{e}_1)+v_2T(\vec{e}_2)+\cdots+v_nT(\vec{e}_n)\\
+&=v_1\vec{a}_1+v_2\vec{a}_2+\cdots+v_n\vec{a}_n\\
+&=[\vec{a}_1,\vec{a}_2,\ldots,\vec{a}_n]
+\begin{bmatrix}v_1\\v_2\\\vdots\\v_n\end{bmatrix}\\
+&=A\vec{v}
+\end{align*}
+\end{proof}
