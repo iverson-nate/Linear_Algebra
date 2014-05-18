@@ -25,8 +25,8 @@ multiplication are preserved. That is,
 \begin{enumerate}
 \item $T(\vec{v}+\vec{w})=T(\vec{v})+T(\vec{w})$ for all 
 $\vec{v},\vec{w} \in \mathbb{R}^n$\hfill \emph{(preserves vector addition)}
-\item $T(\alpha\vec{v})=\alpha T(\vec{v})$ for all $\vec{v}\in \mathbb{R}^n$ 
-and for $\alpha \in \mathbb{R}$\hfill \emph{(preserves scalar multiplication)}
+\item $T(r\vec{v})=r T(\vec{v})$ for all $\vec{v}\in \mathbb{R}^n$ 
+and for $r \in \mathbb{R}$\hfill \emph{(preserves scalar multiplication)}
 \end{enumerate}
 \end{definition}
 
@@ -35,17 +35,17 @@ $T:\mathbb{R}^n \to \mathbb{R}^m$ defined by $T(\vec{v})=A\vec{v}$ is a linear
 transformation. This map is commonly referred to as $\vec{v} \to A\vec{v}$.
 \end{proposition}
 \begin{proof}
-Let $\vec{v},\vec{w} \in \mathbb{R}^n$ and $\alpha \in \mathbb{R}$. 
+Let $\vec{v},\vec{w} \in \mathbb{R}^n$ and $r \in \mathbb{R}$. 
 We will start with scalar multiplication 
 \begin{align*}
-T(\alpha\vec{v})
+T(r\vec{v})
 %=A\begin{bmatrix}av_1\\ \vdots \\ av_n\end{bmatrix}
 &=[\vec{a}_1, \ldots, \vec{a}_n]
-\begin{bmatrix}\alpha v_1\\ \vdots \\ \alpha v_n\end{bmatrix}\\
-&=(\alpha v_1)\vec{a}_1+\cdots+(\alpha v_n)\vec{a}_n\\
-&=\alpha (v_1\vec{a}_1+\cdots+v_n\vec{a}_n)\\
-&=\alpha (A\vec{v})\\
-&=\alpha T(\vec{v})
+\begin{bmatrix}rv_1\\ \vdots \\  rv_n\end{bmatrix}\\
+&=(r v_1)\vec{a}_1+\cdots+(r v_n)\vec{a}_n\\
+&=r (v_1\vec{a}_1+\cdots+v_n\vec{a}_n)\\
+&=r (A\vec{v})\\
+&=r T(\vec{v})
 \end{align*}
 Now we show vector addition is preserved:
 \begin{align*}
@@ -61,8 +61,8 @@ Note that the vector associative and distributive properties used above
 follow from the associative and distributive properties in $\mathbb{R}$ 
 by applying them on each coordinate.
 
-Since the choices of $\vec{v},\vec{w}$ and $\alpha$ were arbitrary the proof 
-works for all $\vec{v},\vec{w} \in \mathbb{R}^n$ and $\alpha \in \mathbb{R}$.
+Since the choices of $\vec{v},\vec{w}$ and $r$ were arbitrary the proof 
+works for all $\vec{v},\vec{w} \in \mathbb{R}^n$ and $r \in \mathbb{R}$.
 \end{proof}
 
 \begin{example} We will show that  map $T:\mathbb{R}^2 \to \mathbb{R}^3$ 
@@ -95,8 +95,8 @@ transformation.
 \end{example}
 
 \begin{remark}
-Notice that we write $T\begin{bmatrix}rv_1\\rv_2\\rv_3\end{bmatrix}$ instead 
-of  $T\left(\begin{bmatrix}rv_1\\rv_2\\rv_3\end{bmatrix}\right)$ as a simple 
+Notice that we write $T\begin{bmatrix}v_1\\v_2\\v_3\end{bmatrix}$ instead 
+of  $T\left(\begin{bmatrix}v_1\\v_2\\v_3\end{bmatrix}\right)$ as a simple 
 mater of convenience.
 \end{remark}
 \begin{proposition}
