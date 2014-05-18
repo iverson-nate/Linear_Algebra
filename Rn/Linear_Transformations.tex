@@ -307,7 +307,7 @@ Consider the function $T:\mathbb{R}^3\to \mathbb{R}^2$ via
 T\begin{bmatrix}v_1 \\ v_2 \\ v_3 \end{bmatrix}
 =\begin{bmatrix}3v_1-2v_2^2 \\ 3+v_2\end{bmatrix}
 \]
-This function is not linear but we can still make what looks like a
+vThis function is not linear but we can still make what looks like a
 matrix for it:\\ 
 $T(\vec{e}_1)=\begin{bmatrix}3\\3\end{bmatrix}$ 
 $T(\vec{e}_2)=\begin{bmatrix}-2\\4\end{bmatrix}$ 
@@ -323,4 +323,29 @@ $A\vec{v}=\begin{bmatrix}3v_1-2v_2\\3v_1+4v_2+3v_3\end{bmatrix}
 Therefore $T$ does not have a standard matrix so is not a linear 
 transformation.
 \end{example}
-\input{Rn/Linear_Transformations_Standar_Matrix_exercises.tex}
+\input{Rn/Linear_Transformations_Standard_Matrix_exercises.tex}
+
+\subsection{Compositions of Linear Transformations}
+\index{Compositions of Linear Transformations}
+
+Consider two linear transformations 
+$T:\mathbb{R}^n\ \to \mathbb{R}^m$ and $S:\mathbb{R}^p \to \mathbb{R}^n$. 
+Since the domain of $T$ is equal to the codomain of $S$ the composition of 
+functions $T \circ S: \mathbb{R}^p \to \mathbb{R}^m$ is defined by 
+$T \circ S(\vec{v})=T(S(\vec{v}))$ for all $v \in \mathbb{R}^p$. Furthermore 
+we should ask is it linear?
+
+\begin{theorem}
+Let $T:\mathbb{R}^n\ \to \mathbb{R}^m$ and $S:\mathbb{R}^p \to \mathbb{R}^n$ 
+be linear transformations. Then the composition 
+$T\circ S:\mathbb{R}^p \to \mathbb{R}^m$ is also a linear transformation.
+\end{theorem}
+
+\begin{proof}
+Let $\vec{v},\vec{w} \in \mathbb{R}^p$ and $a,b \in \mathbb{R}$. We then apply the linearity properties of $S$ then $T$ in turn.
+\begin{align*}
+T(S(a\vec{v}+b\vec{w}))&=T(aS(\vec{v})+bS(\vec{w}))\\
+&=aT(S(\vec{v}))+bT(S(\vec{w}))
+\end{align*}
+Therefore $T\circ S$ is a linear transformation.
+\end{proof}
