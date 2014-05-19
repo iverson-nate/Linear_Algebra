@@ -49,6 +49,13 @@
 {\addvspace{1pt}\sffamily\small} % Spacing and font options for subsections
 {\contentslabel[\thecontentslabel]{1.25cm}} % Subsection number
 {}
+{\sffamily\hfill\thecontentspage} % Page number
+[] 
+% Subsubsection text styling
+\titlecontents{subsubsection}[1.25cm] % Indentation
+{\addvspace{1pt}\sffamily\small} % Spacing and font options for subsections
+{\contentslabel[\thecontentslabel]{1.25cm}} % Subsection number
+{}
 {\sffamily\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 [] 
 
@@ -318,8 +325,8 @@ innerbottommargin=5pt]{cBox}
 \node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{\thechapterimage}};
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Commenting the 3 lines below removes the small contents box in the chapter heading
-\fill[color=ocre!10!white,opacity=.6] (1cm,0) rectangle (8cm,-7cm);
-\node[anchor=north west] at (1.1cm,.35cm) {\parbox[t][8cm][t]{6.5cm}{\huge\bfseries\flushleft \printcontents{l}{1}{\setcounter{tocdepth}{2}}}};
+\fill[color=ocre!10!white,opacity=.6] (1cm,0) rectangle (10cm,-7cm);
+\node[anchor=north west] at (1.1cm,.35cm) {\parbox[t][8cm][t]{10cm}{\huge\bfseries\flushleft \printcontents{l}{1}{\setcounter{tocdepth}{2}}}};
 \draw[anchor=west] (5cm,-9cm) node [rounded corners=20pt,fill=ocre!10!white,text opacity=1,draw=ocre,draw opacity=1,line width=1.5pt,fill opacity=.6,inner sep=12pt]{\huge\sffamily\bfseries\textcolor{black}{\thechapter. #1\strut\makebox[22cm]{}}};
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{tikzpicture}};
