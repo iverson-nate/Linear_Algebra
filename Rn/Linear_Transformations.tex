@@ -114,7 +114,7 @@ v_1+v_2+3\end{bmatrix}$
 is not a linear transformation because $T(\vec{0})=\begin{bmatrix}0\\3\end{bmatrix}$.
 \end{example}
 
-\begin{theorem}
+\begin{theorem}\label{thm:linear_transformation_equivalences}
 Let $T:\mathbb{R}^n\to\mathbb{R}^m$ be a function. The following are equivalent:
 \begin{enumerate}
 \item $T$ is a linear transformation.
@@ -156,15 +156,15 @@ called \textit{mathematical induction}. We present an informal proof here. \\
 
 Let $a_1, \ldots, a_k \in \mathbb{R}$ and 
 $\vec{v}_1,\ldots,\vec{v}_k \in \mathbb{R}^n$. We define 
-$\vec{V}_1= a_1\vec{v}_1+a_2\vec{v}_2+\cdots+a_{k-1}\vec{v}_{k-1}$. Then we 
+$\vec{w}_1= a_1\vec{v}_1+a_2\vec{v}_2+\cdots+a_{k-1}\vec{v}_{k-1}$. Then we 
 have 
 \begin{align*}
 T(a_1\vec{v}_1+\cdots+a_k\vec{v}_k)
-&=T(\vec{V}_1+a_k\vec{v}_k)\\
-&=T(\vec{V}_1)+a_{k}T(\vec{v}_k)\\
-(\text{take }\vec{V}_2=a_1\vec{v}_1+a_2\vec{v}_2+\cdots+a_{k-2}\vec{v}_{k-2}, 
-)&= T(\vec{V}_2+a_{k-1}\vec{v}_{k-1})+a_{k}T(\vec{v}_k)\\
-&=T(\vec{V}_2)+a_{k-1}T(\vec{v}_{k-1})+a_{k}T(\vec{v}_k)\\
+&=T(\vec{w}_1+a_k\vec{v}_k)\\
+&=T(\vec{w}_1)+a_{k}T(\vec{v}_k)\\
+(\text{take }\vec{w}_2=a_1\vec{v}_1+a_2\vec{v}_2+\cdots+a_{k-2}\vec{v}_{k-2}, 
+)&= T(\vec{w}_2+a_{k-1}\vec{v}_{k-1})+a_{k}T(\vec{v}_k)\\
+&=T(\vec{w}_2)+a_{k-1}T(\vec{v}_{k-1})+a_{k}T(\vec{v}_k)\\
 \text{ do this } k-3 \text{ times more } & \phantom{xx} \vdots \\
 &=a_1T(\vec{v} _1)+\cdots+a_{k-1}T(\vec{v}_{k-1})+a_kT(\vec{v}_k).
 \end{align*}
