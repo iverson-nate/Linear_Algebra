@@ -101,7 +101,7 @@ of  $T\left(\begin{bmatrix}v_1\\v_2\\v_3\end{bmatrix}\right)$ as a simple
 mater of convenience.
 \end{remark}
 \begin{proposition}
-A linear transformation $T:\mathbb{R}^n \to \mathbb{R}^m$ has the property 1
+A linear transformation $T:\mathbb{R}^n \to \mathbb{R}^m$ has the property 
 that $T(\vec{0}_n)=\vec{0}_m$ where $\vec{0}_n \in \mathbb{R}^n$ and 
 $\vec{0}_m \in \mathbb{R}$ are the zero vectors.
 \end{proposition}
@@ -120,9 +120,8 @@ Let $T:\mathbb{R}^n\to\mathbb{R}^m$ be a function. The following are equivalent:
 \item $T$ is a linear transformation.
 \item $T(a\vec{v}+b\vec{w})=aT(\vec{v})+bT(\vec{w})$ for all $a,b \in \mathbb{R}$ 
 and $\vec{v},\vec{w} \in \mathbb{R}^n$
-\item $T$ preserves linear transformations. That is, 
-\[T(a_1\vec{v}_1+a_2\vec{v}_2+\cdots+a_k\vec{v}_k)=
-a_1T(\vec{v}_1)+a_2T(\vec{v}_2)+\cdots+a_kT(\vec{v}_k)\] 
+\item $T(a_1\vec{v}_1+a_2\vec{v}_2+\cdots+a_k\vec{v}_k)=
+a_1T(\vec{v}_1)+a_2T(\vec{v}_2)+\cdots+a_kT(\vec{v}_k)$ 
 for all $a_i \in \mathbb{R}$ and $\vec{v}_i \in \mathbb{R}^n$ and $k$ a positive integer.
 \end{enumerate}
 \end{theorem}
@@ -151,41 +150,24 @@ T(a\vec{v}+b\vec{w}) &= T(a\vec{v})+T(b\vec{w})\\
 Since the choice of $a,b \in \mathbb{R}$ and $\vec{v},\vec{w} \in \mathbb{R}^n$
 was arbitrary this equality holds for all choices of these values.
 
-\item[$(2 \implies 3)$] Let $T(a\vec{v}+b\vec{w})=aT(\vec{v})+bT(\vec{w})$ for all $a,b \in \mathbb{R}$ and $\vec{v},\vec{w} \in \mathbb{R}^n$. We proceed by mathematical induction on $k$.\\[10pt] 
-\begin{inparaenum}
-\item[\textbf{Basis Step:}] For $k=1$ let $a_1 \in \mathbb{R}$ and 
-$\vec{v}_1 \in \mathbb{R}^n$. Let $\vec{w} \in \mathbb{R}^n$ be any other 
-vector. Then 
+\item[$(2 \implies 3)$] We will use 2 multiple times to prove 3. In the 
+mathematical literature this technique is called \textit{mathematical 
+induction}. 
+
+Let $a_1, \ldots, a_k \in \mathbb{R}$ and 
+$\vec{v}_1,\ldots,\vec{v}_k \in \mathbb{R}^n$. We define 
+$\vec{V}_1= a_1\vec{v}_1+a_2\vec{v}_2+\cdots+a_{k-1}\vec{v}_{k-1}$. Then we 
+have 
 \begin{align*}
-T(a_1\vec{v}_1)&=T(a_1\vec{v}_1+\vec{0})\\
-&=T(a_1\vec{v}_1+0\vec{w})\\
-&=a_1T(\vec{v}_1)+0T(\vec{w})\\
-&=a_1T(\vec{v}_1)+\vec{0}\\
-&=a_1T(\vec{v}_1)
+T(a_1\vec{v}_1+\cdots+a_k\vec{v}_k)
+&=T(\vec{V}_1+a_k\vec{v}_k)\\
+&=T(\vec{V}_1)+a_{k}T(\vec{v}_k)\\
+(\text{take }\vec{V}_2=a_1\vec{v}_1+a_2\vec{v}_2+\cdots+a_{k-2}\vec{v}_{k-2}, 
+)&= T(\vec{V}_2+a_{k-1}\vec{v}_{k-1})+a_{k}T(\vec{v}_k)\\
+&=T(\vec{V}_2)+a_{k-1}T(\vec{v}_{k-1})+a_{k}T(\vec{v}_k)\\
+\text{ do this } k-3 \text{ times more } & \phantom{xx} \vdots \\
+&=a_1T(\vec{v} _1)+\cdots+a_{k-1}T(\vec{v}_{k-1})+a_kT(\vec{v}_k).
 \end{align*}
-
-Since the choice of $a_1$ and $\vec{v}_1$ were arbitrary this equality holds 
-for all $a_1 \in \mathbb{R}$ and $\vec{v}_1 \in \mathbb{R}^n$.\\[10pt] 
-%
-\item[\textbf{Induction Hypothesis: }] Suppose \\
-$T(a_1\vec{v}_1+a_2\vec{v}_2+\cdots+a_k\vec{v}_k)=
-a_1T(\vec{v}_1)+a_2T(\vec{v}_2)+\cdots+a_kT(\vec{v}_k)$ for all integers $k$ 
-with $1 \le k \le N$. \\[10pt] 
-%
-\item[\textbf{Induction: }]Let $a_1, \ldots, a_N,a_{N+1} \in \mathbb{R}$ and 
-$\vec{v}_1,\ldots,\vec{v}_N,\vec{v}_{N+1} \in \mathbb{R}^n$. Define 
-$\vec{v}=a_1\vec{v}_1+\cdots+a_N\vec{v}_N$. 
-
-Then by the induction hypothesis $T(\vec{v})=a_1T(\vec{v}_1)+\cdots+a_NT(\vec{v}_N)$. Therefore,
-
-\begin{align*}
-T(a_1\vec{v}_1+\cdots+a_N\vec{v}_N+a_{N+1}\vec{v}_{N+1})
-&=T(1\vec{v}+a_{N+1}\vec{v}_{N+1})\\
-&=1T(\vec{v})+a_{N+1}T(\vec{v}_{N+1})\\
-&=a_1T(\vec{v}_1)+\cdots+a_NT(\vec{v}_N)+a_{N+1}T(\vec{v}_{N+1})
-\end{align*}
-Which proves this case by mathematical induction.
-\end{inparaenum}
 
 \item[$(3 \implies 1)$] Suppose 
 $T(a_1\vec{v}_1+a_2\vec{v}_2+\cdots+a_k\vec{v}_k)=
