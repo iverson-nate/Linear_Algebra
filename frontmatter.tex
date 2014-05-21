@@ -3,6 +3,7 @@
 %----------------------------------------------------------------------------------------
 
 \begingroup
+\pdfbookmark[1]{Title Page}{Title Page}
 \thispagestyle{empty}
 \AddToShipoutPicture*{\put(6,5){\includegraphics[scale=1]{background}}} % Image background
 \centering
@@ -35,11 +36,12 @@
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
 %----------------------------------------------------------------------------------------
+
 \setcounter{tocdepth}{3}
 \chapterimage{chapter_head_1.pdf} % Table of contents heading image
 
 \pagestyle{empty} % No headers
-
+\pdfbookmark[1]{Table of Contents}{Table of Contents}
 \tableofcontents % Print the table of contents itself
 
 \cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
