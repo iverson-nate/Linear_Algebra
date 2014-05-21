@@ -127,7 +127,7 @@ for all $a_i \in \mathbb{R}$ and $\vec{v}_i \in \mathbb{R}^n$ and $k$ a positive
 \end{theorem}
 
 \begin{proof}
-We will show the equlivalence of all three by showing $1 \implies 2$ and 
+We will show the equivalence of all three by showing $1 \implies 2$ and 
 $2 \implies 3$ and $3 \implies 1$. 
 Then the rest of the implications can be deduced working around the circle:\\
 \begin{center}
@@ -201,9 +201,9 @@ linear transformation.
 \index{The Standard Matrix of a Linear Transformation}
 
 \begin{definition}
-If linear transformation $T:\mathbb{R}^n \to \mathbb{R}^m$ has a matrix 
-$A \in M_{m\times n}(\mathbb{R})$ such that $T(\vec{v})=A\vec{v}$ then $A$ 
-is called \emph{the standard matrix} of $T$.
+Let  $T:\mathbb{R}^n \to \mathbb{R}^m$ be a linear transformation. If there 
+exists $A \in M_{m\times n}(\mathbb{R})$ such that $T(\vec{v})=A\vec{v}$ then 
+$A$ is called \emph{the standard matrix} of $T$.
 \end{definition}
 
 \begin{theorem} Every linear transformation $T:\mathbb{R}^n \to \mathbb{R}^m$ 
@@ -222,7 +222,6 @@ standard basis. In fact, it can be written:
 \[
 \vec{v}=v_1\vec{e}_1+v_2\vec{e}_2+\cdots+v_n\vec{e}_n
 \]
-
 where the each $v_k$ is the $k^{\text{th}}$ coordinate of $\vec{v}$. Thus
 \begin{align*}
 T(\vec{v}) 
@@ -235,13 +234,13 @@ T(\vec{v})
 \end{align*}
 \end{proof}
 
-\begin{example} Let's find the standard matrix for the linear transformation
+\begin{example} Let us find the standard matrix for the linear transformation
 $T:\mathbb{R}^2 \to \mathbb{R}^3$ 
 defined by 
 $T\begin{bmatrix}v_1 \\ v_2 \end{bmatrix}=
 \begin{bmatrix}v_1-3v_2\\v_2\\5v_1-3v_2\end{bmatrix}$.
-
-Since the domain is $\mathbb{R}^2$ we use the standard basis $\{\vec{e}_1,\vec{e}_2\}$ for $\mathbb{R}^2$. 
+Since the domain is $\mathbb{R}^2$ we use the standard basis 
+$\{\vec{e}_1,\vec{e}_2\}$ for $\mathbb{R}^2$. 
 \begin{alignat*}{9}
 \vec{a}_1
 &=T(\vec{e}_1) 
@@ -251,7 +250,7 @@ Since the domain is $\mathbb{R}^2$ we use the standard basis $\{\vec{e}_1,\vec{e
 &= T\begin{bmatrix}0 \\ 1\end{bmatrix} 
 &=\begin{bmatrix*}[C]-3\\1\\-3\end{bmatrix*}
 \end{alignat*}
-So $A=\begin{bmatrix*}[c]1 & -3 \\0 & 1 \\5 & -3\\\end{bmatrix*}$
+So $A=\begin{bmatrix*}[c]1 & -3 \\0 & 1 \\5 & -3\\\end{bmatrix*}$. 
 We can test our work simply by multiplying:
 \[
 A\begin{bmatrix}v_1 \\ v_2 \end{bmatrix}
@@ -262,24 +261,23 @@ v_1-3v_2 \\ v_2 \\ 5v_1-3v_2
 \end{bmatrix}
 \]
 \end{example}
-By combining Theorem~\ref{thm:standard_matrix} and 
-Proposition~\ref{prop:Av_is_linear} we can use the existence of a standard matrix to prove or disprove a particular function is linear. 
+By combining Theorem \ref{thm:standard_matrix} and 
+Proposition \ref{prop:Av_is_linear} we can use the existence of a standard 
+matrix to prove or disprove a particular function is linear. 
 \begin{example}
-For example consider $T:\mathbb{R}^4 \to \mathbb{R}$ defined by
+Consider $T:\mathbb{R}^4 \to \mathbb{R}$ defined by
 \[
-T\begin{bmatrix}v_1 \\ v_2 \\ v_3 \\ v_4 \end{bmatrix}=5v_1-3v_3+v_4
+T\begin{bmatrix}v_1 \\ v_2 \\ v_3 \\ v_4 \end{bmatrix}=5v_1-3v_3+v_4.
 \]
-
-$T(\vec{e}_1)=5$, $T(\vec{e}_2)=0$, $T(\vec{e}_3)=-3$ and $T(\vec{e}_4)=1$ so 
-$A=\begin{bmatrix}5 & 0 & -3 & 1\end{bmatrix}$
-
+Then $T(\vec{e}_1)=5$, $T(\vec{e}_2)=0$, $T(\vec{e}_3)=-3$ and $T(\vec{e}_4)=1$ 
+so $A=\begin{bmatrix}5 & 0 & -3 & 1\end{bmatrix}$.
 By checking, 
 \[
 \begin{bmatrix}5 & 0 & -3 & 1\end{bmatrix}
 \begin{bmatrix}v_1 \\ v_2 \\ v_3 \\ v_4 \end{bmatrix}
 =5v_1+0v_2-3v_3+v_4=T(\vec{v})
 \]
-We prove that $T$ can be written as a matrix-vector product and therefore is 
+we prove that $T$ can be written as a matrix-vector product and therefore is 
 a linear transformation.
 \end{example}
 
@@ -287,21 +285,18 @@ a linear transformation.
 Consider the function $T:\mathbb{R}^3\to \mathbb{R}^2$ via
 \[
 T\begin{bmatrix}v_1 \\ v_2 \\ v_3 \end{bmatrix}
-=\begin{bmatrix}3v_1-2v_2^2 \\ 3+v_2\end{bmatrix}
+=\begin{bmatrix}3v_1-2v_2^2 \\ 3+v_2\end{bmatrix}.
 \]
-vThis function is not linear but we can still make what looks like a
-matrix for it:\\ 
-$T(\vec{e}_1)=\begin{bmatrix}3\\3\end{bmatrix}$ 
-$T(\vec{e}_2)=\begin{bmatrix}-2\\4\end{bmatrix}$ 
-and $T(\vec{e}_3)=\begin{bmatrix}0\\3\end{bmatrix}$.
-
-So wouldn't $A=\begin{bmatrix*}[C] 3 & -2 & 0 \\ 3 & 4 & 3 \end{bmatrix*}$ ??
-
-Checking the multiplication reveals the problem,
-
-$A\vec{v}=\begin{bmatrix}3v_1-2v_2\\3v_1+4v_2+3v_3\end{bmatrix}
-\neq \begin{bmatrix}3v_1-2v_2^2 \\ 3+v_2\end{bmatrix}$
-
+This function is not linear but we can still make what looks like a
+matrix for it:
+\[T(\vec{e}_1)=\begin{bmatrix}3\\3\end{bmatrix},  
+T(\vec{e}_2)=\begin{bmatrix}-2\\4\end{bmatrix}, 
+\text{ and }T(\vec{e}_3)=\begin{bmatrix}0\\3\end{bmatrix}.\]
+This might lead us to believe that $A=\begin{bmatrix*}[C] 3 & -2 & 
+0 \\ 3 & 4 & 3 \end{bmatrix*}$. However, checking the multiplication reveals 
+the problem,
+\[A\vec{v}=\begin{bmatrix}3v_1-2v_2\\3v_1+4v_2+3v_3\end{bmatrix}
+\neq \begin{bmatrix}3v_1-2v_2^2 \\ 3+v_2\end{bmatrix}.\]
 Therefore $T$ does not have a standard matrix so is not a linear 
 transformation.
 \end{example}
@@ -309,13 +304,12 @@ transformation.
 
 \subsection{Compositions of Linear Transformations}
 \index{Compositions of Linear Transformations}
-
 Consider two linear transformations 
 $T:\mathbb{R}^n\ \to \mathbb{R}^m$ and $S:\mathbb{R}^p \to \mathbb{R}^n$. 
-Since the domain of $T$ is equal to the codomain of $S$ the composition of 
-functions $T \circ S: \mathbb{R}^p \to \mathbb{R}^m$ is defined by 
-$T \circ S(\vec{v})=T(S(\vec{v}))$ for all $v \in \mathbb{R}^p$. Furthermore 
-we should ask is it linear?
+Since the domain of $T$ is equal to the codomain of $S$ we define the 
+composition of function $T \circ S: \mathbb{R}^p \to \mathbb{R}^m$ by 
+$T \circ S(\vec{v})=T(S(\vec{v}))$ for all $v \in \mathbb{R}^p$. 
+the following theorem shows that the composition is linear.
 
 \begin{theorem}
 Let $T:\mathbb{R}^n\ \to \mathbb{R}^m$ and $S:\mathbb{R}^p \to \mathbb{R}^n$ 
@@ -324,17 +318,18 @@ $T\circ S:\mathbb{R}^p \to \mathbb{R}^m$ is also a linear transformation.
 \end{theorem}
 
 \begin{proof}
-Let $\vec{v},\vec{w} \in \mathbb{R}^p$ and $a,b \in \mathbb{R}$. We then apply the linearity properties of $S$ then $T$ in turn.
+Let $\vec{v},\vec{w} \in \mathbb{R}^p$ and $a,b \in \mathbb{R}$. 
+We then apply the linearity properties of $S$ then $T$ in turn.
 \begin{align*}
-T(S(a\vec{v}+b\vec{w}))&=T(aS(\vec{v})+bS(\vec{w}))\\
-&=aT(S(\vec{v}))+bT(S(\vec{w}))
+T\circ S(a\vec{v}+b\vec{w})&=T(S(a\vec{v}+b\vec{w}))\\
+&=T(aS(\vec{v})+bS(\vec{w}))\\
+&=aT(S(\vec{v}))+bT(S(\vec{w}))\\
+&=aT\circ S(\vec{v})+bT\circ S(\vec{w}).
 \end{align*}
 Therefore $T\circ S$ is a linear transformation.
 \end{proof}
-
-Next we may ask since composition of linear transformation is linear, what
+Next we may ask, since composition of linear transformation is linear, what
 can we say about the standard matrix of a composition?
-
 \begin{example}
 Let $T:\mathbb{R}^2 \to \mathbb{R}^3$ and $S:\mathbb{R}^4 \to \mathbb{R}^2$
 defined by $T(\vec{v})=A\vec{v}$ and $S(\vec{w})=B\vec{w}$ with
@@ -349,7 +344,8 @@ B=\begin{bmatrix*}[C]
 1 & 1 & -1 & 0 
 \end{bmatrix*}
 \end{gather*}
-$T\circ S:\mathbb{R}^4 \to \mathbb{R}^3$ so we just need to consider it's action on the basis $\{\vec{e}_1,\vec{e}_2,\vec{e}_3,\vec{e}_4\}$.\\
+$T\circ S:\mathbb{R}^4 \to \mathbb{R}^3$ so we just need to consider it's 
+action on the basis $\{\vec{e}_1,\vec{e}_2,\vec{e}_3,\vec{e}_4\}$.\\
 %
 $T\circ S(\vec{e}_1)=T(S(\vec{e}_1))=T(B\vec{e}_1)=A(B\vec{e}_1)
 =A\begin{bmatrix*}[C]-3 \\ 1\end{bmatrix*}
@@ -365,14 +361,14 @@ $T\circ S(\vec{e}_3)=T(S(\vec{e}_3))=T(B\vec{e}_3)=A(B\vec{e}_3)
 $\\
 $T\circ S(\vec{e}_4)=T(S(\vec{e}_4))=T(B\vec{e}_4)=A(B\vec{e}_4)
 =A\begin{bmatrix*}[C]-7 \\ 0\end{bmatrix*}
-=\begin{bmatrix*}[C] -7 \\ 7 \\ 21 \end{bmatrix*}
+=\begin{bmatrix*}[C] -7 \\ 7 \\ -21 \end{bmatrix*}
 $
 
 This gives a a standard matrix of 
 \[\begin{bmatrix*}[C]
 -1 & 2 &  0 & -7 \\
  4 & 1 & -3 &  7 \\
--7 & 2 &  4 & 21 
+-7 & 2 &  4 & -21 
 \end{bmatrix*}
 \]
 But more importantly we notice that the standard matrix was made of 
@@ -408,22 +404,22 @@ $A \in M_{m\times n}(\mathbb{R})$ and $B \in M_{n\times p}(\mathbb{R})$.
 Then the standard matrix of $T \circ S$ is $AB$.
 \end{theorem}
 \begin{proof}
-$T \circ S:\mathbb{R}^p \to \mathbb{R}^m$ so let's start with standard basis
-$\mathcal{E}=\{\vec{e}_1,\vec{e}_2,\ldots,\vec{e}_p\}$. Let  $k$ be an 
-arbitrary integer with $1 \le k \le p$. Note that we have:
+The composition $T \circ S$ is a linear transformation from $\mathbb{R}^p$ to 
+$\mathbb{R}^m$. Let $B=[\vec{b}_1,\vec{b}_2,\ldots,\vec{b}_p]$  and 
+$\mathcal{E}=\{\vec{e}_1,\vec{e}_2,\ldots,\vec{e}_p\}$ be the standard basis. 
+Let  $k$ be an arbitrary integer with $1 \le k \le p$. Then 
 \[
 B\vec{e}_k
 =0\vec{b}_1+\cdots+0\vec{b}_{k-1}+1\vec{b}_k+0\vec{b}_{k+1}+\cdots+0\vec{b}_p
-=\vec{b}_k
+=\vec{b}_k.
 \]
 Thus we can expand 
 \[
-T \circ S(\vec{e}_k) =T(S(\vec{e}_k))=T(B(\vec{e}_k))=T(\vec{b}_k)=A\vec{b}_k
+T \circ S(\vec{e}_k) =T(S(\vec{e}_k))=T(B(\vec{e}_k))=T(\vec{b}_k)=A\vec{b}_k.
 \]
-
 Since $k$ was arbitrary this holds for all $k$ with $1 \le k \le p$. 
 Therefore, the standard matrix for $T \circ S$ is 
-$[A\vec{b}_1,\ldots, A\vec{b}_p]$ which is by definition $AB$
+$[A\vec{b}_1,\ldots, A\vec{b}_p]$ which is $AB$, by definition.
 \end{proof}
 
 \input{Rn/Linear_Transformations_Composition_exercises.tex}
