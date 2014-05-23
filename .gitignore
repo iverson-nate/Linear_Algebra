@@ -27,4 +27,5 @@
 *.ptc
 *.xml
 *.bak
-#*#vc.tex
+#*#
+vc.tex
