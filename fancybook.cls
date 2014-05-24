@@ -50,17 +50,67 @@
 %\RequirePackage{enumitem}
 \RequirePackage{fancyhdr}
 \RequirePackage[framemethod=TikZ]{mdframed}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Theorem Setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% dedicated to boxed/framed environements %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{bookcolornumbox}% % Theorem style name
+{0pt}% Space above
+{0pt}% Space below
+{\normalfont}% % Body font
+{}% Indent amount
+{\small\bf\sffamily\color{bookcolor}}% % Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily\color{bookcolor}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}---\nobreakspace#3.}} % Optional theorem note
+
+\newtheoremstyle{blacknumex}% Theorem style name
+{5pt}% Space above
+{5pt}% Space below
+{\normalfont}% Body font
+{} % Indent amount
+{\small\bf\sffamily}% Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily{\tiny\ensuremath{\blacksquare}}\nobreakspace\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries---\nobreakspace#3.}}% Optional theorem note
+
+\newtheoremstyle{blacknumbox} % Theorem style name
+{0pt}% Space above
+{0pt}% Space below
+{\normalfont}% Body font
+{}% Indent amount
+{\small\bf\sffamily}% Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries---\nobreakspace#3.}}% Optional theorem note
+
+\newtheoremstyle{bookcolornum}% % Theorem style name
+{5pt}% Space above
+{5pt}% Space below
+{\normalfont}% % Body font
+{}% Indent amount
+{\small\bf\sffamily\color{bookcolor}}% % Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily\color{bookcolor}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}---\nobreakspace#3.}} % Optional theorem note
+\makeatother
+
 \declaretheoremstyle[
-    headfont=\bfseries, 
+    headfont=\small\bf\sffamily\color{bookcolor},
     notebraces={[}{]},
     bodyfont=\normalfont\itshape,
-    headpunct={},
-    postheadspace=\newline,
-    spacebelow=\parsep,
-    spaceabove=\parsep,
+    headpunct={\;},
+    postheadspace=0.25em,
+    spacebelow=0pt,
+    spaceabove=0pt,
     mdframed={
             backgroundcolor=black!5, 
             skipabove=7pt,
@@ -99,6 +149,16 @@
       rightmargin=0cm,
       linewidth=4pt}
 ]{Xstyle}  
+
+\declaretheoremstyle[
+    headfont=\small\bf\sffamily,
+    notebraces={[}{]},                                                                                                                                                 
+    bodyfont=\normalfont,
+    headpunct={\;},
+    postheadspace=0.25em,
+    spacebelow=5pt,
+    spaceabove=5pt
+]{Estyle}  
 
 \declaretheoremstyle[
     headfont=\bfseries,                                                                                                                                                
@@ -153,14 +213,13 @@
 \declaretheorem[
     style=Tstyle,
     name=Theorem,
-    numberwithin=chapter
+    numberwithin=section
 ]{theorem}
 \declaretheorem[
     style=Estyle,
     name=Example,
     numberwithin=chapter
 ]{example}
-\declaretheorem{remark}
 \declaretheorem[
     style=Xstyle,
     name=Exercise,
@@ -169,14 +228,30 @@
 \declaretheorem[
     style=Dstyle,
     name=Definition,
-    numberwithin=chapter
+    numberwithin=section
 ]{definition}
-\declaretheorem{proposition}
+\declaretheorem[
+    style=Tstyle,
+    name=Proposition,
+    sibling=theorem
+]{proposition}
 \declaretheorem[
     style=Cstyle,
     name=Corollary,
-    numberwithin=chapter
+    sibling=theorem
 ]{corollary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% remark
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{remark}{\par\vspace{10pt}\small % Vertical white space above the remark and smaller font size
+\begin{list}{}{
+\leftmargin=35pt % Indentation on the left
+\rightmargin=25pt}\item\ignorespaces % Indentation on the right
+\makebox[-2.5pt]{\begin{tikzpicture}[overlay]
+\node[draw=bookcolor!60,line width=1pt,circle,fill=bookcolor!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){\textcolor{bookcolor}{R}};\end{tikzpicture}} % Orange R in a circle
+\advance\baselineskip -1pt}{\end{list}\vskip5pt} % Tighter line spacing and white space after remark
 
 \usepackage{hyperref}
 \hypersetup{hidelinks,backref=true,pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor=bookcolor,bookmarks=true,bookmarksopen=false,linktoc=all,pdftitle={\@title},pdfauthor={\@author}}
