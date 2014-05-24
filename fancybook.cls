@@ -11,12 +11,12 @@
 \RequirePackage[letterpaper]{geometry} % Page margins
 \geometry{body={6.5in,9in}, centering}
 
-%\RequirePackage{titlesec} % Allows customization of titles
+\RequirePackage{titlesec} % Allows customization of titles
 
-%\RequirePackage{graphicx} % Required for including pictures
+\RequirePackage{graphicx} % Required for including pictures
 %\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
 
-%\RequirePackage{lipsum} % Inserts dummy text
+\RequirePackage{lipsum} % Inserts dummy text
 
 \RequirePackage{tikz} % Required for drawing custom shapes
 
@@ -25,9 +25,9 @@
 %\RequirePackage{enumitem} % Customize lists
 %\setlist{nolistsep} % Reduce spacing between bullet points and numbered lists
 
-%\RequirePackage{booktabs} % Required for nicer horizontal rules in tables
+\RequirePackage{booktabs} % Required for nicer horizontal rules in tables
 
-%\RequirePackage{eso-pic}
+\RequirePackage{eso-pic}
 
 \RequirePackage{titletoc} % Required for manipulating the table of contents
 

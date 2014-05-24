@@ -17,9 +17,17 @@
 
 \input{Rn/chapter} % CHAPTER 1
 
-\backmatter
+\appendix
 
 \input{Appendix/chapter}
 %\input{backmatter}
+
+\backmatter
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{bibliography}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
+
 
 \end{document}
