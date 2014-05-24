@@ -80,13 +80,13 @@
 ]{Tstyle}
 
 \declaretheoremstyle[
-    headfont=\bfseries,                                                                                                                                                
-    notebraces={[}{]},                                                                                                                                                 
-    bodyfont=\normalfont\itshape,
-    headpunct={},
-    postheadspace=\newline,
-    spacebelow=\parsep,
-    spaceabove=\parsep,
+    headfont=\small\bf\sffamily\color{bookcolor},
+    bodyfont=\normalfont,
+    headpunct={\;},
+    postheadspace=0.25em,
+    spacebelow=0pt,
+    spaceabove=0pt,
+    prefoothook=\hfill{\color{bookcolor}\tiny\ensuremath{\blacksquare}},
     mdframed={
       skipabove=7pt,
       skipbelow=7pt,
@@ -107,14 +107,12 @@
 
 \declaretheoremstyle[
     headfont=\small\bf\sffamily,
-    notebraces={[}{]},                                                                                                                                                 
     bodyfont=\normalfont,
     headpunct={\;},
     postheadspace=0.25em,
     spacebelow=5pt,
     spaceabove=5pt,
-    postfoothook=\hfill{\tiny\ensuremath{\blacksquare}},
-    postheadhook=\noindent\hfill{\tiny\ensuremath{\blacksquare}},
+    prefoothook=\hfill{\tiny\ensuremath{\blacksquare}},
 ]{Estyle}  
 
 \declaretheoremstyle[
