@@ -13,6 +13,6 @@ pdf: $(FILE)
 	$(TEX) $(FILE)
 	$(TEX) $(FILE)
 clean: 
-	rm -rf *.aux *.log *~ *.out *.toc *.idx *.bbl *.bcf *.blg *.ptc *.xml */*.aux */*.log */*~ *.pdf
+	rm -rf *.aux *.log *~ *.out *.toc *.idx *.bbl *.bcf *.blg *.ptc *.xml */*.aux */*.log */*~ *.pdf vc.tex
 
 
