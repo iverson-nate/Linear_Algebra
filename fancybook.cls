@@ -2,7 +2,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{fancybook}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
-\input{vc.tex}
 
 \ProcessOptions\relax
 \LoadClass{book}
@@ -268,6 +267,21 @@
 \let\@subject\empty
 \def\@subject{#1}}
 
+\def\@GITAbrHash{}
+\def\GITAbrHash#1{
+\let\@GITAbrHash\empty
+\def\@GITAbrHash{#1}}
+
+\def\@GITAuthorDate{}
+\def\GITAuthorDate#1{
+\let\@GITAuthorDate\empty
+\def\@GITAuthorDate{#1}}
+
+\def\@GITAuthorName{}
+\def\GITAuthorName#1{
+\let\@GITAuthorName\empty
+\def\@GITAuthorName{#1}}
+
 \renewcommand{\maketitle}{
 
 \hypersetup{%
@@ -275,7 +289,7 @@
   pdftitle=\@title,
   pdfsubject=\@subject,
   pdfkeywords=\@keywords,
-  pdfcreator={fancybook.cls by Nate Iverson},
+  pdfcreator={fancybook.cls Last git commit: \@GITAbrHash\ \@GITAuthorDate \ by \@GITAuthorName},
 } 
 
 \pdfbookmark[1]{Title Page}{Title Page}
