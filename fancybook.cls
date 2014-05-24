@@ -65,7 +65,7 @@
     postheadspace=0.25em,
     spacebelow=0pt,
     spaceabove=0pt,
-    headformat=\NAME\NUMBER\NOTE.,
+    headformat=\NAME~\NUMBER\NOTE.,
     mdframed={
             backgroundcolor=black!5, 
             skipabove=7pt,
@@ -117,12 +117,14 @@
 
 \declaretheoremstyle[
     headfont=\bfseries,                                                                                                                                                
-    notebraces={[}{]},                                                                                                                                                 
-    bodyfont=\normalfont\itshape,
-    headpunct={},
-    postheadspace=\newline,
-    spacebelow=\parsep,
-    spaceabove=\parsep,
+    notefont=\bfseries,                                                                                                                                                
+    notebraces={---}{},                                                                                                                                               
+    bodyfont=\normalfont,
+    headpunct={\;},
+    postheadspace=0.25em,
+    spacebelow=0pt,
+    spaceabove=0pt,
+    headformat=\NAME~\NUMBER\NOTE:,
     mdframed={
       skipabove=7pt,
       skipbelow=7pt,
@@ -140,9 +142,10 @@
       innerbottommargin=0pt}
 ]{Dstyle}
 \declaretheoremstyle[
-    headfont=\bfseries,                                                                                                                                                
-    notebraces={[}{]},
-    bodyfont=\normalfont\itshape,
+    headfont=\small\bf\sffamily,
+    notefont=\small\bf\sffamily,
+    notebraces={---[}{]},
+    bodyfont=\normalfont,
     headpunct={},
     postheadspace=\newline,
     spacebelow=\parsep,
