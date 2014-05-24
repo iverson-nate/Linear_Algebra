@@ -255,10 +255,45 @@
 \newpage
 \fi}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\@keywords{}
+\def\keywords#1{
+\let\@keywords\empty
+\def\@keywords{#1}}
+
+\def\@subject{}
+\def\subject#1{
+\let\@subject\empty
+\def\@subject{#1}}
+
+\renewcommand{\maketitle}{
+
+\hypersetup{%
+  pdfauthor=\@author,
+  pdftitle=\@title,
+  pdfsubject=\@subject,
+  pdfkeywords=\@keywords,
+  pdfcreator={fancybook.cls by Nate Iverson},
+} 
+
+\pdfbookmark[1]{Title Page}{Title Page}
+\thispagestyle{empty}
+\AddToShipoutPicture*{\put(6,5){\includegraphics[scale=1]{Pictures/background}}} % Image background
+\centering
+\vspace*{7cm}
+\par\normalfont\fontsize{35}{35}\sffamily\selectfont
+\@title\par % Book title
+%\vspace*{1cm}
+{\Huge \@author}\par % Author name
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter heading setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\chapterimage}[1]{}
-
-
 
 
 \endinput
