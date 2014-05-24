@@ -111,6 +111,7 @@
     postheadspace=0.25em,
     spacebelow=0pt,
     spaceabove=0pt,
+    headformat=\small\sffamily\color{bookcolor}\thmname\nobreakspace,
     mdframed={
             backgroundcolor=black!5, 
             skipabove=7pt,
@@ -157,7 +158,9 @@
     headpunct={\;},
     postheadspace=0.25em,
     spacebelow=5pt,
-    spaceabove=5pt
+    spaceabove=5pt,
+    postfoothook=\hfill{\tiny\ensuremath{\blacksquare}},
+    postheadhook=\noindent\hfill{\tiny\ensuremath{\blacksquare}},
 ]{Estyle}  
 
 \declaretheoremstyle[
