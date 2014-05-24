@@ -283,17 +283,63 @@
 \AddToShipoutPicture*{\put(6,5){\includegraphics[scale=1]{Pictures/background}}} % Image background
 \centering
 \vspace*{7cm}
-\par\normalfont\fontsize{35}{35}\sffamily\selectfont
-\@title\par % Book title
+{\par\normalfont\fontsize{35}{35}\sffamily\selectfont
+\@title\par} % Book title
 %\vspace*{1cm}
-{\Huge \@author}\par % Author name
+{\Huge \@author}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% chapter heading setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\chapterimage}[1]{}
+%----------------------------------------------------------------------------------------
+%       MINI TABLE OF CONTENTS IN CHAPTER HEADS
+%----------------------------------------------------------------------------------------
+
+% Section text styling
+\titlecontents{lsection}[0em] % Indendating
+{\footnotesize\sffamily} % Font settings
+{}
+{}
+{}
+
+% Subsection text styling
+\titlecontents{lsubsection}[.5em] % Indentation
+{\normalfont\footnotesize\sffamily} % Font settings
+{}
+{}
+{}
+
+
+\def\@thechapterimage{}
+\def\chapterimage#1{
+\let\@thechapterimage\empty
+\def\@thechapterimage{#1}
+}
+
+\def\thechapter{\arabic{chapter}}
+\def\@makechapterhead#1{
+\thispagestyle{empty}
+{\centering \normalfont\sffamily
+\ifnum \c@secnumdepth >\m@ne
+\if@mainmatter
+\startcontents
+\begin{tikzpicture}[remember picture,overlay]
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{\@thechapterimage}};
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commenting the 3 lines below removes the small contents box in the chapter heading
+\fill[color=bookcolor!10!white,opacity=.6] (1cm,0) rectangle (10cm,-7cm);
+\node[anchor=north west] at (1.1cm,.35cm) {\parbox[t][8cm][t]{10cm}{\huge\bfseries\flushleft \printcontents{l}{1}{\setcounter{tocdepth}{2}}}};
+\draw[anchor=west] (5cm,-9cm) node [rounded corners=20pt,fill=bookcolor!10!white,text opacity=1,draw=bookcolor,draw opacity=1,line width=1.5pt,fill opacity=.6,inner sep=12pt]{\huge\sffamily\bfseries\textcolor{black}{\thechapter. #1\strut\makebox[22cm]{}}};
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{tikzpicture}};
+\end{tikzpicture}}
+\par\vspace*{230\p@}
+\fi
+\fi}
 
 
 \endinput
