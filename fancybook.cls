@@ -7,7 +7,6 @@
 \ProcessOptions\relax
 \LoadClass{book}
 
-
 \RequirePackage[letterpaper]{geometry} % Page margins
 \geometry{body={6.5in,9in}, centering}
 
@@ -142,30 +141,15 @@
       innerbottommargin=0pt}
 ]{Dstyle}
 \declaretheoremstyle[
-    headfont=\small\bf\sffamily,
-    notefont=\small\bf\sffamily,
-    notebraces={---[}{]},
+    headfont=\small\bf\sffamily\color{bookcolor},
+    notefont=\small\bf\sffamily\color{black},
+    notebraces={---}{},
     bodyfont=\normalfont,
-    headpunct={},
-    postheadspace=\newline,
-    spacebelow=\parsep,
-    spaceabove=\parsep,
-    mdframed={
-      skipabove=7pt,
-      skipbelow=7pt,
-      rightline=false,
-      leftline=true,
-      topline=false,
-      bottomline=false,
-      linecolor=gray,
-      backgroundcolor=black!5,
-      innerleftmargin=5pt,
-      innerrightmargin=5pt,
-      innertopmargin=5pt,
-      leftmargin=0cm,
-      rightmargin=0cm,
-      linewidth=4pt,
-      innerbottommargin=5pt}
+    headpunct={\;},
+    postheadspace=0.25em,
+    spacebelow=0pt,
+    spaceabove=0pt,
+    headformat=\NAME~\NUMBER\NOTE.
 ]{Cstyle}
 
 \declaretheorem[
@@ -189,7 +173,7 @@
     numberwithin=section
 ]{definition}
 \declaretheorem[
-    style=Tstyle,
+    style=Cstyle,
     name=Proposition,
     sibling=theorem
 ]{proposition}
