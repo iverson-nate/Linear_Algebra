@@ -48,14 +48,140 @@
 \RequirePackage[utf8]{inputenc} % Required for including letters with accents                                                                                         
 \RequirePackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs                                                                                                 
 %\RequirePackage{enumitem}
+\RequirePackage{fancyhdr}
+\RequirePackage[framemethod=TikZ]{mdframed}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Theorem Setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\declaretheoremstyle[
+    headfont=\bfseries, 
+    notebraces={[}{]},
+    bodyfont=\normalfont\itshape,
+    headpunct={},
+    postheadspace=\newline,
+    spacebelow=\parsep,
+    spaceabove=\parsep,
+    mdframed={
+            backgroundcolor=black!5, 
+            skipabove=7pt,
+            skipbelow=7pt,
+            innerleftmargin=5pt,
+            innerrightmargin=5pt,
+            innertopmargin=5pt,
+            leftmargin=0cm,
+            rightmargin=0cm,
+            innerbottommargin=5pt
+            linecolor=bookcolor}   
+]{Tstyle}
 
+\declaretheoremstyle[
+    headfont=\bfseries,                                                                                                                                                
+    notebraces={[}{]},                                                                                                                                                 
+    bodyfont=\normalfont\itshape,
+    headpunct={},
+    postheadspace=\newline,
+    spacebelow=\parsep,
+    spaceabove=\parsep,
+    mdframed={
+      skipabove=7pt,
+      skipbelow=7pt,
+      rightline=false,
+      leftline=true,
+      topline=false,
+      bottomline=false,
+      backgroundcolor=bookcolor!10,
+      linecolor=bookcolor,
+      innerleftmargin=5pt,
+      innerrightmargin=5pt,
+      innertopmargin=5pt,
+      innerbottommargin=5pt,
+      leftmargin=0cm,
+      rightmargin=0cm,
+      linewidth=4pt}
+]{Xstyle}  
 
-\declaretheorem{theorem}
-\declaretheorem{example}
+\declaretheoremstyle[
+    headfont=\bfseries,                                                                                                                                                
+    notebraces={[}{]},                                                                                                                                                 
+    bodyfont=\normalfont\itshape,
+    headpunct={},
+    postheadspace=\newline,
+    spacebelow=\parsep,
+    spaceabove=\parsep,
+    mdframed={
+      skipabove=7pt,
+      skipbelow=7pt,
+      rightline=false,
+      leftline=true,
+      topline=false,
+      bottomline=false,
+      linecolor=bookcolor,
+      innerleftmargin=5pt,
+      innerrightmargin=5pt,
+      innertopmargin=0pt,
+      leftmargin=0cm,
+      rightmargin=0cm,
+      linewidth=4pt,
+      innerbottommargin=0pt}
+]{Dstyle}
+\declaretheoremstyle[
+    headfont=\bfseries,                                                                                                                                                
+    notebraces={[}{]},
+    bodyfont=\normalfont\itshape,
+    headpunct={},
+    postheadspace=\newline,
+    spacebelow=\parsep,
+    spaceabove=\parsep,
+    mdframed={
+      skipabove=7pt,
+      skipbelow=7pt,
+      rightline=false,
+      leftline=true,
+      topline=false,
+      bottomline=false,
+      linecolor=gray,
+      backgroundcolor=black!5,
+      innerleftmargin=5pt,
+      innerrightmargin=5pt,
+      innertopmargin=5pt,
+      leftmargin=0cm,
+      rightmargin=0cm,
+      linewidth=4pt,
+      innerbottommargin=5pt}
+]{Cstyle}
+
+\declaretheorem[
+    style=Tstyle,
+    name=Theorem,
+    numberwithin=chapter
+]{theorem}
+\declaretheorem[
+    style=Estyle,
+    name=Example,
+    numberwithin=chapter
+]{example}
 \declaretheorem{remark}
-\declaretheorem{exercise}
-\declaretheorem{definition}
+\declaretheorem[
+    style=Xstyle,
+    name=Exercise,
+    numberwithin=chapter
+]{exercise}
+\declaretheorem[
+    style=Dstyle,
+    name=Definition,
+    numberwithin=chapter
+]{definition}
 \declaretheorem{proposition}
+\declaretheorem[
+    style=Cstyle,
+    name=Corollary,
+    numberwithin=chapter
+]{corollary}
+
+\usepackage{hyperref}
+\hypersetup{hidelinks,backref=true,pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor=bookcolor,bookmarks=true,bookmarksopen=false,linktoc=all,pdftitle={\@title},pdfauthor={\@author}}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Section styling
@@ -91,7 +217,31 @@
 [] 
 
 
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\chaptername\ \thechapter.\ #1}{}} % Chapter text font settings
+\renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} % Section text font settings
+\fancyhead[LE,RO]{\sffamily\normalsize\thepage} % Font setting for the page number in the header
+\fancyhead[LO]{\rightmark} % Print the nearest section name on the left side of odd pages
+\fancyhead[RE]{\leftmark} % Print the current chapter name on the right side of even pages
+\renewcommand{\headrulewidth}{0.5pt} % Width of the rule under the header
+\addtolength{\headheight}{2.5pt} % Increase the spacing around the header slightly
+\renewcommand{\footrulewidth}{0pt} % Removes the rule in the footer
+\fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}} % Style for when a plain pagestyle is specified
+
+% Removes the header from odd empty pages at the end of chapters
+\makeatletter
+\renewcommand{\cleardoublepage}{
+\clearpage\ifodd\c@page\else
+\hbox{}
+\vspace*{\fill}
+\thispagestyle{empty}
+\newpage
+\fi}
+
 
 \newcommand{\chapterimage}[1]{}
+
+
+
 
 \endinput
