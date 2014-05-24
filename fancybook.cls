@@ -55,63 +55,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Theorem Setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%% dedicated to boxed/framed environements %%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtheoremstyle{bookcolornumbox}% % Theorem style name
-{0pt}% Space above
-{0pt}% Space below
-{\normalfont}% % Body font
-{}% Indent amount
-{\small\bf\sffamily\color{bookcolor}}% % Theorem head font
-{\;}% Punctuation after theorem head
-{0.25em}% Space after theorem head
-{\small\sffamily\color{bookcolor}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
-\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}---\nobreakspace#3.}} % Optional theorem note
-
-\newtheoremstyle{blacknumex}% Theorem style name
-{5pt}% Space above
-{5pt}% Space below
-{\normalfont}% Body font
-{} % Indent amount
-{\small\bf\sffamily}% Theorem head font
-{\;}% Punctuation after theorem head
-{0.25em}% Space after theorem head
-{\small\sffamily{\tiny\ensuremath{\blacksquare}}\nobreakspace\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
-\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries---\nobreakspace#3.}}% Optional theorem note
-
-\newtheoremstyle{blacknumbox} % Theorem style name
-{0pt}% Space above
-{0pt}% Space below
-{\normalfont}% Body font
-{}% Indent amount
-{\small\bf\sffamily}% Theorem head font
-{\;}% Punctuation after theorem head
-{0.25em}% Space after theorem head
-{\small\sffamily\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
-\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries---\nobreakspace#3.}}% Optional theorem note
-
-\newtheoremstyle{bookcolornum}% % Theorem style name
-{5pt}% Space above
-{5pt}% Space below
-{\normalfont}% % Body font
-{}% Indent amount
-{\small\bf\sffamily\color{bookcolor}}% % Theorem head font
-{\;}% Punctuation after theorem head
-{0.25em}% Space after theorem head
-{\small\sffamily\color{bookcolor}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
-\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}---\nobreakspace#3.}} % Optional theorem note
-\makeatother
 
 \declaretheoremstyle[
     headfont=\small\bf\sffamily\color{bookcolor},
-    notebraces={[}{]},
-    bodyfont=\normalfont\itshape,
+    notebraces={---(}{)},
+    notefont=\small\bf\sffamily\color{black},
+    bodyfont=\normalfont,
     headpunct={\;},
     postheadspace=0.25em,
     spacebelow=0pt,
     spaceabove=0pt,
-    headformat=\small\sffamily\color{bookcolor}\thmname\nobreakspace,
+    headformat=\NAME\NUMBER\NOTE.,
     mdframed={
             backgroundcolor=black!5, 
             skipabove=7pt,
