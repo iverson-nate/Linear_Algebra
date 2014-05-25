@@ -367,7 +367,7 @@
 \noindent Copyright \copyright\ \@date\ \@author\\
 }
 {\let\and\originaland}
-\endinput
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% table of contents
@@ -385,3 +385,5 @@
 
 \pagestyle{fancy} % Print headers again
 }
+
+\endinput
