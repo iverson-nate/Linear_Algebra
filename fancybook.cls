@@ -368,3 +368,20 @@
 }
 {\let\and\originaland}
 \endinput
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% table of contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\@originaltableofcontents\tableofcontents
+\renewcommand\tableofcontents{%
+\setcounter{tocdepth}{3}
+
+\pagestyle{empty} % No headers
+\pdfbookmark[1]{Table of Contents}{Table of Contents}
+\@originaltableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+}
