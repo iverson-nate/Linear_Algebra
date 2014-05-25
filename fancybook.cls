@@ -287,7 +287,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% cleaning up \maketitle
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pdfstringdefDisableCommands{\def\and{, }}
+\pdfstringdefDisableCommands{\def\and{,\ }}
 \pretitle{
 \pdfbookmark[1]{Title Page}{Title Page}
 \AddToShipoutPicture*{\put(6,5){\includegraphics[scale=1]{Pictures/background}}}
@@ -300,8 +300,10 @@
 }
 \begin{center}\normalfont\fontsize{35}{35}\sffamily\selectfont}
 \preauthor{\begin{center}
-\Huge \lineskip 0.5em%
+\Huge\bf \lineskip 0.5em%
 \begin{tabular}[t]{c}}
+\predate{\color{white}}
+\postdate{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% chapter heading setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -359,7 +361,7 @@
 \newenvironment{copyrightpage}%
 {
 \let\originaland\and
-\renewcommand\and{,}
+\renewcommand\and{,\ }
 \newpage
 ~\vfill
 \thispagestyle{empty}
