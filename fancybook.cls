@@ -44,12 +44,15 @@
 \RequirePackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym-bol, Chancery and Com-puter Modern fonts       
 \RequirePackage{microtype} % Slightly tweak font spacing for aesthetics                                                                                               
 \RequirePackage[utf8]{inputenc} % Required for including letters with accents                                                                                         
-\RequirePackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs                                                                                                 
+\RequirePackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs          
+
+\RequirePackage{titling} % For title page                                                                                       
 %\RequirePackage{enumitem}
 \RequirePackage{fancyhdr}
 \RequirePackage[framemethod=TikZ]{mdframed}
 
 \renewcommand{\qedsymbol}{$\blacksquare$}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Theorem Setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -255,7 +258,7 @@
 \fi}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% \maketitle
+%% Some commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\@keywords{}
 \def\keywords#1{
@@ -281,28 +284,24 @@
 \def\GITAuthorName#1{
 \let\@GITAuthorName\empty
 \def\@GITAuthorName{#1}}
-
-\renewcommand{\maketitle}{
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% cleaning up \maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pdfstringdefDisableCommands{\def\and{, }}
+\pretitle{
+\pdfbookmark[1]{Title Page}{Title Page}
+\AddToShipoutPicture*{\put(6,5){\includegraphics[scale=1]{Pictures/background}}}
 \hypersetup{%
   pdfauthor=\@author,
   pdftitle=\@title,
   pdfsubject=\@subject,
   pdfkeywords=\@keywords,
   pdfcreator={fancybook.cls Last git commit: \@GITAbrHash\ \@GITAuthorDate \ by \@GITAuthorName},
-} 
-
-\pdfbookmark[1]{Title Page}{Title Page}
-\thispagestyle{empty}
-\AddToShipoutPicture*{\put(6,5){\includegraphics[scale=1]{Pictures/background}}} % Image background
-\centering
-\vspace*{7cm}
-{\par\normalfont\fontsize{35}{35}\sffamily\selectfont
-\@title\par} % Book title
-%\vspace*{1cm}
-{\Huge \@author}
 }
-
+\begin{center}\normalfont\fontsize{35}{35}\sffamily\selectfont}
+\preauthor{\begin{center}
+\Huge \lineskip 0.5em%
+\begin{tabular}[t]{c}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% chapter heading setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -354,6 +353,18 @@
 \par\vspace*{230\p@}
 \fi
 \fi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% copyrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{copyrightpage}%
+{
+\let\originaland\and
+\renewcommand\and{,}
+\newpage
+~\vfill
+\thispagestyle{empty}
 
-
+\noindent Copyright \copyright\ \@date\ \@author\\
+}
+{\let\and\originaland}
 \endinput
