@@ -236,7 +236,7 @@ A\vec{v}=[\vec{a}_1, \vec{a}_2, \ldots ,\vec{a}_n]\begin{bmatrix}v_1 \\ v_2 \\
 It is important to note that the product is only defined if the number of columns in $A$ matches the number of coordinates in $\vec{v}$.
 \end{remark}
 
-\begin{example}
+\begin{example}\label{ex:mv_mult_by_def}
 \begin{align*}
 \begin{bmatrix*}[C]
 2 & -3 & 0 \\
@@ -252,7 +252,7 @@ It is important to note that the product is only defined if the number of column
 \end{align*}
 \end{example}
 
-\begin{example}
+\begin{example}\label{ex:mv_mult_by_def_gen}
 \begin{align*}
 \begin{bmatrix*}[C]
 2 & -3 & 0 \\
@@ -273,7 +273,7 @@ strictly necessary but helps motivate the row-column algorithm for matrix
 multiplication.
 \end{example}
 
-\begin{proposition}[The Row-Column Algorithm] 
+\begin{proposition}[The Row-Column Algorithm]\label{prop:vec_row-column}
 Let $A=[a_{ij}]\in M_{m\times n}(\mathbb{R})$ and $\vec{v} \in \mathbb{R}^n$. 
 Then $\vec{w}=A\vec{v} \in \mathbb{R}^m$ where  
 \[\vec{w}(k)=a_{k1}v_1+a_{k2}v_2+\cdots+a_{kn}v_n\] 
@@ -304,5 +304,62 @@ each $j$. That is, $\vec{a}_j(k)=a_{kj}$. Therefore,
 \[\vec{w}(k)=v_1a_{k1}+v_2a_{k2}+\cdots+v_na_{kn}=a_{k1}v_1+a_{k2}v_2+\cdots+a_{
 kn}v_n.\]
 \end{proof}
+
+\begin{example}
+For $A=\begin{bmatrix*}[C]
+1  & 1 \\
+0  & 1 \\
+3  & -4\\
+-1 & 0 
+\end{bmatrix*}$\\
+\begin{inparaenum}[a.)]
+\item Is there a solution to 
+$A\vec{v}=\begin{bmatrix*}[C] 0 \\ -2 \\ 14 \\ -2 \end{bmatrix*}$ ?\\
+
+Picking a generic  $\vec{v}\in\mathbb{R}^n$ we can multiply
+\[
+A\vec{v}=
+\begin{bmatrix*}[C]
+1  & 1 \\
+0  & 1 \\
+3  & -4\\
+-1 & 0 
+\end{bmatrix*}\begin{bmatrix}v_1\\v_2\end{bmatrix}
+=\begin{bmatrix*}
+v_1+v_2\\
+v_2\\
+3v_1-4v_2\\
+-v_1
+\end{bmatrix*}
+=\begin{bmatrix*}[C] 0 \\ -2 \\ 14 \\ -2 \end{bmatrix*}
+\]
+
+By inspection we can see that $v_2=-2$ and $-v_1=-2$ so $v_1=2$. We check the
+rest of the values by multiplying
+\[
+\begin{bmatrix*}[C]
+1  & 1 \\
+0  & 1 \\
+3  & -4\\
+-1 & 0 
+\end{bmatrix*}\begin{bmatrix*}[C]2\\-2\end{bmatrix*}
+=\begin{bmatrix*}[C] 0 \\ -2 \\ 14 \\ -2 \end{bmatrix*}
+\]
+So we can conlcude there is a solution, namely 
+$\vec{v}=\begin{bmatrix*}[C]2\\-2\end{bmatrix*}$\\
+%
+\item Is there a solution, $\vec{v} \in \mathbb{R}^2$, to $A\vec{v}=\vec{b}$ 
+for every $\vec{b} \in \mathbb{R}^4$?
+
+Recall for a generic $\vec{v} \in \mathbb{R}^n$
+\[A\vec{v}=\begin{bmatrix*}[C]v_1+v_2\\v_2\\3v_1-4v_2\\-v_1\end{bmatrix*}\]
+
+So if $A\vec{v}=\vec{b}$ has a solution for 
+$\vec{b}=\begin{bmatrix*}b_1\\0\\b_3\\0\end{bmatrix*}$, the values $v_1=v_2=0$ 
+which would mena $b_1=v_1+v_2=0$ and $b_3=3v_1-4v_2=0$. So if we pick
+$b=\begin{bmatrix}1 \\ 0 \\ 0 \\ 0\end{bmatrix}$ this $A\vec{v}=\vec{b}$ 
+cannot have a solution.
+\end{inparaenum}
+\end{example}
 
 \input{Rn/Matrix-Vector_Multiplication_exercises.tex}
