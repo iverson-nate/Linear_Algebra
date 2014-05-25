@@ -8,7 +8,7 @@
 
 \RequirePackage[letterpaper]{geometry} % Page margins
 \geometry{body={6.5in,9in}, centering}
-
+%\RequirePackage[useTeX]{mmap}
 \RequirePackage{titlesec} % Allows customization of titles
 
 \RequirePackage{graphicx} % Required for including pictures
@@ -41,7 +41,7 @@
 \definecolor{bookcolor}{RGB}{243,102,25} % Define the orange color used for highlighting throughout the book 
 % Font Settings                                                                                                                                                        
 \RequirePackage{avant} % Use the Avantgarde font for headings                                                                                                        
-\RequirePackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym-bol, Chancery and Com-puter Modern fonts       
+%\RequirePackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym-bol, Chancery and Com-puter Modern fonts       
 \RequirePackage{microtype} % Slightly tweak font spacing for aesthetics                                                                                               
 \RequirePackage[utf8]{inputenc} % Required for including letters with accents                                                                                         
 \RequirePackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs          
@@ -367,7 +367,7 @@
 \noindent Copyright \copyright\ \@date\ \@author\\
 }
 {\let\and\originaland}
-\endinput
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% table of contents
@@ -385,3 +385,5 @@
 
 \pagestyle{fancy} % Print headers again
 }
+
+\endinput
