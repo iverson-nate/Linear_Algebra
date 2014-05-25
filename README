@@ -44,6 +44,9 @@ Some quick git fixes:
 (This will revert file.tex to prev commit)
 git checkout -- file.tex	
 
+(This will make file.tex the version from the master branch)
+git checkout master -- file.tex	
+
 (Abort a merge okay as long as you work in branch)
 git merge --abort		
 
