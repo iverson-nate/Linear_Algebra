@@ -17,54 +17,19 @@ the rest of the book with linear transformations. Our plan is to cover at
 least till spectral theory. Some optional topics we would like to include once the math 1890 part is taken care of: Jordan Normal Form, SVD, Power Method, Eigencentrality, Least Squares (linear algebra point of view), pseudo inverses. 
 
 *************
-Prerequisites:
-************* 
-
-The template we're using uses a fairly complete set of latex macros. In particular you may need to install biblatex and a few other extras.
-
-
-*************
-Command Summary:
-*************
-
-To update your local repo:
-git pull
-
-To compile the files
-make
-
-To see changes you have made:
-git status
-
-To stage all changes you have made(change the . to a filename to only stage 1 file change):
-git add .
-
-To commit changes you have made
-git commit -m "Put a descriptive short message here describing changes"
-
-To update remote repository with your changes
-git push
-
-*************
 File Structure:
 *************
 
 mycommands.sty (Put the special commands you want and packages in here)
-authors.tex (Authors names separated by \\ for now )
 Pictures/      (pdfs for chapter heading pictures and cover picture)
-structure.tex	(Part of The Legrand Orange Book Template do not edit)
-backmatter.tex  ( place that loads bibliography needs to be fixed)
-linear_algebra.tex  (main file, avoid editing most in subdirectory and subfiles)
-preamble.tex	    (Part of The Legrand Orange Book Template do not edit)
-template.txt  	    (Part of The Legrand Orange Book Template do not edit)
+fancybook.cls  (We've rewritten most of the Legrand Orange book to be in here)
+linear_algebra.tex  (main file, avoid editing author and copyright in here)
 bibliography.bib  (bibliography use standard keys from mathscinet)
 makefile	  (Sets up make to compile using pdflatex)   
 README		  (This file)
-frontmatter.tex   (Part of The Legrand Orange Book Template do not edit)
 Rn/		  (Subdirectory of Real vector spaces stuff currently chapter1)
-title.tex	  (Part of The Legrand Orange Book Template do not edit)
-ut
-
+Appendix/	  (Subdirectory of supplemental material
+)
 *************
 Coding style:
 *************
@@ -75,4 +40,21 @@ unary minues.We use bracketed symbols for both matrices and vectors.
 To say $n$-th use \nth{n} 5th is \nth{5}
 
 We use $\vec{v}$ to denote a vector v
- 
+
+We use the following theorem type environments (using thmtools): 
+theorem, definition, remark, proposition, corollary,example, exercise, lemma
+e.g.
+\begin{definition}[1st example]\label{def:example_defn}
+This is an example
+\end{definition}
+
+We can make any theorem type environment restatable the following way:
+\begin{restatable}{definition}{ExampleDefn}[1st example]\label{def:example_defn}
+This is an example
+\end{restatable}
+
+The following will restate (Note underscores are not allowed):
+
+\ExampleDefn*
+
+
