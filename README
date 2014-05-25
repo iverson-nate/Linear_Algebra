@@ -17,6 +17,45 @@ the rest of the book with linear transformations. Our plan is to cover at
 least till spectral theory. Some optional topics we would like to include once the math 1890 part is taken care of: Jordan Normal Form, SVD, Power Method, Eigencentrality, Least Squares (linear algebra point of view), pseudo inverses. 
 
 *************
+Commands:
+*************
+make			(builds linear_algebra.pdf)
+make clean		(makes directory clean including linear_algebra.pdf)
+
+*************
+Suggested git use
+*************
+git pull		(update local repo from github)
+git branch X		(create a branch named X)
+git checkout X		(change to branch)
+(edit stuff use make to make sure edits are working)
+git add .   	     	(add all changes)
+git commit		(commit changes)
+git checkout master	(switch to master again)
+git pull     		(check latest version)
+git merge X		(attempts to merge)
+(if conflict edit files to fix then)
+    git commit 	  	(not needed if no conflict)
+git push		(update github)
+git branch -d X		(delete branch)
+
+Some quick git fixes:
+
+(This will revert file.tex to prev commit)
+git checkout -- file.tex	
+
+(Abort a merge okay as long as you work in branch)
+git merge --abort		
+
+(If you don't delete a branch, X, do this every time you change to it)
+git checkout master  (start from master branch)
+git pull     	     (make sure up to date)
+git checkout X	     (switch to undeleted branch)
+git rebase master    (rebase the branch X on master)
+
+
+
+*************
 File Structure:
 *************
 
