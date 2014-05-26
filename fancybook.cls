@@ -70,8 +70,8 @@
     mdframed={
       roundcorner=8pt,
       backgroundcolor=black!5, 
-      skipabove=7pt,
-      skipbelow=7pt,
+      skipabove=5pt,
+      skipbelow=5pt,
       innerleftmargin=5pt,
       innerrightmargin=5pt,
       innertopmargin=5pt,
@@ -90,8 +90,8 @@
     spaceabove=0pt,
     prefoothook=\hfill{\color{bookcolor}\tiny\ensuremath{\blacksquare}},
     mdframed={
-      skipabove=7pt,
-      skipbelow=7pt,
+      skipabove=5pt,
+      skipbelow=5pt,
       rightline=false,
       leftline=true,
       topline=false,
@@ -128,8 +128,8 @@
     spaceabove=0pt,
     headformat=\NAME~\NUMBER\NOTE:,
     mdframed={
-      skipabove=7pt,
-      skipbelow=7pt,
+      skipabove=5pt,
+      skipbelow=5pt,
       rightline=false,
       leftline=true,
       topline=false,
