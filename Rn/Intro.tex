@@ -216,10 +216,119 @@ $A=\begin{bmatrix*}[C]
 -5 & 0 & 1 
 \end{bmatrix*}$
 is a $2 \times 3$ matrix, $a_{12}=-3$, and  
-$\vec{a}_1=\begin{bmatrix*}[C] 2 \\ -5 \end{bmatrix*} $
+$\vec{a}_1=\begin{bmatrix*}[C] 2 \\ -5 \end{bmatrix*}$
+\end{example}
+We can also define Addition and scalar multiplication for matrices.
+
+\begin{definition}[Matrix Addition] We define \emph{matrix addition} in each 
+$M_{m\times n}(\mathbb{R})$ coordinatewise. That is for $A,B \in M_{m\times n}$
+with $A=[a_{ij}]$ and $B=[b_{ij}]$ we define 
+$A+B=[a_{ij}]+[b_{ij}]=[a_{ij}+b_{ij}]$ which is the same as saying:
+\[
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix}
++
+\begin{bmatrix}
+b_{11} & b_{12} & \cdots & b_{1n} \\
+b_{21} & b_{22} & \cdots & b_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+b_{m1} & b_{m2} & \cdots & b_{mn}
+\end{bmatrix}
+=
+\begin{bmatrix}
+a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n} \\
+a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n} \\
+\vdots        & \vdots        & \ddots & \vdots \\
+a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & a_{mn}+b_{mn}
+\end{bmatrix}
+\]
+\end{definition}
+
+\begin{example}
+\begin{align*}
+\begin{bmatrix*}[C]
+2  & -4 & 3 \\
+-1 & 0  & 2
+\end{bmatrix*}+
+\begin{bmatrix*}[C]
+1  & 3 & 2 \\
+0 & -2  & -7
+\end{bmatrix*}
+&=\begin{bmatrix*}[C]
+2+1  & -4+3 & 3+2 \\
+-1+0 & 0-2  & 2-7
+\end{bmatrix*}\\
+&=\begin{bmatrix*}[C]
+3  & -1 & 5 \\
+-1 & -2  & -5
+\end{bmatrix*}
+\end{align*}
 \end{example}
 
+\begin{definition}[Matrix Scalar Multiplication] We define \emph{scalar multiplication} in each $M_{m\times n}$ coordinatewise. That is, if 
+$A \in M_{m \times n}$ with $A=[a_{ij}]$ and $r \in \mathbb{R}$ we define 
+$rA=r[a_{ij}]=[ra_{ij}]$ which is the same as saying:
+\[
+r\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix}
+=
+\begin{bmatrix}
+ra_{11} & ra_{12} & \cdots & ra_{1n} \\
+ra_{21} & ra_{22} & \cdots & ra_{2n} \\
+\vdots  & \vdots  & \ddots & \vdots \\
+ra_{m1} & ra_{m2} & \cdots & ra_{mn}
+\end{bmatrix}
+\]
+\end{definition}
 
+\begin{remark}
+It is worth noting here that it is not accidental that both matricies and 
+vectors have these two properties. For each $\vec{v} \in \mathbb{R}^n$ you can
+think of it as an $n\times 1$ matrix $\vec{v} \in M_{n\times 1}(\mathbb{R})$. 
+So all vectors are matrices. In Chapter~\ref{ch:Vector_Space} we will explore
+a class called \emph{Vector Spaces} that share properties with matrices and 
+vectors.
+\end{remark}
+
+The order of operations is again scalar multiplication then addition.
+
+\begin{example}
+\begin{align*}
+2\begin{bmatrix*}[C]
+2  & -4 & 3 \\
+-1 & 0  & 2
+\end{bmatrix*}+
+(-3)\begin{bmatrix*}[C]
+1  & 3 & 2 \\
+0 & -2  & -7
+\end{bmatrix*}
+&=
+\begin{bmatrix*}[C]
+4  & -8 & 6 \\
+-2 & 0  & 4
+\end{bmatrix*}+
+\begin{bmatrix*}[C]
+-3 & 9  & -6 \\
+0  & -6 & 21
+\end{bmatrix*}\\
+&=\begin{bmatrix*}[C]
+4-3  & -8-6 & 6-6 \\
+-2+0 & 0-6  & 4+21
+\end{bmatrix*}\\
+&=\begin{bmatrix*}[C]
+1  & -14 & 0 \\
+-2 & -6  & 25
+\end{bmatrix*}
+\end{align*}
+\end{example}
 \input{Rn/Real_Matrices__exercises.tex}
 
 \subsection{Matrix-Vector Multiplication}

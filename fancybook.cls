@@ -68,16 +68,17 @@
     spaceabove=0pt,
     headformat=\NAME~\NUMBER\NOTE.,
     mdframed={
-            backgroundcolor=black!5, 
-            skipabove=7pt,
-            skipbelow=7pt,
-            innerleftmargin=5pt,
-            innerrightmargin=5pt,
-            innertopmargin=5pt,
-            leftmargin=0cm,
-            rightmargin=0cm,
-            innerbottommargin=5pt
-            linecolor=bookcolor}   
+      roundcorner=8pt,
+      backgroundcolor=black!5, 
+      skipabove=7pt,
+      skipbelow=7pt,
+      innerleftmargin=5pt,
+      innerrightmargin=5pt,
+      innertopmargin=5pt,
+      leftmargin=0cm,
+      rightmargin=0cm,
+      innerbottommargin=5pt,
+      linecolor=bookcolor}   
 ]{Tstyle}
 
 \declaretheoremstyle[
