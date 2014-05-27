@@ -24,9 +24,9 @@ $T: \mathbb{R}^n \to \mathbb{R}^m$ such that vector addition and scalar
 multiplication are preserved. That is, 
 \begin{enumerate}
 \item $T(\vec{v}+\vec{w})=T(\vec{v})+T(\vec{w})$ for all 
-$\vec{v},\vec{w} \in \mathbb{R}^n$\hfill \emph{(preserves vector addition)}
+$\vec{v},\vec{w} \in \mathbb{R}^n$.\hfill \emph{(preserves vector addition)}
 \item $T(r\vec{v})=r T(\vec{v})$ for all $\vec{v}\in \mathbb{R}^n$ 
-and for $r \in \mathbb{R}$\hfill \emph{(preserves scalar multiplication)}
+and for $r \in \mathbb{R}$.\hfill \emph{(preserves scalar multiplication)}
 \end{enumerate}
 \end{definition}
 
@@ -46,7 +46,7 @@ T(r\vec{v})
 &=(r v_1)\vec{a}_1+\cdots+(r v_n)\vec{a}_n\\
 &=r (v_1\vec{a}_1+\cdots+v_n\vec{a}_n)\\
 &=r (A\vec{v})\\
-&=r T(\vec{v})
+&=r T(\vec{v}).
 \end{align*}
 Now we show vector addition is preserved:
 \begin{align*}
@@ -56,7 +56,7 @@ T(\vec{v}+\vec{w})
 &=(v_1+w_1)\vec{a}_1+\cdots+(v_n+w_n)\vec{a}_n\\
 &=(v_1\vec{a}_1+\cdots+v_n\vec{a}_n)+(w_1\vec{a}_1+\cdots+w_n\vec{a}_n)\\
 &=A\vec{v}+A\vec{w}\\
-&=T(\vec{v})+T(\vec{w})
+&=T(\vec{v})+T(\vec{w}).
 \end{align*}
 Note that the vector associative and distributive properties used above 
 follow from the associative and distributive properties in $\mathbb{R}$ 
@@ -80,7 +80,7 @@ T(\vec{v}+\vec{w})
 &= \begin{bmatrix}v_1-3v_2+w_1-3w_2\\v_2+w_2\\5v_1-3v_2+5w_1-3w_2\end{bmatrix}\\
 &= \begin{bmatrix}v_1-3v_2\\v_2\\5v_1-3v_2\end{bmatrix}
 +\begin{bmatrix}w_1-3w_2\\w_2\\5w_1-3w_2\end{bmatrix}\\
-&= T(\vec{v})+T(\vec{w})
+&= T(\vec{v})+T(\vec{w}).
 \end{align*}
 Thus $T$ preserves addition. Let $r\in \mathbb{R}$ then 
 \begin{align*}
@@ -89,7 +89,7 @@ T(r\vec{v})
 &= \begin{bmatrix}rv_1-3rv_2\\rv_2\\5rv_1-3rv_2\end{bmatrix}\\
 &= \begin{bmatrix}r(v_1-3v_2)\\r(v_2)\\r(5v_1-3v_2)\end{bmatrix}\\
 &= r\begin{bmatrix}v_1-3v_2\\v_2\\5v_1-3v_2\end{bmatrix}\\
-&= rT(\vec{v})
+&= rT(\vec{v}).
 \end{align*}
 Thus $T$ is preserves scalar multiplication and is therefore a linear
 transformation.
@@ -119,7 +119,7 @@ Let $T:\mathbb{R}^n\to\mathbb{R}^m$ be a function. The following are equivalent:
 \begin{enumerate}
 \item $T$ is a linear transformation.
 \item $T(a\vec{v}+b\vec{w})=aT(\vec{v})+bT(\vec{w})$ for all $a,b \in \mathbb{R}$ 
-and $\vec{v},\vec{w} \in \mathbb{R}^n$
+and $\vec{v},\vec{w} \in \mathbb{R}^n$.
 \item $T(a_1\vec{v}_1+a_2\vec{v}_2+\cdots+a_k\vec{v}_k)=
 a_1T(\vec{v}_1)+a_2T(\vec{v}_2)+\cdots+a_kT(\vec{v}_k)$ 
 for all $a_i \in \mathbb{R}$ and $\vec{v}_i \in \mathbb{R}^n$ and $k$ a positive integer.
@@ -145,7 +145,7 @@ Then the rest of the implications can be deduced working around the circle:\\
 $a,b \in \mathbb{R}$ and $\vec{v},\vec{w} \in \mathbb{R}^n$. Then
 \begin{align*}
 T(a\vec{v}+b\vec{w}) &= T(a\vec{v})+T(b\vec{w})\\
-&= aT(\vec{v})+bT(\vec{w})
+&= aT(\vec{v})+bT(\vec{w}).
 \end{align*}
 Since the choice of $a,b \in \mathbb{R}$ and $\vec{v},\vec{w} \in \mathbb{R}^n$
 was arbitrary this equality holds for all choices of these values.
@@ -178,7 +178,7 @@ Then consider the $k=1$ case $a_1=r$ $\vec{v}_1=\vec{v}$. Then
 \begin{align*}
 T(r\vec{v})&=T(a_1\vec{v}_1)\\
 &=a_1T(\vec{v}_1)\\
-&=rT(\vec{v})
+&=rT(\vec{v}).
 \end{align*}
 Therefore $T$ preserves scalar multiplication.
 
@@ -188,7 +188,7 @@ $a_1=a_2=1$, $\vec{v}_1=\vec{v}$ and $\vec{v}_2=\vec{w}$. Then
 T(\vec{v}+\vec{w})&=T(a_1\vec{v}_1+a_2\vec{v}_2)\\
 &=a_1T(\vec{v}_1)+a_2T(\vec{v}_2)\\
 &=1T(\vec{v})+1T(\vec{w})\\
-&=T(\vec{v})+T(\vec{w})
+&=T(\vec{v})+T(\vec{w}).
 \end{align*}
 Thus $T$ also preserves vector addition and is therefore a 
 linear transformation.
@@ -230,7 +230,7 @@ T(\vec{v})
 &=v_1\vec{a}_1+v_2\vec{a}_2+\cdots+v_n\vec{a}_n\\
 &=[\vec{a}_1,\vec{a}_2,\ldots,\vec{a}_n]
 \begin{bmatrix}v_1\\v_2\\\vdots\\v_n\end{bmatrix}\\
-&=A\vec{v}
+&=A\vec{v}.
 \end{align*}
 \end{proof}
 
@@ -248,7 +248,7 @@ $\mathcal{E}=\{\vec{e}_1,\vec{e}_2\}$ for $\mathbb{R}^2$.
 &\hspace*{1.5cm} &\vec{a}_2
 &=T(\vec{e}_2) 
 &= T\begin{bmatrix}0 \\ 1\end{bmatrix} 
-&=\begin{bmatrix*}[C]-3\\1\\-3\end{bmatrix*}
+&=\begin{bmatrix*}[C]-3\\1\\-3\end{bmatrix*}.
 \end{alignat*}
 So $A=\begin{bmatrix*}[c]1 & -3 \\0 & 1 \\5 & -3\\\end{bmatrix*}$. 
 We can test our work simply by multiplying:
@@ -258,7 +258,7 @@ A\begin{bmatrix}v_1 \\ v_2 \end{bmatrix}
 \begin{bmatrix}v_1 \\ v_2 \end{bmatrix}
 =\begin{bmatrix}
 v_1-3v_2 \\ v_2 \\ 5v_1-3v_2
-\end{bmatrix}
+\end{bmatrix}.
 \]
 \end{example}
 By combining Theorem \ref{thm:standard_matrix} and 
@@ -364,14 +364,12 @@ $\\
 $T\circ S(\vec{e}_4)=T(S(\vec{e}_4))=T(B\vec{e}_4)=A(B\vec{e}_4)
 =A\begin{bmatrix*}[C]-7 \\ 0\end{bmatrix*}
 =\begin{bmatrix*}[C] -7 \\ 7 \\ -21 \end{bmatrix*}
-$
-
-This gives a a standard matrix of 
+$. This gives a a standard matrix of 
 \[\begin{bmatrix*}[C]
 -1 & 2 &  0 & -7 \\
  4 & 1 & -3 &  7 \\
 -7 & 2 &  4 & -21 
-\end{bmatrix*}
+\end{bmatrix*}.
 \]
 But more importantly we notice that the standard matrix was made of 
 $[A\vec{b}_1, A\vec{b}_2, A\vec{b}_3,A\vec{b}_4]$ where 
@@ -385,7 +383,7 @@ Let $A \in M_{m \times n}$ and $B \in M_{n \times p}$ we define the matrix
 product $AB=[A\vec{b}_1,A\vec{b}_2,\ldots,A\vec{b}_m]$.
 \end{definition}
 
-\begin{remark} 
+\begin{remark} We have two remarks about the definition above. 
 \begin{enumerate}
 \item The matrix product $AB$ only exists when the number of columns in $A$ is
 equal to the number of rows in $B$. 
