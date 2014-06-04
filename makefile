@@ -2,13 +2,15 @@ FILE=linear_algebra.tex
 BIBFILE=linear_algebra
 TEX=pdflatex
 BIBTEX=bibtex
+INDEX=makeindex
 
-all: vc.tex bib pdf
+all: vc.tex bib idx pdf
 
 bib: $(FILE)
 	$(TEX) $(FILE)
 	$(BIBTEX) $(BIBFILE)
-
+idx: $(FILE)
+	$(INDEX) $(BIBFILE)
 pdf: $(FILE)
 	$(TEX) $(FILE)
 	$(TEX) $(FILE)
