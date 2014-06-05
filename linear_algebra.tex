@@ -2,7 +2,8 @@
 \usepackage[noTeX]{mmap}
 \usepackage{mycommands} % put first or some of our custom packages may break formatting.
 \input{vc.tex}
-
+\usepackage{makeidx}
+\makeindex
 \author{Nathaniel Iverson%
 \and
 S\"{o}nmez \c{S}ahuto\u{g}lu}
@@ -37,5 +38,5 @@ S\"{o}nmez \c{S}ahuto\u{g}lu}
 \bibliography{bibliography}
 \addcontentsline{toc}{chapter}{\textcolor{bookcolor}{Bibliography}}
 
-
+\printindex
 \end{document}
