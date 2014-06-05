@@ -1,10 +1,9 @@
 \section{Introduction}
-\index{$\mathbb{R}^n$, Introduction}
 \subsection{$\mathbb{R}^n$}
 We will assume that all readers are already familiar with a concept of real and complex numbers. 
 In this text we denote the real numbers by $\mathbb{R}$ and the complex numbers by $\mathbb{C}$. 
 
-\begin{definition}
+\begin{definition}\index{Rn@$\mathbb{R}^n$!Definition}
 We define $\mathbb{R}^n$ to be the set of real column vectors in $n$-coordinates. That is 
 \[
 \mathbb{R}^n=\left\{ 
@@ -38,14 +37,14 @@ $\vec{v}(2)=4$ that is the \nth{2} coordinate of $\vec{v}$ is $4$.
 \end{remark}
 
 
-\begin{definition}[Vector Equality]\index{vector equality}
-Vectors $\vec{v}, \vec{w} \in \mathbb{R}^n$ are \emph{equal},  if they are equal 
-coordinatewise. That is, $v_i=v(i)=w(i)=w_i$ for all $i=1,2,\ldots, n$. We 
-denote this with  $\vec{v}=\vec{w}$.
+\begin{definition}[Vector Equality]\index{Rn@$\mathbb{R}^n$!vector equality}
+Vectors $\vec{v}, \vec{w} \in \mathbb{R}^n$ are \emph{equal},  if they are 
+equal coordinatewise. That is, $v_i=v(i)=w(i)=w_i$ for all $i=1,2,\ldots, n$. 
+We denote this with  $\vec{v}=\vec{w}$.
 \end{definition}
 
 
-\begin{definition}[Vector Addition]\index{vector addition}
+\begin{definition}[Vector Addition]\index{Rn@$\mathbb{R}^n$!vector addition}
 We define \emph{vector addition} on $\mathbb{R}^n$ coordinatewise. 
 That is, for $\vec{v},\vec{w} \in \mathbb{R}^n$ we define
 \[
@@ -56,7 +55,7 @@ That is, for $\vec{v},\vec{w} \in \mathbb{R}^n$ we define
 \]
 \end{definition}
 
-\begin{definition}[Scalar Multiplication]\index{scalar multiplication}
+\begin{definition}[Scalar Multiplication]\index{Rn@$\mathbb{R}^n$!scalar multiplication}
 We define \emph{scalar multiplication} on $\mathbb{R}^n$ coordinatewise. That 
 is, for $\vec{v} \in \mathbb{R}^n$ and $r \in \mathbb{R}$ we define
 \[
@@ -85,7 +84,7 @@ $\vec{y}=\begin{bmatrix*}[C]-4\\ 2 \\ 1\end{bmatrix*}$ in $\mathbb{R}^3$.
 This is actually also an example of our next definition.
 \end{example}
 
-\begin{definition}\index{linear combination}
+\begin{definition}\index{Linear combination}
 A \emph{linear combination} of vectors $\vec{a}_1, \vec{a}_2, \ldots,
 \vec{a}_n$ is the sum
 \[c_1\vec{a}_1+c_2\vec{a}_2+\cdots+c_n\vec{a}_n\]
@@ -118,7 +117,7 @@ implies that $1=0$ which is a contradiction.
 \end{example}
 
 \begin{definition}
-\index{standard basis for $\mathbb{R}^n$}
+\index{Rn@$\mathbb{R}^n$!Standard basis}
 The \emph{standard basis for} $\mathbb{R}^n$ is a set of $n$-vectors
 $\mathcal{E}=\{\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n\}$ such that\\
 $\vec{e}_j(k)=\begin{cases}
@@ -180,9 +179,8 @@ Since the above equation is true for any $1\leq k\leq n$ we have,
 \input{Rn/Rn_exercises.tex}
 
 \subsection{Real Matrices}
-\index{Real Matrices}
 
-\begin{definition}[Matrix]
+\begin{definition}[Matrix]\index{Matrix!Definition}
 A real matrix $A$ is a rectangular array of real numbers 
 $a_{i,j} \in \mathbb{R}$ (usually the comma is omitted $a_{ij}$)  where the $i$ 
 is the row and $j$ is the column number. That is, 
@@ -196,7 +194,7 @@ a_{m1} & a_{m2} & \cdots & a_{mn}
 \]
 The \emph{dimension} of the matrix is $m\times n$ where $m$ is the number of 
 rows and $n$ is the number of columns. The set of all such matrices is denoted 
-by $M_{m\times n}(\mathbb{R})$. 
+by $M_{m\times n}(\mathbb{R})$.\index{Matrix!Mmn@ $M_{m\times n}(\mathbb{R})$}
 \end{definition}
 The matrix $A$ can be also seen as a collection of vectors. Namely, 
 $A=[a_{ij}]=[\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n]$ where 
@@ -335,7 +333,8 @@ The order of operations is again scalar multiplication then addition.
 
 \subsection{Matrix-Vector Multiplication}
 
-\begin{definition}[Matrix-Vector Multiplication]\index{Matrix-Vector Multiplication}
+\begin{definition}[Matrix-Vector Multiplication]
+\index{Matrix!Matrix-Vector Multiplication}
 Let $A=[a_{ij}]\in M_{m\times n}(\mathbb{R})$ and $\vec{v} \in \mathbb{R}^n$.  
 We define the \emph{Matrix-Vector} product to be the linear combination 
 \[
@@ -385,6 +384,7 @@ multiplication.
 \end{example}
 
 \begin{proposition}[The Row-Column Algorithm]\label{prop:vec_row-column}
+\index{Matrix!Matrix-Vector Multiplication!The Row-Column Algorithm}
 Let $A=[a_{ij}]\in M_{m\times n}(\mathbb{R})$ and $\vec{v} \in \mathbb{R}^n$. 
 Then $\vec{w}=A\vec{v} \in \mathbb{R}^m$ where  
 \[\vec{w}(k)=a_{k1}v_1+a_{k2}v_2+\cdots+a_{kn}v_n\] 
