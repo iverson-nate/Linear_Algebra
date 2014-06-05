@@ -1,31 +1,18 @@
 FILE=linear_algebra.tex
 BIBFILE=linear_algebra
-INDEXFILE=linear_algebra
 TEX=pdflatex
 BIBTEX=bibtex
-<<<<<<< HEAD
 MAKEINDEX=makeindex
 
-all: vc.tex bib index pdf
-=======
-INDEX=makeindex
-
 all: vc.tex bib idx pdf
->>>>>>> d9e06e8f8e10477b8fc42ecfcb6ff32547875147
 
 bib: $(FILE)
 	$(TEX) $(FILE)
 	$(BIBTEX) $(BIBFILE)
-<<<<<<< HEAD
 
-index: $(FILE)
-	$(TEX) $(FILE)
-	$(MAKEINDEX) $(INDEXFILE)
-
-=======
 idx: $(FILE)
-	$(INDEX) $(BIBFILE)
->>>>>>> d9e06e8f8e10477b8fc42ecfcb6ff32547875147
+	$(MAKEINDEX) $(BIBFILE)
+
 pdf: $(FILE)
 	$(TEX) $(FILE)
 	$(TEX) $(FILE)
