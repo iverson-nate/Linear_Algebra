@@ -42,4 +42,61 @@ The vector from $(2,3)$ to $(3,-2)$ has canonical form $\begin{bmatrix}1\\-5\end
     \draw [ultra thick,-latex,red] (2,3) node [above right] {$(2,3)$} -- (3,-2) node [above right] {$(3,-2)$};
     \draw [ultra thick,-latex,blue] (Origin) node [above right] {$(0,0)$} -- (1,-5) node [above right] {$(3,-2)$};
   \end{tikzpicture}
+
+\subsection{Scalar Multiplication and Vector Addition}
+
+Scalar multiplication can be thought of as a  geometric operation. If $r>0$ then $r\vec{v}$ can be thought of as $v$ stretched or shrunk by real factor $r$.\\ 
+
+\begin{tikzpicture}[scale=.5]
+    \coordinate (Origin)   at (0,0);
+    \coordinate (XAxisMin) at (-6,0);
+    \coordinate (XAxisMax) at (6,0);
+    \coordinate (YAxisMin) at (0,-6);
+    \coordinate (YAxisMax) at (0,6);
+    \draw [thin, gray,-latex] (XAxisMin) -- (XAxisMax);% Draw x axis                                                                                                   
+    \draw [thin, gray,-latex] (YAxisMin) -- (YAxisMax);% Draw y axis                                                                                                   
+    \draw [ultra thick,-latex,blue] (0,0)  -- (6,3) node[pos=0.5,above]{$r\vec{v}$};
+    \draw [ultra thick,-latex,black] (Origin) -- (2,1) node[pos=0.5,above]{$\vec{v}$};;
+\end{tikzpicture}
+
+If $r<0$ then $r\vec{v}$ can be thought of as $v$ reflected through the origin then stretced or shrunk by a real factor $|r|$
+
+\begin{tikzpicture}[scale=.5]
+    \coordinate (Origin)   at (0,0);
+    \coordinate (XAxisMin) at (-6,0);
+    \coordinate (XAxisMax) at (6,0);
+    \coordinate (YAxisMin) at (0,-6);
+    \coordinate (YAxisMax) at (0,6);
+    \draw [thin, gray,-latex] (XAxisMin) -- (XAxisMax);% Draw x axis                                                                                                   
+    \draw [thin, gray,-latex] (YAxisMin) -- (YAxisMax);% Draw y axis                                                                                                   
+    \draw [ultra thick,-latex,blue] (0,0)  -- (-6,-3) node[pos=0.5,above]{$r\vec{v}$};
+    \draw [ultra thick,-latex,black] (Origin) -- (2,1) node[pos=0.5,above]{$\vec{v}$};;
+\end{tikzpicture}
+
+Vector addition can also be thought of as a geometric operation via the \textbf{parallelogram rule}. 
+
+\begin{proposition}[The Paralelogram Rule] If $\vec{v},\vec{w} \in \mathbb{R}^n$ then $\vec{v}+\vec{w}$ can be determined by the paralelogram:
+
+\begin{tikzpicture}[scale=.5]
+    \coordinate (Origin)   at (0,0);
+    \coordinate (XAxisMin) at (-6,0);
+    \coordinate (XAxisMax) at (6,0);
+    \coordinate (YAxisMin) at (0,-6);
+    \coordinate (YAxisMax) at (0,6);
+    \draw [thin, gray,-latex] (XAxisMin) -- (XAxisMax);% Draw x axis                                                                                                   
+    \draw [thin, gray,-latex] (YAxisMin) -- (YAxisMax);% Draw y axis                                                                                                   
+    \draw [ultra thick,-latex,blue] (0,0)  -- (4,1) node[pos=0.5,above]{$\vec{v}$};
+    \draw [ultra thick,-latex,red] (4,1)  -- (6,-2) node[pos=0.5,above]{$\vec{w}$};
+    \draw [ultra thick,-latex,red] (Origin) -- (2,-3) node[pos=0.5,below]{$\vec{w}$};;
+    \draw [ultra thick,-latex,blue] (2,-3)  -- (6,-2) node[pos=0.5,below]{$\vec{v}$};
+    \draw [ultra thick,-latex,black] (0,0)  -- (6,-2) node[pos=0.5,above]{$\vec{v}+\vec{w}$};
+\end{tikzpicture}
+
+Note that taking the base point of $\vec{w}$ to be the end point of $\vec{v}$ yeilds the same result as taking the base point of $\vec{v}$ to be the end point of 
+$\vec{w}$.
+\end{proposition}
+\begin{proof}
+Simply note the commutative property of vector addition,  $\vec{v}+\vec{w}=\vec{w}+\vec{v}$. 
+\end{proof}
+
 \end{example}
