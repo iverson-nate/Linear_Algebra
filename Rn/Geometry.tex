@@ -80,7 +80,7 @@ Vector addition can also be thought of as a geometric operation via the \textbf{
 \item If there is a nonzero linear combination $s\vec{v}+t\vec{w}$ equal to $\vec{0}$ then 
 $\vec{v}+\vec{w}$ is either a scalar multiple of $\vec{v}$ or a scalar multiple of $\vec{w}$.
 
-\item Otherwise $\vec{v}+\vec{w}$ is determined by the parallelogram rule:
+\item Otherwise $\vec{v}+\vec{w}$ is determined by the parallelogram rule:\\
 \begin{tikzpicture}[scale=.5]
     \coordinate (Origin)   at (0,0);
     \coordinate (XAxisMin) at (-6,0);
@@ -101,7 +101,14 @@ $\vec{w}$.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-Simply note the commutative property of vector addition,  $\vec{v}+\vec{w}=\vec{w}+\vec{v}$. 
+The proof of the case where there is a nonzero linear combination of $s\vec{v}+t\vec{w}=\vec{0}$ is Exercise~\ref{exercise:dependent_addition}. This case eliminates the possiblity that $\vec{v}$ and $\vec{w}$ are on the same line.
+
+The vector $\vec{v}$ take the origin $(0,0, \ldots, 0)$ to the coordinate $(v_1, v_2, \ldots, v_n)$. 
+By adding vector $w$ we take $(v_1, v_2, \ldots, v_n)$ to $(v_1+w_1, v_2+w_2, \ldots, v_n+w_n)$. 
+So $v+w$ is the composite operation of taking the origin to $(v_1, v_2, \ldots, v_n)$ then to $(v_1+w_1, v_2+w_2, \ldots, v_n+w_n)$. 
+
+Graphically we can think of this as follow the canonical form of $\vec{v}$ then base $w$ at the endpoint of $v$ to get $\vec{v}+\vec{w}$. Since we can do the same thing starting with $w$, this makes a parallelogram as long as $\vec{v}$ and $\vec{w}$ are not on the same line.
+
 \end{proof}
 
 \end{example}
