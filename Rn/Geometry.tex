@@ -75,8 +75,12 @@ If $r<0$ then $r\vec{v}$ can be thought of as $v$ reflected through the origin t
 
 Vector addition can also be thought of as a geometric operation via the \textbf{parallelogram rule}. 
 
-\begin{proposition}[The Paralelogram Rule] If $\vec{v},\vec{w} \in \mathbb{R}^n$ then $\vec{v}+\vec{w}$ can be determined by the paralelogram:
+\begin{proposition}[The Paralelogram Rule] If $\vec{v},\vec{w} \in \mathbb{R}^n$ with then $\vec{v}+\vec{w}$ can be determined by the following:
+\begin{enumerate}
+\item If there is a nonzero linear combination $s\vec{v}+t\vec{w}$ equal to $\vec{0}$ then 
+$\vec{v}+\vec{w}$ is either a scalar multiple of $\vec{v}$ or a scalar multiple of $\vec{w}$.
 
+\item Otherwise $\vec{v}+\vec{w}$ is determined by the parallelogram rule:
 \begin{tikzpicture}[scale=.5]
     \coordinate (Origin)   at (0,0);
     \coordinate (XAxisMin) at (-6,0);
