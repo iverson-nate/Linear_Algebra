@@ -424,3 +424,58 @@ $[A\vec{b}_1,\ldots, A\vec{b}_p]$ which is $AB$, by definition.
 \end{proof}
 
 \input{Rn/Linear_Transformations_Composition_exercises.tex}
+
+\subsection{Row Vectors and the Transpose Operator}
+
+Sometimes it is useful for us to deal with row vectors:
+
+$$
+\mathbb{R}_\text{row}^n=\left\{ 
+\begin{bmatrix}v_1 & v_2 & \cdots & v_n\end{bmatrix}
+\mid v_i \in \mathbb{R} \text{ for all } i\ \right\}
+$$
+
+We can also think of row vectors as the set of $n \times 1 $ matrices, that is $\mathbb{R}^n_\text{row} = M_{n \times 1}(\mathbb{R})$.
+
+For $A \in  M_{n \times m}(\mathbb{R})$ we can write $A$ in terms of its row vectors $\vec{r}_1, \vec{r}_2, \ldots, \vec{r}_n \in \mathbb{R}^n_\text{row}$ in the 
+following way
+
+$$
+A=\begin{bmatrix}\vec{r}_1 \\ \vec{r}_2 \\ \vdots \\ \vec{r}_n \end{bmatrix}=
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1m} \\
+a_{21} & a_{22} & \cdots & a_{2m} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nm} \\
+\end{bmatrix}
+$$
+
+Where for each $k$, the row vector $\vec{r}_k=\begin{bmatrix}a_{k1} & a_{k2} & \cdots & a_{km}\end{bmatrix}$
+
+For a $v \in \mathbb{R}_\text{row}^n$ we define left vector-matrix multiplication by a matrix $A\in M_{n \times m}(\mathbb{R})$ with row vectors 
+$\vec{r}_1, \ldots, \vec{r}_n \in \mathbb{R}^m_\text{row}$ to be:
+
+
+$$
+\begin{bmatrix}v_1 & v_2 & \cdots & v_n\end{bmatrix}\begin{bmatrix}\vec{r}_1 \\ \vec{r}_2 \\ \vdots \\ \vec{r}_n\end{bmatrix}
+=v_1\vec{r}_1+v_2\vec{r}_2+ \cdots + v_n\vec{r}_n 
+$$
+
+\begin{example}
+$$
+\begin{bmatrix}1 & 2 & 3 \end{bmatrix} \begin{bmatrix*}[C] 1 & 1 & 1 & 1 \\ 0 & 1 & 0 & 1 \\ 0 & -1 & 0 & 1 \end{bmatrix*}
+=1 \begin{bmatrix}1 & 1 & 1 & 1\end{bmatrix}+2\begin{bmatrix}0 & 1 & 0 & 1\end{bmatrix}+3\begin{bmatrix}0 & -1 & 0 & 1 \end{bmatrix}
+=\begin{bmatrix} 1 & 0 & 1 & 6 \end{bmatrix}
+$$
+\end{example}
+
+\begin{proposition}
+For $\vec{v} \in \mathbb{R}^n_\text{row}$ and $A \in M_{n \times m}$ left vector-matrix multiplication $\vec{v}A$ is the same as the matrix-matrix multiplication 
+acheiced by considering $\vec{v}$ as a $1 \times n$ matrix.
+\end{proposition}
+\begin{proof}
+
+\end{proof}
+
+We can then define linear transformations $T:\mathbb{R}_\text{row}^m \to \mathbb{R}_\text{row}^n$ to be functions that preserve scalar multiplication and 
+vector addition. 
