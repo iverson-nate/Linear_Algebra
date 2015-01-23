@@ -153,7 +153,7 @@ $$x_1\vec{v}_1+x_2\vec{v}_2+\cdots + x_n \vec{v}_n=\vec{0}$$
 has a \textbf{non-trivial solution}. That is, there is a solution $x_1, x_2, \ldots, x_n$ to the vector equation with $x_i \neq 0$ for at least one value $i$. 
 \end{definition}
 
-\begin{proposition} If $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n \in \mathbb{R}^n$ are linearly dependent. Then at at least one of the vectors, $\vec{v}_k$, can be written as a linear combination of the others. That is,
+\begin{proposition} Vectors $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n \in \mathbb{R}^n$ are linearly dependent if and only if at at least one of the vectors, $\vec{v}_k$, can be written as a linear combination of the others. That is,
 $$
 \vec{v}_k=\alpha_1 v_1+ \cdots+ \alpha_{k-1}\vec{v}_{k-1}+ \alpha_{k+1}\vec{v}_{k+1}+\cdots+ \alpha_n \vec{v}_n
 $$
@@ -175,6 +175,39 @@ $$
 \vec{v}_k=\frac{x_1}{-x_k} v_1+ \cdots + \frac{x_{k-1}}{-x_k}\vec{v}_{k-1}+ \frac{x_{k+1}}{-x_k}\vec{v}_{k+1}+\cdots+ \frac{x_n}{-x_k} \vec{v}_n
 $$
 
+To show the converse let 
+
+$$\vec{v}_k=\alpha_1 v_1+ \cdots+ \alpha_{k-1}\vec{v}_{k-1}+ \alpha_{k+1}\vec{v}_{k+1}+\cdots+ \alpha_n \vec{v}_n$$
+
+Then by adding $(-1)\vec{v}_k$ to both sides
+$$
+\vec{0}=\alpha_1 v_1+ \cdots+ \alpha_{k-1}\vec{v}_{k-1}+(-1)\vec{v}_k+ \alpha_{k+1}\vec{v}_{k+1}+\cdots+ \alpha_n \vec{v}_n
+$$
+
+This is a non-trivial linear combination of $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k$ since the $k$-coefficient $(-1)$ is nonzero. Therefore, $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k$ are linearly dependent.
+\end{proof}
+
+\begin{remark}
+The above proposition shows that a linearly dependent set has ``extra vectors'' when it comes to making linear combinations. That is, by adding in a vector $\vec{v}_k$, that can be written as a linear combination of the others you could have accomplished the same thing by simply changing the coefficients on the other vectors. So in a sense the $\vec{v}_k$ vector is unnecessary or ``extra'' and there could be more than one such vector.
+\end{remark}
+
+\begin{proposition}\label{prop:zero_dependent} If the zero vector is in a set of vectors then the set is linearly dependent. 
+\end{proposition}
+\begin{proof}
+Left as an exercise.
+\end{proof}
+
+
+\begin{proposition}\label{prop:zero_dependent} If the row vectors of matrix $A \in M_{m\times n}(\mathbb{R})$ are linearly dependent, then there is a  $\vec{b} \in \mathbb{R}^m$ such that $A\vec{v}=\vec{b}$ does not have a solution.
+\end{proposition}
+\begin{proof}
+Left as an exercise.
+\end{proof}
+
+\begin{proposition}\label{prop:zero_dependent} If the column vectors of matrix $[\vec{a}_1, \ldots, \vec{a}_n]=A \in M_{m\times n}(\mathbb{R})$ are linearly dependent and $\vec{w}$ is a solution to $A\vec{v}=\vec{b}$ then there are infinitely many solutions to $A\vec{v}=\vec{b}$.
+\end{proposition}
+\begin{proof}
+Left as an exercise.
 \end{proof}
 
 \begin{definition}[Linearly Independent Vectors]
