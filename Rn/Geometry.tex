@@ -135,7 +135,57 @@ It's not a very large stretch to include vectors with endpoints on the rest of t
 
 \subsection{Linear Dependence and Linear Independence}
 
-\subsection{Some Geometric Linear Transformations}
+Previously, we noticed that when we add two vectors $\vec{v}+\vec{w}$, the result can geometrically be described either by linear addition or by the parallelogram rule. When the result is linear addition the vectors are on the same line in $\mathbb{R}^n$. In other words $\vec{v}=r\vec{w}$ or $\vec{w}=t\vec{v}$ for some $r,t \in \mathbb{R}$. Instead of stating this as two cases, we can instead write 
+
+\begin{equation*}
+a\vec{v}+b\vec{w}=\vec{0}
+\end{equation*}
+
+where $a$ and $b$ are real scalars and they are not both zero. We call the case where both $a=0$ and $b=0$ the \textbf{trivial solution} to the vector equation and any solution where at least one of them is non-zero a \textbf{non-trivial solution}.
+
+Generalizing to more than two vectors we get the following definition:
+
+\begin{definition}[Linearly Dependent Vectors]
+Vectors $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n \in \mathbb{R}^m$ are \textbf{linearly dependent} if 
+
+$$x_1\vec{v}_1+x_2\vec{v}_2+\cdots + x_n \vec{v}_n=\vec{0}$$
+
+has a \textbf{non-trivial solution}. That is, there is a solution $x_1, x_2, \ldots, x_n$ to the vector equation with $x_i \neq 0$ for at least one value $i$. 
+\end{definition}
+
+\begin{proposition} If $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n \in \mathbb{R}^n$ are linearly dependent. Then at at least one of the vectors, $\vec{v}_k$, can be written as a linear combination of the others. That is,
+$$
+\vec{v}_k=\alpha_1 v_1+ \cdots+ \alpha_{k-1}\vec{v}_{k-1}+ \alpha_{k+1}\vec{v}_{k+1}+\cdots+ \alpha_n \vec{v}_n
+$$
+\end{proposition}
+\begin{proof}
+Let $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n \in \mathbb{R}^n$ be linearly dependent. Then there is a nontrivial solution to:
+
+$$x_1\vec{v}_1+x_2\vec{v}_2+\cdots +x_{k-1}\vec{v}_{k-1}+ x_k\vec{v}_k+x_{k+1}\vec{v}_{k+1}+ \cdots + x_n \vec{v}_n=\vec{0}$$
+
+That is $x_k \neq 0$ for some $k$. Solving for $x_k\vec{v}_k$ we get
+
+$$
+(-x_k)\vec{v}_k=x_1 v_1+ \cdots + x_{k-1}\vec{v}_{k-1}+ x_{k+1}\vec{v}_{k+1}+\cdots+ x_n \vec{v}_n
+$$
+
+Since $x_k \neq 0$ we can multiply both sides of the equation by $-\frac{1}{x_k}$ yeilding:
+
+$$
+\vec{v}_k=\frac{x_1}{-x_k} v_1+ \cdots + \frac{x_{k-1}}{-x_k}\vec{v}_{k-1}+ \frac{x_{k+1}}{-x_k}\vec{v}_{k+1}+\cdots+ \frac{x_n}{-x_k} \vec{v}_n
+$$
+
+\end{proof}
+
+\begin{definition}[Linearly Independent Vectors]
+Vectors $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n \in \mathbb{R}^m$ are \textbf{linearly independent} if 
+
+$$x_1\vec{v}_1+x_2\vec{v}_2+\cdots + x_n \vec{v}_n=\vec{0}$$
+
+has only the \textbf{trivial solution}. That is, the only solution to the vector equation is $x_1=x_2=\cdots=x_n=0$.  
+\end{definition}
+
+\subsection{Geometric Transformations}
 
 \subsection{Dot Product, Distance and Angle between vectors}
 
