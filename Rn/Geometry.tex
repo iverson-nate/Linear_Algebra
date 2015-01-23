@@ -42,6 +42,7 @@ The vector from $(2,3)$ to $(3,-2)$ has canonical form $\begin{bmatrix*}[C]1\\-5
     \draw [ultra thick,-latex,red] (2,3) node [above right] {$(2,3)$} -- (3,-2) node [above right] {$(3,-2)$};
     \draw [ultra thick,-latex,blue] (Origin) node [above right] {$(0,0)$} -- (1,-5) node [above right] {$(3,-2)$};
   \end{tikzpicture}
+\end{example}
 
 \subsection{Scalar Multiplication and Vector Addition}
 
@@ -111,7 +112,19 @@ Graphically we can think of this as follow the canonical form of $\vec{v}$ then 
 \end{proof}
 
 \begin{example} 
-Let $\vec{v}=\begin{bmatrix} 1 \\ 3 \end{bmatrix}$ and $\vec{w}=\begin{bmatrix*}[C] -5 \\ 2 \end{bmatrix*}$. We can identify all vectors in $\mathbb{R}^n$ as a linear combination of these two geometrically. Since the canonical forms of$\vec{v}$ and $\vec{w}$ are not in the same line in $\mathbb{R}^n$, $\vec{v}+\vec{w}$ forms a parallelogram.
+Let $\vec{v}=\begin{bmatrix} 1 \\ 3 \end{bmatrix}$ and $\vec{w}=\begin{bmatrix*}[C] -5 \\ 2 \end{bmatrix*}$. We can identify all vectors in $\mathbb{R}^n$ as a linear combination of these two geometrically. Since the canonical forms of$\vec{v}$ and $\vec{w}$ are not in the same line in $\mathbb{R}^n$, $\vec{v}+\vec{w}$ forms a parallelogram. Below we mark all the integer linear combination endpoints of $m\vec{v}+n\vec{w}$ where $n$ and $m$ are integers. This makes a shape called a lattice:
+\begin{center}
+\includegraphics[scale=.5]{Rn/vw_graph1.pdf}
+\end{center}
+
+We can see below that the vector $\begin{bmatrix*}[C]9 \\ -7 \end{bmatrix*}$ can be written by the linear combination $(-1)\vec{v}+(-2)\vec{w}$. It doesn't even mater what path we use to get there since we can use the associative properties of vector addition and the distributive property of vector addition and scalar multiplication.
+\begin{center}
+\includegraphics[scale=.5]{Rn/vw_9n7_graph1.pdf}
+\end{center}
+
+It's not a very large stretch to include vectors with endpoints on the rest of the plane since all we need to allow is any real linear combination $r\vec{v}+t\vec{w}$ where $r$ and $t$ are real numbers. For instance we can add in the endpoint $(3,3)$ by taking $\frac{21}{17}\vec{v}+\frac{-6}{17}\vec{w}$\\
+\begin{center}
+\includegraphics[scale=.5]{Rn/vw_graph2.pdf}\
+\end{center}
 \end{example}
 
-\end{example}
