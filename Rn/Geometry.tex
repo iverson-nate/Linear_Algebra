@@ -5,6 +5,7 @@ $(0,0, \ldots, 0)$ to the point $(v_1, v_2, \ldots, v_n)$.  In this case we'd ca
 
 \begin{example}
 $\begin{bmatrix}2\\5\end{bmatrix}$ can be visualized as the arrow between $(0,0)$ and $(2,5)$\\
+\begin{center}
   \begin{tikzpicture}[scale=.5]
     \coordinate (Origin)   at (0,0);
     \coordinate (XAxisMin) at (-2,0);
@@ -15,6 +16,7 @@ $\begin{bmatrix}2\\5\end{bmatrix}$ can be visualized as the arrow between $(0,0)
     \draw [thin, gray,-latex] (YAxisMin) -- (YAxisMax);% Draw y axis
     \draw [ultra thick,-latex,red] (Origin) node [below right] {$(0,0)$} -- (2,5) node [below right] {$(2,5)$};
   \end{tikzpicture}
+\end{center}
 \end{example}
 
 We can also think of any arrow from point $(a_1, a_2, \ldots, a_n)$ to point $(b_1, b_2, \ldots, b_n)$ as a vector. We've simply changed 
@@ -31,6 +33,7 @@ You can think of the canonical form of a vector is taking an arrow with the same
 
 \begin{example}
 The vector from $(2,3)$ to $(3,-2)$ has canonical form $\begin{bmatrix*}[C]1\\-5\end{bmatrix*}$. Below the vector is in red and the canonical form of the vector is in blue.\\
+\begin{center}
   \begin{tikzpicture}[scale=.5]
     \coordinate (Origin)   at (0,0);
     \coordinate (XAxisMin) at (-6,0);
@@ -42,12 +45,13 @@ The vector from $(2,3)$ to $(3,-2)$ has canonical form $\begin{bmatrix*}[C]1\\-5
     \draw [ultra thick,-latex,red] (2,3) node [above right] {$(2,3)$} -- (3,-2) node [above right] {$(3,-2)$};
     \draw [ultra thick,-latex,blue] (Origin) node [above right] {$(0,0)$} -- (1,-5) node [above right] {$(3,-2)$};
   \end{tikzpicture}
+  \end{center}
 \end{example}
 
 \subsection{Scalar Multiplication and Vector Addition}
 
 Scalar multiplication can be thought of as a  geometric operation. If $r>0$ then $r\vec{v}$ can be thought of as $v$ stretched or shrunk by real factor $r$.\\ 
-
+\begin{center}
 \begin{tikzpicture}[scale=.5]
     \coordinate (Origin)   at (0,0);
     \coordinate (XAxisMin) at (-6,0);
@@ -59,9 +63,9 @@ Scalar multiplication can be thought of as a  geometric operation. If $r>0$ then
     \draw [ultra thick,-latex,blue] (0,0)  -- (6,3) node[pos=0.5,above]{$r\vec{v}$};
     \draw [ultra thick,-latex,black] (Origin) -- (2,1) node[pos=0.5,above]{$\vec{v}$};;
 \end{tikzpicture}
-
+\end{center}
 If $r<0$ then $r\vec{v}$ can be thought of as $v$ reflected through the origin then stretced or shrunk by a real factor $|r|$
-
+\begin{center}
 \begin{tikzpicture}[scale=.5]
     \coordinate (Origin)   at (0,0);
     \coordinate (XAxisMin) at (-6,0);
@@ -73,7 +77,7 @@ If $r<0$ then $r\vec{v}$ can be thought of as $v$ reflected through the origin t
     \draw [ultra thick,-latex,blue] (0,0)  -- (-6,-3) node[pos=0.5,above]{$r\vec{v}$};
     \draw [ultra thick,-latex,black] (Origin) -- (2,1) node[pos=0.5,above]{$\vec{v}$};;
 \end{tikzpicture}
-
+\end{center}
 Vector addition can also be thought of as a geometric operation via the \textbf{parallelogram rule}. 
 
 \begin{proposition}[The Paralelogram Rule] If $\vec{v},\vec{w} \in \mathbb{R}^n$ with then $\vec{v}+\vec{w}$ can be determined by the following:
@@ -82,6 +86,7 @@ Vector addition can also be thought of as a geometric operation via the \textbf{
 $\vec{v}+\vec{w}$ is either a scalar multiple of $\vec{v}$ or a scalar multiple of $\vec{w}$.
 
 \item Otherwise $\vec{v}+\vec{w}$ is determined by the parallelogram rule:\\
+\begin{center}
 \begin{tikzpicture}[scale=.5]
     \coordinate (Origin)   at (0,0);
     \coordinate (XAxisMin) at (-6,0);
@@ -96,7 +101,7 @@ $\vec{v}+\vec{w}$ is either a scalar multiple of $\vec{v}$ or a scalar multiple 
     \draw [ultra thick,-latex,blue] (2,-3)  -- (6,-2) node[pos=0.5,below]{$\vec{v}$};
     \draw [ultra thick,-latex,black] (0,0)  -- (6,-2) node[pos=0.5,above]{$\vec{v}+\vec{w}$};
 \end{tikzpicture}
-
+\end{center}
 Note that taking the base point of $\vec{w}$ to be the end point of $\vec{v}$ yeilds the same result as taking the base point of $\vec{v}$ to be the end point of 
 $\vec{w}$.
 \end{enumerate}
