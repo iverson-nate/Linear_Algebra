@@ -427,7 +427,7 @@ $[A\vec{b}_1,\ldots, A\vec{b}_p]$ which is $AB$, by definition.
 
 \clearpage
 
-\subsection{Row Vectors and the Transpose Operator}
+\subsection{Row Vectors, Transpose and Duality}
 
 Sometimes it is useful for us to deal with row vectors:
 
@@ -437,7 +437,7 @@ $$
 \mid v_i \in \mathbb{R} \text{ for all } i\ \right\}
 $$
 
-We can also think of row vectors as the set of $n \times 1 $ matrices, that is $\mathbb{R}^n_\text{row} = M_{n \times 1}(\mathbb{R})$.
+We can also think of row vectors as the set of $1 \times n $ matrices, that is $\mathbb{R}^n_\text{row} = M_{1 \times n}(\mathbb{R})$.
 
 For $A \in  M_{n \times m}(\mathbb{R})$ we can write $A$ in terms of its row vectors $\vec{r}_1, \vec{r}_2, \ldots, \vec{r}_n \in \mathbb{R}^n_\text{row}$ in the 
 following way
@@ -506,5 +506,66 @@ The left vector matrix product is:
 \end{align*}
 \end{proof}
 
-We can then define linear transformations $T:\mathbb{R}_\text{row}^m \to \mathbb{R}_\text{row}^n$ to be functions that preserve scalar multiplication and 
-vector addition. 
+We define linear transformations to be functions $T:\mathbb{R}^m_\text{row} \to \mathbb{R}^n_\text{row}$ that preserve vector addition and scalar multiplication. 
+
+\begin{definition}[The Transpose]
+For $m \times n$ matrix $$A=[a_{ij}]=
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn} 
+\end{bmatrix}
+$$ 
+we define \textbf{the transpose} to be an $n \times m$ matrix  
+$$A^T=[a_{ji}]=
+\begin{bmatrix}
+a_{11} & a_{21} & \cdots & a_{m1} \\
+a_{12} & a_{22} & \cdots & a_{m2} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{1n} & a_{2n} & \cdots & a_{nm} 
+\end{bmatrix}$$ 
+\end{definition}
+
+\begin{remark}
+The transpose works on vectors too since $\mathbb{R}^n=M_{1 \times n}(\mathbb{R})$ and $\mathbb{R}^n_\text{row}=M_{n \times 1}(\mathbb{R})$. 
+\end{remark}
+
+\begin{example}
+\[
+\begin{bmatrix}
+1 \\
+2 \\
+3 \\
+\end{bmatrix}^T
+=\begin{bmatrix}
+1 & 2 & 3
+\end{bmatrix}
+\]
+\end{example}
+
+\begin{example}
+\[
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 
+\end{bmatrix}^T
+=\begin{bmatrix}
+1 & 4 \\
+2 & 5 \\
+3 & 6 \\
+\end{bmatrix}
+\]
+\end{example}
+
+\begin{proposition}
+Let $A$ and $B$ be matrices and $r$ a scalar. Then 
+\begin{enumerate}
+\item $(A^T)^T=A$
+\item $(A+B)^T=A^T+B^T$ whenever $A$ and $B$ are both $m \times n$ matrices
+\item $(rA)^T=r(A^T)$
+\item $(AB)^T=B^TA^T$ whenever $A$ is an $m \times n$ and $B$ is an $n \times p$
+\item If $\vec{r}_i$ is the $i$-th row of $A$ if and only if $\vec{r}_i^T$ is the $i$-th column of $A^T$ 
+\item If $\vec{a}_i$ is the $i$-th column of $A$ if and only if $\vec{a}_i^T$ is the $i$-th row of $A^T$ 
+\end{enumerate}
+\end{proposition}
