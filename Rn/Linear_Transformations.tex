@@ -427,7 +427,7 @@ $[A\vec{b}_1,\ldots, A\vec{b}_p]$ which is $AB$, by definition.
 
 \clearpage
 
-\subsection{Row Vectors, Transpose and Duality}
+\subsection{Row Vectors and Transpose}
 
 Sometimes it is useful for us to deal with row vectors:
 
@@ -558,6 +558,25 @@ The transpose works on vectors too since $\mathbb{R}^n=M_{1 \times n}(\mathbb{R}
 \]
 \end{example}
 
+\begin{remark} With row vectors for a matrix the row column algorithm can be written much more easily. If 
+$A=\begin{bmatrix} \vec{r}_1 \\ \vec{r}_2 \\ \vdots \\ \vec{r}_m\end{bmatrix}$ is an $m \times n$ matrix with row vectors $r_i \in \mathbb{R}^n_\text{row}$ 
+and $B=[\vec{b}_1, \vec{b}_2, \ldots, \vec{b}_p]$ with column vectors $\vec{b}_j \in \mathbb{R}^n$. Then $\vec{r}_i\vec{b}_j$ is defined and furthermore
+\[
+\vec{r}_i\vec{b}_j=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}
+\]
+
+which is the $(i,j)$ coordinate of $AB$. Thus we can rewrite 
+\[
+AB=\begin{bmatrix}
+\vec{r}_1\vec{b}_1 & \vec{r}_1\vec{b}_2 & \cdots & \vec{r}_1\vec{b}_p \\
+\vec{r}_2\vec{b}_1 & \vec{r}_2\vec{b}_2 & \cdots & \vec{r}_2\vec{b}_p \\
+\vdots & \vdots & \ddots & \vdots \\
+\vec{r}_m\vec{b}_1 & \vec{r}_m\vec{b}_2 & \cdots & \vec{r}_m\vec{b}_p \\
+\end{bmatrix}
+\]
+
+\end{remark}
+
 \begin{proposition}
 Let $A$ and $B$ be matrices and $r$ a scalar. Then 
 \begin{enumerate}
@@ -569,3 +588,212 @@ Let $A$ and $B$ be matrices and $r$ a scalar. Then
 \item If $\vec{a}_i$ is the $i$-th column of $A$ if and only if $\vec{a}_i^T$ is the $i$-th row of $A^T$ 
 \end{enumerate}
 \end{proposition}
+\begin{proof}
+\begin{enumerate}
+
+\item Consider $m \times n$ matrix  
+
+$$A=[a_{ij}]=
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix}
+$$                                 
+
+Then the transpose is a $n \times m$ matrix
+
+$$A^T=[a_{ji}]=
+\begin{bmatrix}
+a_{11} & a_{21} & \cdots & a_{m1} \\
+a_{12} & a_{22} & \cdots & a_{m2} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{1n} & a_{2n} & \cdots & a_{nm}
+\end{bmatrix}$$    
+
+Taking the transpose a second time yeilds 
+$$(A^T)^T=[a_{ij}]=
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix}
+$$                                 
+
+
+\item 
+Let $A=[a_{ij}]$ and $B=[b_{ij}]$ both be $m \times n$ matricies. Then 
+
+\begin{align*}
+(A+B)^T &= [a_{ij}+b_{ij}]^T \\
+              &= [a_{ji}+b_{ji}] \\
+              &= [a_{ji}]+[b_{ji}]\\
+              &= A^T+B^T 
+\end{align*}
+
+\item Let $r \in \mathbb{R}$ and $A=[a_{ij}]$ an $m \times n$ matrix. Then 
+\begin{align*}
+(rA)^T&=[ra_{ij}]^T\\
+&=[ra_{ji}]\\
+&=r[a_{ji}]\\
+&=rA^T
+\end{align*}
+
+\item %$(AB)^T=B^TA^T$ whenever 
+Let $A$ be an $m \times n$ matrix with row vectors $\vec{r}_1, \vec{r}_2, \ldots, \vec{r}_m$ and $B=[\vec{b}_1,\vec{b}_2, \ldots, \vec{b}_p]$ an  $n \times p$ matrix. Then
+\begin{align*}
+(AB)^T &= \begin{bmatrix}
+\vec{r}_1\vec{b}_1 & \vec{r}_1\vec{b}_2 & \cdots & \vec{r}_1\vec{b}_p \\
+\vec{r}_2\vec{b}_1 & \vec{r}_2\vec{b}_2 & \cdots & \vec{r}_2\vec{b}_p \\
+\vdots & \vdots & \ddots & \vdots \\
+\vec{r}_m\vec{b}_1 & \vec{r}_m\vec{b}_2 & \cdots & \vec{r}_m\vec{b}_p \\
+\end{bmatrix}^T \\
+&= \begin{bmatrix}
+\vec{r}_1\vec{b}_1 & \vec{r}_2\vec{b}_1 & \cdots & \vec{r}_m\vec{b}_1 \\
+\vec{r}_1\vec{b}_2 & \vec{r}_2\vec{b}_2 & \cdots & \vec{r}_m\vec{b}_2 \\
+\vdots & \vdots & \ddots & \vdots \\
+\vec{r}_1\vec{b}_p & \vec{r}_2\vec{b}_p & \cdots & \vec{r}_m\vec{b}_p \\
+\end{bmatrix} \\
+\end{align*}
+
+Note that the $(i,j)$ coordinate of $(AB)^T$ is $\vec{r}_j\vec{b}_i=a_{j1}b_{1i}+a_{j2}b_{2i}+\cdots+a_{jn}b_{ni}$. 
+Next see 
+\begin{align*}
+B^TA^T &=
+\begin{bmatrix}
+b_{11} & b_{12} & \cdots & b_{1p} \\
+b_{21} & b_{22} & \cdots & b_{2p} \\
+\vdots & \vdots & \ddots & \vdots \\
+b_{n1} & b_{n2} & \cdots & b_{np} \\
+\end{bmatrix}^T
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn} \\
+\end{bmatrix}^T \\
+&=
+\begin{bmatrix}
+b_{11} & b_{21} & \cdots & b_{n1} \\
+b_{12} & b_{22} & \cdots & b_{n2} \\
+\vdots & \vdots & \ddots & \vdots \\
+b_{1p} & b_{2p} & \cdots & b_{np} \\
+\end{bmatrix}
+\begin{bmatrix}
+a_{11} & a_{21} & \cdots & a_{m1} \\
+a_{12} & a_{22} & \cdots & a_{m2} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{1n} & a_{2n} & \cdots & a_{mn} \\
+\end{bmatrix} 
+\end{align*}
+
+Now the row-column algorithm gives the $(i,j)$ coordinate is 
+
+\begin{align*}
+\begin{bmatrix} b_{1i} & b_{2i} & \cdots & b_{ni}\end{bmatrix}
+\begin{bmatrix} a_{j1} \\ a_{j2} \\ \vdots \\ a_{jn}\end{bmatrix} &=
+b_{1i}a_{j1}+b_{2i}a_{j2}+\cdots+b_{ni}a_{jn}
+\end{align*} 
+
+\item Left as an exercise.
+\item Left as an exercise.
+\end{enumerate}
+\end{proof}
+
+\subsection{The Dual of $\mathbb{R}^n$}
+
+\begin{definition}[The Dual of $\mathbb{R}^n$]
+The set of linear transformations $f:\mathbb{R}^n \to \mathbb{R}$ is called the dual of $\mathbb{R}^n$. These linear transformations are called $\textbf{linear functionals}$ (or sometimes $\textbf{covectors}$). The notation for the dual is $\left(\mathbb{R}^n\right)^*$.
+\end{definition}
+
+\begin{remark} Don't be concerned about $\mathbb{R}$ isthe codomain instead of $\mathbb{R}^m$. It's typical to write $\mathbb{R}$ instead of $\mathbb{R}^1$. The real numbers are this simplest real vectors.
+\end{remark}
+
+\begin{remark}Note by convention we typically use lower case letters for linear functionals and uppercase letters for linear transformations.
+\end{remark}
+
+\begin{example} The function $f:\mathbb{R}^4 \to \mathbb{R}$ defined by
+\[
+f\begin{bmatrix}v_1\\v_2\\v_3\\v_4\end{bmatrix}=3v_1-2v_3+5v_4
+\]
+is a linear functional. The standard matrix of $f$ is $\begin{bmatrix}3 & 0 & -2 &5 \end{bmatrix}$. Using the matrix multiplication we can prove $f$ is linear 
+
+\[
+\begin{bmatrix}3 & 0 & -2 &5 \end{bmatrix}\begin{bmatrix}v_1\\v_2\\v_3\\v_4\end{bmatrix}=3v_1-2v_3+5v_4
+\]
+
+\end{example}
+
+\begin{theorem}
+$\mathbb{R}^n_\text{row}$ is the set of standard matrices for the linear functionals $\left(\mathbb{R}^n\right)^*$.
+\end{theorem}
+\begin{proof}
+Is an exercise.
+\end{proof}
+
+\begin{definition}
+We also have a notion of functional addition and functional scalar multiplication. For $f,g \in \left(\mathbb{R}^n\right)^*$ and $r \in \mathbb{R}$ we define
+\begin{align*}
+(f+g)(\vec{v})&=f(\vec{v})+g(\vec{v}) \\
+(rf)(\vec{v})&=r(f(\vec{v}))
+\end{align*}
+for all $\vec{v} \in \mathbb{R}^n$.
+\end{definition}
+
+\begin{proposition}
+Let $f$ and $g$ linear functionals in  $\left(\mathbb{R}^n\right)^*$ with standard matricies $\vec{v}$ and $\vec{w}$ in $\mathbb{R}^n_\text{row}$ respectively. Then 
+the standard matrix of the linear functional $f+g$ is $\vec{v}+\vec{w}$. If $r \in \mathbb{R}$ then the standard matrix of $rf$ is $r\vec{v}$.
+\end{proposition}
+\begin{proof}
+Let $f,g \in \left(\mathbb{R}^n\right)^*$
+Note to find the $i$-th column of the standard matrix of $f+g$ we evaluate the functional at $\vec{e}_i$
+\[
+(f+g)(\vec{e}_i)=f(\vec{e}_i)+g(\vec{e}_i)=v_i+w_i
+\]
+Thus the the standard matrix of $f+g$ is $\vec{v}+\vec{w}$.
+
+Let $r \in \mathbb{R}$, then the $i$-th column of the standard matrix of $rf$ is found by evaluating at $\vec{e}_i$
+\[
+(rf)(\vec{e}_i)=r(f(\vec{e}_i))=r(v_i)
+\]
+Thus the standard matrix of $rf$ is $r\vec{v}$
+\end{proof}
+
+\begin{definition}[The dual basis]
+We define dual basis for $\left(\mathbb{R}^n\right)^*$ to be the set of functionals $e^1,e^2,\ldots,e^n:\mathbb{R}^n \to \mathbb{R}$ defined for 
+$\vec{v} \in \mathbb{R}^n$ by
+\[
+e^1(\vec{v})
+=v_1,
+e^2(\vec{v})
+=v_2,
+\ldots,
+e^n(\vec{v})
+=v_n
+\]
+\end{definition}
+
+\begin{proposition}
+Every $f \in \left(\mathbb{R}^n\right)^*$ is a linear combination of the dual basis.
+\end{proposition}
+
+\begin{proof}
+Let $f$ be a linear functional with standard matrix $\vec{v}=\begin{bmatrix}v_1 & v_2 & \cdots & v_n\end{bmatrix} \in \mathbb{R}^n_\text{row}$. The transpose $\vec{v}^T$ is in $\mathbb{R}^n$ so is a linear combination of the standard basis:
+
+\[
+\vec{v}^T=v_1\vec{e}_1+v_2\vec{e}_2+\cdots+v_n\vec{e}_n
+\]
+
+Applying the transpose to both sides and using the property that $(\vec{v}^T)^T=\vec{v}$ and the transpose preserves addition. we get
+
+\[
+\vec{v}=v_1\vec{e}_1^T+v_2\vec{e}_2^T+\cdots+v_n\vec{e}_n^T
+\]
+
+Note that the standard matrix for $e^i$ is $\vec{e}_i^T$ for each $i$. Therefore since the standard matrix for $f$ is a linear combination 
+\[
+f=v_1e^1+v_2e^2+\cdots+v_ne^n
+\]
+\end{proof}
