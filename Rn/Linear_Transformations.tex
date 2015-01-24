@@ -425,6 +425,8 @@ $[A\vec{b}_1,\ldots, A\vec{b}_p]$ which is $AB$, by definition.
 
 \input{Rn/Linear_Transformations_Composition_exercises.tex}
 
+\clearpage
+
 \subsection{Row Vectors and the Transpose Operator}
 
 Sometimes it is useful for us to deal with row vectors:
@@ -467,6 +469,7 @@ $$
 =1 \begin{bmatrix}1 & 1 & 1 & 1\end{bmatrix}+2\begin{bmatrix}0 & 1 & 0 & 1\end{bmatrix}+3\begin{bmatrix}0 & -1 & 0 & 1 \end{bmatrix}
 =\begin{bmatrix} 1 & 0 & 1 & 6 \end{bmatrix}
 $$
+%
 \end{example}
 
 \begin{proposition}
@@ -474,7 +477,33 @@ For $\vec{v} \in \mathbb{R}^n_\text{row}$ and $A \in M_{n \times m}$ left vector
 acheiced by considering $\vec{v}$ as a $1 \times n$ matrix.
 \end{proposition}
 \begin{proof}
+Let $A=[a_{ij}]=[\vec{a}_1, \vec{a}_2, \cdots, \vec{a}_m]=
+\begin{bmatrix}
+\vec{r}_1\\
+\vec{r}_2\\
+\vdots \\ 
+\vec{r}_n
+\end{bmatrix}=
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1m}\\
+a_{21} & a_{22} & \cdots & a_{2m}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{n1} & a_{n2} & \cdots & a_{nm}\\
+\end{bmatrix}
+$.
 
+As a matrix product:
+\begin{align*}
+\vec{v}A&=[\vec{v}\vec{a}_1, \vec{v}\vec{a}_2, \ldots, \vec{v}\vec{a}_m]\\
+&=[v_1a_{11}+v_2a_{21}+\cdots+v_na_{n1}, v_1a_{12}+v_2a_{22}+\cdots+v_na_{n2}, \ldots, v_1a_{1m}+v_2a_{2m}+\cdots+v_na_{nm}]
+\end{align*}
+
+The left vector matrix product is:
+\begin{align*}
+\vec{v}A &=v_1\vec{r}_1+v_2\vec{r}_2+\cdots+v_n\vec{r}_n\\
+&=[v_1a_{11}, v_1a_{12}, \ldots, v_1a_{1m}]+[v_2a_{21}, v_2a_{22}, \ldots, v_2a_{2m}]+\cdots+[v_na_{n1}, v_na_{n2}, \ldots, v_na_{nm}]\\
+&=[v_1a_{11}+v_2a_{21}+\cdots+v_na_{n1}, v_1a_{12}+v_2a_{22}+\cdots+v_na_{n2}, \ldots, v_1a_{1m}+v_2a_{2m}+\cdots+v_na_{nm}]
+\end{align*}
 \end{proof}
 
 We can then define linear transformations $T:\mathbb{R}_\text{row}^m \to \mathbb{R}_\text{row}^n$ to be functions that preserve scalar multiplication and 
