@@ -132,6 +132,66 @@ It's not a very large stretch to include vectors with endpoints on the rest of t
 \includegraphics[scale=.5]{Rn/vw_graph2.pdf}\
 \end{center}
 \end{example}
+\begin{remark}
+The above example illustrates that you can build a whole plane with linear combinations of two vectors.
+\end{remark}
+\begin{definition}[The Span]
+We call the set of linear combinations of a collection of vectors in $\mathbb{R}^n$ the \textbf{span}.
+\[
+\text{span}\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}=
+\{a_1\vec{v}_1+a_2\vec{v}_2+\cdots+a_k\vec{v}_k \mid a_1, a_2, \ldots , a_k \mathbb{R} \}
+\]
+\end{definition}
+
+\begin{example} Consider the following span
+\[
+H=\text{span}\left\{
+\begin{bmatrix*}[C]1 \\ 0 \\ 0 \\ -1\end{bmatrix*},
+\begin{bmatrix*}[C]-1 \\ 2 \\ 1 \\ 0\end{bmatrix*},
+\begin{bmatrix*}[C]0 \\ 1 \\ 1 \\ 1\end{bmatrix*}
+\right\}
+\]
+
+Each $\vec{v} \in H$ can be written as a liner combination:
+\[
+\vec{v}=
+x_1\begin{bmatrix*}[C]1 \\ 0 \\ 0 \\ -1\end{bmatrix*}+
+x_2\begin{bmatrix*}[C]-1 \\ 2 \\ 1 \\ 0\end{bmatrix*}+
+x_3\begin{bmatrix*}[C]0 \\ 1 \\ 1 \\ 1\end{bmatrix*}
+\]
+for some choice of $x_1, x_2, x_3 \in \mathbb{R}$. This in turn can be written
+as matrix vector multiplication:
+\[
+\vec{v}=
+x_1\begin{bmatrix*}[C]1 \\ 0 \\ 0 \\ -1\end{bmatrix*}+
+x_2\begin{bmatrix*}[C]-1 \\ 2 \\ 1 \\ 0\end{bmatrix*}+
+x_3\begin{bmatrix*}[C]0 \\ 1 \\ 1 \\ 1\end{bmatrix*}
+=
+\begin{bmatrix*}[C]
+1 & -1 & 0 \\
+0 & 2 & 1 \\
+0 & 1 & 1 \\
+-1 & 0 & 1 
+\end{bmatrix*}
+\begin{bmatrix}
+x_1 \\ x_2 \\ x_3
+\end{bmatrix}
+\]
+
+So the linear transformation $T:\mathbb{R}^3 \to \mathbb{R}^4$ defined by 
+\[
+T(\vec{x})=\begin{bmatrix*}[C]
+1 & -1 & 0 \\
+0 & 2 & 1 \\
+0 & 1 & 1 \\
+-1 & 0 & 1 
+\end{bmatrix*}
+\begin{bmatrix}x_1 \\ x_2 \\ x_3 \end{bmatrix}
+\]
+takes coordinates on each of the vectors to the appropriate linear combination in $H$.
+\end{example}
+\input{Rn/Geometry_1st_exercises}
+
 
 \subsection{Linear Dependence and Linear Independence}
 
