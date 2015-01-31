@@ -139,7 +139,7 @@ The above example illustrates that you can build a whole plane with linear combi
 We call the set of linear combinations of a collection of vectors in $\mathbb{R}^n$ the \textbf{span}.
 \[
 \text{span}\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}=
-\{a_1\vec{v}_1+a_2\vec{v}_2+\cdots+a_k\vec{v}_k \mid a_1, a_2, \ldots , a_k \mathbb{R} \}
+\{a_1\vec{v}_1+a_2\vec{v}_2+\cdots+a_k\vec{v}_k \mid a_1, a_2, \ldots , a_k \in \mathbb{R} \}
 \]
 \end{definition}
 
@@ -261,7 +261,27 @@ Left as an exercise.
 \begin{proposition}\label{prop:zero_dependent} If the row vectors of matrix $A \in M_{m\times n}(\mathbb{R})$ are linearly dependent, then there is a  $\vec{b} \in \mathbb{R}^m$ such that $A\vec{v}=\vec{b}$ does not have a solution.
 \end{proposition}
 \begin{proof}
-Left as an exercise.
+Let $A$ have row vectors $\vec{r}_1, \vec{r}_2, \ldots, \vec{r}_m$ in $\mathbb{R}^n_\text{row}$ and suppose they are linearly dependent. Then for some $k$ a row vector
+$\vec{r}_k$ is a linear combination of the other row vectors. That is,
+\[
+\vec{r}_k=a_1\vec{r}_1+\cdots+a_{k-1}\vec{r}_{k-1}+a_{k+1}\vec{r}_{k+1}+\cdots+a_m\vec{r}_m
+\]
+
+Thus when we set $A\vec{v}=\vec{b}$ we get 
+\begin{align*}
+A\vec{v} = \begin{bmatrix}\vec{r}_1 \\ \vec{r}_2 \\ \vdots \\ \vec{r}_k \\ \vdots \\ \vec{r}_m\end{bmatrix}\vec{v}
+= \begin{bmatrix}\vec{r}_1\vec{v} \\ \vec{r}_2\vec{v} \\ \vdots \\ \vec{r}_k\vec{v} \\ \vdots \\ \vec{r}_m\vec{v}\end{bmatrix}
+=\begin{bmatrix}b_1 \\ b_2 \\ \vdots \\ b_k \\ \vdots \\ b_m\end{bmatrix}
+\end{align*}
+
+If we set $b_i=0$ for all $i \neq k$ and $b_k=1$ we then have a $\vec{b}$ such that $A\vec{v}=\vec{b}$ has no solution. If $\vec{v}$ were a solution  
+then $\vec{r}_i\vec{v}=0$  for all $i \neq k$ and $\vec{r}_k\vec{v}=1$, but 
+\begin{align*}
+\vec{r}_k\vec{v} &= (a_1\vec{r}_1+\cdots+a_{k-1}\vec{r}_{k-1}+a_{k+1}\vec{r}_{k+1}+\cdots+a_m\vec{r}_m)\vec{v}\\
+&= a_1\vec{r}_1\vec{v}+\cdots+a_{k-1}\vec{r}_{k-1}\vec{v}+a_{k+1}\vec{r}_{k+1}\vec{v}+\cdots+a_m\vec{r}_m\vec{v}\\
+&= a_10+\cdots+a_{k-1}0+a_{k+1}0+\cdots+a_m0\\
+&= 0
+\end{align*}
 \end{proof}
 
 \begin{proposition}\label{prop:zero_dependent} If the column vectors of matrix $[\vec{a}_1, \ldots, \vec{a}_n]=A \in M_{m\times n}(\mathbb{R})$ are linearly dependent and $\vec{w}$ is a solution to $A\vec{v}=\vec{b}$ then there are infinitely many solutions to $A\vec{v}=\vec{b}$.
