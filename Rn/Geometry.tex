@@ -190,6 +190,38 @@ T(\vec{x})=\begin{bmatrix*}[C]
 \]
 takes coordinates on each of the vectors to the appropriate linear combination in $H$.
 \end{example}
+\begin{example} We can describe the image of a linear transformation using a span quite easily. For example $T:\mathbb{R}^3 \to \mathbb{R}^5$ defined by
+\[
+T(\vec{v})=\begin{bmatrix*}[C]
+1 & 0 & -1 \\
+0 & -1 & 5 \\
+2 & 0 & 0 \\
+-3 & 3 & 3 \\
+3 & 3 & -2 \\
+\end{bmatrix*}\begin{bmatrix}v_1\\ v_2\\ v_3\end{bmatrix}
+=
+v_ 1\begin{bmatrix*}[C]1 \\ 0 \\ 2 \\ -3 \\ 3 \end{bmatrix*}
++v_2\begin{bmatrix*}[C]0 \\ -1 \\ 0 \\ 3 \\ 3 \end{bmatrix*}
++v_3\begin{bmatrix*}[C]-1 \\ 5 \\ 0 \\ 3 \\ 2 \end{bmatrix*}
+\] 
+
+So we can rewrite the image of $T$ as 
+
+\[
+\text{span}\left\{
+\begin{bmatrix*}[C]1 \\ 0 \\ 2 \\ -3 \\ 3 \end{bmatrix*},
+\begin{bmatrix*}[C]0 \\ -1 \\ 0 \\ 3 \\ 3 \end{bmatrix*},
+\begin{bmatrix*}[C]-1 \\ 5 \\ 0 \\ 3 \\ 2 \end{bmatrix*}
+\right\}
+=\left\{
+v_ 1\begin{bmatrix*}[C]1 \\ 0 \\ 2 \\ -3 \\ 3 \end{bmatrix*}
++v_2\begin{bmatrix*}[C]0 \\ -1 \\ 0 \\ 3 \\ 3 \end{bmatrix*}
++v_3\begin{bmatrix*}[C]-1 \\ 5 \\ 0 \\ 3 \\ 2 \end{bmatrix*}
+\mid 
+v_1, v_2, v_3 \in \mathbb{R}^5 
+\right\}
+\]
+\end{example}
 \input{Rn/Geometry_1st_exercises}
 
 
