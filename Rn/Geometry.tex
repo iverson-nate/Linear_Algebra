@@ -386,13 +386,13 @@ If $A$ has linearly independent column vectors, then $A\vec{v}=\vec{0}$ has only
 Left as an exercise.
 \end{proof}
 
-\begin{proposition}
-If $m \times n$ matrix $A$ has linearly independent row vectors $\vec{r}_1, \vec{r}_2, \ldots, \vec{r}_m$, then $A\vec{v}=\vec{b}$ has a solution for each $b$ in 
-$\mathbb{R}^m$
-\end{proposition}
-\begin{proof}
-We will prove this one in the next section.
-\end{proof}
+%\begin{proposition}
+%If $m \times n$ matrix $A$ has linearly independent row vectors $\vec{r}_1, \vec{r}_2, \ldots, \vec{r}_m$, then $A\vec{v}=\vec{b}$ has a solution for each $b$ in 
+%$\mathbb{R}^m$
+%\end{proposition}
+%\begin{proof}
+%We will prove this one in the next section.
+%\end{proof}
 
 \begin{proposition}
 If $m \times n$ matrix $A$ has linearly independent column vectors $\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n$, then $A\vec{v}=\vec{0}$ has only the trivial solution 
@@ -406,7 +406,45 @@ Left as an exercise.
 
 
 \subsection{Geometric Linear Transformations}
+Several of the plane transformations are actually linear transformations, even more can be considered an affine transformation.
 
+\begin{definition}
+A function $\mathcal{A}:\mathbb{R}^n \to \mathbb{R}^m$ is called an \textbf{affine transformation} if 
+$\mathcal{A}(\vec{v})=T(\vec{v})+\vec{b}$ for $T:\mathbb{R}^m \to \mathbb{R}^n$ a linear transformation and $\vec{b} \in \mathbb{R}^m$. 
+\end{definition}
+
+\begin{remark}
+So basically anything that is an affine transformation is just a translated linear transformation.
+\end{remark}
+
+\begin{example} Consider the function from $\mathcal{A}:\mathbb{R}^2 \to \mathbb{R}^2$ defined by translating each vector by 
+$\vec{b}=\begin{bmatrix} 1 \\ -2 \end{bmatrix}$. That is $\mathcal{A}(\vec{v})=\vec{v}+\vec{b}$. Clearly $\mathcal{A}$ is not a linear transformation
+because $\mathcal{A}(\vec{0})=\vec{b}$. However, $T:\mathbb{R}^2 \to \mathbb{R}^2$ defined by $T(\vec{v})=\vec{v}$ is a linear transformation 
+called the identity linear transformation. To prove it is linear note it's standard matrix is $A=\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$ and check the multiplication is $A\vec{v}=\vec{v}$. So translation is an affine transformation.
+\end{example}
+
+\begin{remark}
+We will thus study affine transformations by studying the underlying linear transformations. Essentially just compose them with a translation and you are there.
+\end{remark}
+
+\begin{proposition}
+Consider $\text{id}:\mathbb{R}^n \to \mathbb{R}^n$ defined by $\text{id}(\vec{v})=\vec{v}$. We call this function the \textbf{identity function} on $\mathbb{R}^n$. The identity function is a linear transformation whose standard matrix is the \textbf{identity matrix} $I_n=[\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n]$ where the column vectors are the standard basis for $\mathbb{R}^n$.
+\end{proposition}
+\begin{proof}
+Left as an exercise.
+\end{proof}
+
+\begin{remark}The identity matrix is often denoted as $I$ when the dimensions are obvious.
+\end{remark}
+
+\begin{example}
+$\mathcal{A}:\mathbb{R}^2 \to \mathbb{R}^2$ defined by rotating all points by $\frac{\pi}{6}$ radians in a counter-clockwise direction around $(1,2)$ is an affine transformation. To see this we need to see the underlying linear transformation $T$. Since $(1,2)$ is a fixed point of $\mathcal{A}$ we need to consider a rotation with fixed point $\vec{0}$ in order to make it linear. That is $\mathcal{A}(\vec{v})=T(\vec{v})+\begin{bmatrix} 1 \\ 2 \end{bmatrix}$
+where $T$ is rotation by $\frac{\pi}{6}$ about $(0,0)$.
+\begin{align*}
+T(\vec{e}_1)&=\begin{bmatrix} \sqrt{3}/2 \\ 1/2\end{bmatrix}\\
+T(\vec{e}_2)&=\begin{bmatrix} -1/2 \\ \sqrt{3}/2\end{bmatrix}
+\end{align*}
+\end{example}
 
 \input{Rn/Geometry_Linear_Transformations_exercises}
 
