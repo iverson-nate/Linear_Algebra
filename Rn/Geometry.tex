@@ -362,6 +362,47 @@ $$x_1\vec{v}_1+x_2\vec{v}_2+\cdots + x_n \vec{v}_n=\vec{0}$$
 has only the \textbf{trivial solution}. That is, the only solution to the vector equation is $x_1=x_2=\cdots=x_n=0$.  
 \end{definition}
 
+\begin{remark}
+If you take a span of linearly independent vectors, this means you can't remove any of the vectors and get the same span. In a sense being linearly independent means that there is a smallest number of vectors to acheive a specific span. 
+\end{remark}
+
+\begin{example} The vectors 
+$\begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix},\begin{bmatrix}1 \\ 1 \\ 0 \end{bmatrix},\begin{bmatrix}1 \\ 1 \\ 1 \end{bmatrix}$ 
+are linearly independent. To show this consider a linear combination of the vectors
+
+\[
+x_1\begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix}+x_2\begin{bmatrix}1 \\ 1 \\ 0 \end{bmatrix}+x_3\begin{bmatrix}1 \\ 1 \\ 1 \end{bmatrix}
+=\begin{bmatrix}0 \\ 0 \\ 0 \end{bmatrix}
+\]
+
+The last coordinate gives $x_3=0$. The $2$-nd coordinate gives $x_2+x_3=0$ and substituting in $x_3=0$ gives $x_2=0$. The first coordinate gives equation 
+$x_1+x_2+x_3=0$ substituting $x_2=x_3=0$ we get $x_1=0$. Thus the only solution is the trivial one, that is $x_1=x_2=x_3=0$.
+\end{example}
+
+\begin{proposition}
+If $A$ has linearly independent column vectors, then $A\vec{v}=\vec{0}$ has only the trivial solution.
+\end{proposition}
+\begin{proof}
+Left as an exercise.
+\end{proof}
+
+\begin{proposition}
+If $m \times n$ matrix $A$ has linearly independent row vectors $\vec{r}_1, \vec{r}_2, \ldots, \vec{r}_m$, then $A\vec{v}=\vec{b}$ has a solution for each $b$ in 
+$\mathbb{R}^m$
+\end{proposition}
+\begin{proof}
+We will prove this one in the next section.
+\end{proof}
+
+\begin{proposition}
+If $m \times n$ matrix $A$ has linearly independent column vectors $\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n$, then $A\vec{v}=\vec{0}$ has only the trivial solution 
+$\vec{v}=\vec{0}$
+\end{proposition}
+\begin{proof}
+Left as an exercise.
+\end{proof}
+
+
 \subsection{Geometric Transformations}
 
 \subsection{Dot Product, Distance and Angle between vectors}
