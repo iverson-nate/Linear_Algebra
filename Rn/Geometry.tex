@@ -303,7 +303,7 @@ Left as an exercise.
 \end{proof}
 
 
-\begin{proposition}\label{prop:zero_dependent} If the row vectors of matrix $A \in M_{m\times n}(\mathbb{R})$ are linearly dependent, then there is a  $\vec{b} \in \mathbb{R}^m$ such that $A\vec{v}=\vec{b}$ does not have a solution.
+\begin{proposition}\label{prop:not_onto} If the row vectors of matrix $A \in M_{m\times n}(\mathbb{R})$ are linearly dependent, then there is a  $\vec{b} \in \mathbb{R}^m$ such that $A\vec{v}=\vec{b}$ does not have a solution.
 \end{proposition}
 \begin{proof}
 Let $A$ have row vectors $\vec{r}_1, \vec{r}_2, \ldots, \vec{r}_m$ in $\mathbb{R}^n_\text{row}$ and suppose they are linearly dependent. Then for some $k$ a row vector
@@ -329,7 +329,7 @@ then $\vec{r}_i\vec{v}=0$  for all $i \neq k$ and $\vec{r}_k\vec{v}=1$, but
 \end{align*}
 \end{proof}
 
-\begin{proposition}\label{prop:zero_dependent} If the column vectors of matrix $[\vec{a}_1, \ldots, \vec{a}_n]=A \in M_{m\times n}(\mathbb{R})$ are linearly dependent then $A\vec{v}=\vec{0}$ has infinitely many solutions.
+\begin{proposition}\label{prop:not_injective} If the column vectors of matrix $[\vec{a}_1, \ldots, \vec{a}_n]=A \in M_{m\times n}(\mathbb{R})$ are linearly dependent then $A\vec{v}=\vec{0}$ has infinitely many solutions.
 \end{proposition}
 \begin{proof}
 Since the columns of $A$ are linearly dependent we can write one of the column vectors as a linear combination of the others:
@@ -348,7 +348,8 @@ A \begin{bmatrix}\alpha x_1 \\ \vdots \\ \alpha x_{k-1} \\ -\alpha \\ \alpha x_{
 Since there are infinitely many $\alpha$ in $\mathbb{R}$ there are infinitely many solutions.
 \end{proof}
 
-\begin{proposition}\label{prop:zero_dependent} If the column vectors of matrix $[\vec{a}_1, \ldots, \vec{a}_n]=A \in M_{m\times n}(\mathbb{R})$ are linearly dependent and $\vec{w}$ is a solution to $A\vec{v}=\vec{b}$ then there are infinitely many solutions to $A\vec{v}=\vec{b}$.
+\begin{proposition}\label{prop:deprows_infsol} 
+If the column vectors of matrix $[\vec{a}_1, \ldots, \vec{a}_n]=A \in M_{m\times n}(\mathbb{R})$ are linearly dependent and $\vec{w}$ is a solution to $A\vec{v}=\vec{b}$ then there are infinitely many solutions to $A\vec{v}=\vec{b}$.
 \end{proposition}
 \begin{proof}
 Left as an exercise.
@@ -379,7 +380,7 @@ The last coordinate gives $x_3=0$. The $2$-nd coordinate gives $x_2+x_3=0$ and s
 $x_1+x_2+x_3=0$ substituting $x_2=x_3=0$ we get $x_1=0$. Thus the only solution is the trivial one, that is $x_1=x_2=x_3=0$.
 \end{example}
 
-\begin{proposition}
+\begin{proposition}\label{prop:ind_injective1} 
 If $A$ has linearly independent column vectors, then $A\vec{v}=\vec{0}$ has only the trivial solution.
 \end{proposition}
 \begin{proof}
@@ -394,14 +395,58 @@ Left as an exercise.
 %We will prove this one in the next section.
 %\end{proof}
 
-\begin{proposition}
-If $m \times n$ matrix $A$ has linearly independent column vectors $\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n$, then $A\vec{v}=\vec{0}$ has only the trivial solution 
-$\vec{v}=\vec{0}$
+\begin{proposition}\label{prop:ind_injective2} 
+Let $m \times n$ matrix $A$ has linearly independent column vectors $\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n$. If $A\vec{v}=\vec{b}$ has a solution then there is only one solution to $A\vec{v}=\vec{b}$
 \end{proposition}
 \begin{proof}
 Left as an exercise.
 \end{proof}
 
+\begin{definition}
+A set of vectors that span $\mathbb{R}^n$ and are linearly independent are called \textbf{a basis} for $\mathbb{R}^n$. 
+\end{definition}
+
+\begin{example}
+Is $\mathcal{B}=\left\{\begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix}1 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix}1 \\ 1 \\ 1 \end{bmatrix}\right\}$ a basis for $\mathbb{R}^3$?
+
+Let's check if it spans. Given generic $\vec{b}=\begin{bmatrix}b_1\\ b_2 \\ b_3\end{bmatrix}$ can we solve
+
+$x_1\begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix} +x_2\begin{bmatrix}1 \\ 1 \\ 0 \end{bmatrix}+x_3 \begin{bmatrix}1 \\ 1 \\ 1 \end{bmatrix}=
+\begin{bmatrix}b_1\\ b_2 \\ b_3\end{bmatrix}$
+
+Working from the bottom coordinate up, we can solve $x_3=b_3$, $x_2=b_2-b_3$ and $x_1=b_1-x_2-x_3=b_1-(b_2-b_3)-b_3=b_1-b_2$. So $\mathcal{B}$ is a spans $\mathbb{R}^3$
+
+Let's check if it is linearly independent. 
+
+$x_1\begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix} +x_2\begin{bmatrix}1 \\ 1 \\ 0 \end{bmatrix}+x_3 \begin{bmatrix}1 \\ 1 \\ 1 \end{bmatrix}=
+\begin{bmatrix}0\\ 0 \\ 0\end{bmatrix}$
+
+Working our way from the bottom coordinate up, we see $x_3=0$, $x_2=0-x_3=0$, $x_1=0-x_2-x_3=0$. Therefore, $\mathcal{B}$ is linearly independent and therefore a basis.
+\end{example}
+
+\begin{example}
+Is $\mathcal{B}=\left\{\begin{bmatrix}1 \\ 0 \\ 1 \end{bmatrix}, \begin{bmatrix}1 \\ 1 \\ 2 \end{bmatrix}\right\}$ a basis for $\mathbb{R}^3$?
+
+No. Let $A=\begin{bmatrix}1 & 1 \\ 0 & 1 \\ 1 & 2 \end{bmatrix}$.  We can see that the rows of $A$ are linearly dependent on each other 
+$\vec{r}_1+\vec{r}_2=\vec{r}_3$. Therefore, there is a $\vec{b} \in \mathbb{R}^3$ such that $A\vec{v}=\vec{b}$ does not have a solution by 
+Proposition~\ref{prop:not_onto}. Converting to vector notation:
+\begin{align*}
+A\vec{v} &= \begin{bmatrix}1 & 1 \\ 0 & 1 \\ 1 & 2 \end{bmatrix}\begin{bmatrix}v_1 \\ v_2 \end{bmatrix} \\
+&= 
+v_1\begin{bmatrix}1 \\ 0 \\ 1 \end{bmatrix}+v_2\begin{bmatrix}1 \\ 1 \\ 2 \end{bmatrix}
+=\begin{bmatrix}b_1 \\ b_2 \\ b_3\end{bmatrix}
+\end{align*}
+does not have a solution. Therefore $\mathcal{B}$ does not span $\mathbb{R}^3$
+\end{example}
+\begin{example}
+Is $\mathcal{B}=\left\{\begin{bmatrix}1 \\ 0 \end{bmatrix}, \begin{bmatrix}1 \\ 2  \end{bmatrix}, \begin{bmatrix}1 & 1 \end{bmatrix}\right\}$ a basis for $\mathbb{R}^2$?
+Not the following linear dependence:
+\[
+(-1)\begin{bmatrix}1 \\ 0 \end{bmatrix}= \begin{bmatrix}1 \\ 2  \end{bmatrix}+(-2)\begin{bmatrix}1 & 1 \end{bmatrix}
+\]
+
+So since the vectors are not linearly independent they are not a basis.
+\end{example}
 \input{Rn/Geometry_dependence_exercises}
 
 
