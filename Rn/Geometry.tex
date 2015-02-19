@@ -503,15 +503,17 @@ T(\vec{e}_2)&=\begin{bmatrix*}[C] -\sin \frac{\pi}{6} \\ \cos \frac{\pi}{6}\end{
 and $T$ has standard matrix $\dfrac{1}{2}\begin{bmatrix*}[C]\sqrt{3} & -1 \\ 1 & \sqrt{3}\end{bmatrix*}$
 \end{example}
 
-\begin{proposition} Rotation counter-clockwise by $\theta$ in $\mathbb{R}^2$ is an affine transformation whose associated linear transformation has standard matrix   
+\begin{proposition} Rotation is an affine transformation. When $\mathcal{A}:\mathbb{R}^2 \to \mathbb{R}^2$ is rotation counter-clockwise by $\theta$ in $\mathbb{R}^2$ is an affine transformation whose associated linear transformation has standard matrix   
 $\begin{bmatrix*}[C]
 \cos \theta & -\sin \theta\\
 \sin \theta & \cos \theta
 \end{bmatrix*}$
-and the translation vector is $\vec{b}=\begin{bmatrix}b_1 \\ b_2 \end{bmatrix}$ where the center of rotation is the point $(b_1,b_2)$ in the plane.
+and the translation vector is $\mathbal{A}(\vec{0})=\vec{b}$.
 \end{proposition}
 \begin{proof}
-Note that rotation of a plane fixes exactly 1 point. 
+Let $T:\mathbb{R}^2 \to \mathbb{R}^2$ be a linear transformation of a rotation. A rotation fixes only the center of rotation, so $T(\vec{0})=\vec{0}$ gives us 
+$\vec{0}$ is the center of rotation.
+ 
 \end{proof}
 
 \begin{proposition}
@@ -524,7 +526,6 @@ Reflection is an affine transformation. The linear transformations for $\mathbb{
 \item $\dfrac{1}{m^2+1}\begin{bmatrix*}[C] m^2-1 & -2m \\ -2m & 1-m^2 \end{bmatrix*}$ for reflection about $y=mx$.
 \end{enumerate}
 \end{proposition}
-
 
 \input{Rn/Geometry_Linear_Transformations_exercises}
 
