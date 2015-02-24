@@ -1,1 +1,28 @@
 \subsubsection{Exercises}
+\begin{exercise}
+In this exerciese we are going to be deriving the standard matrix for reflection across $y=mx$. To do this we are going to rotate $y=mx$ into the $x$-axis, 
+reflect across the $x$-axis, then rotate back.
+\begin{enumerate}
+\item Find the intersection $(x_1,y_1)$ between $y=mx$ and the unit circle $x^2+y^2=1$ that's in quadrant I or IV. Be sure to simplify any complex fractions.
+\item Let $\theta=\arctan \left(\frac{y_1}{x_1}\right)$ and write the corresponding reference triangle. Use the reference triangle to compute $\cos \theta$ and $\sin \theta$ in terms of $(x_1,y_1)$.
+\item Use the fact that rotation counter clockwise by $\theta$ has a standard matrix of 
+$A=\begin{bmatrix*}[C]
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta \\
+\end{bmatrix*}$
+
+To find the standard matrix of rotation counter clockwise by $-\theta$. 
+The transformation of this matrix will rotate $y=mx$ into the $x$-axis. Write the matrix only in terms of $(x_1,y_1)$.
+
+\item Find the standard matrix of rotation counter clockwise by $\theta$ and write it in terms of $(x_1,y_1)$.
+
+\item The standard matrix for reflection about the $x$-axis is $\begin{bmatrix*}[C]1 & 0 \\ 0 & -1 \end{bmatrix*}$. Mulitply these matrices to see that the 
+standard matrix for reflection about $y=mx$ is 
+\[
+\begin{bmatrix} x_1^2-y_1^2 & 2x_1y_1 \\ 2x_1y_1 & y_1^2-x_1^2\end{bmatrix}=\frac{1}{m^2+1}\begin{bmatrix} 1-m^2 & 2m \\ 2m & m^2-1\end{bmatrix}
+\]
+
+\textbf{Note:} The matrix multiplication is a right-to-left operation. That is the operation that is first should have the matrix farthest on the right.
+
+\end{enumerate}
+\end{exercise}
