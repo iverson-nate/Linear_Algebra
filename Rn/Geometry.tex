@@ -490,9 +490,11 @@ It's worth noting that rotation is a linear transformation because a rotated par
 
 To get the standard matrix for $T$ we only need to see what happens how $T$ acts on each of the vectors 
 $\vec{e}_1=\begin{bmatrix}1 \\ 0 \end{bmatrix}$ and $\vec{e}_2=\begin{bmatrix}0 \\ 1 \end{bmatrix}$. We can figure this out by trigonometry, here's a diagram that you can figure it out from:
+\begin{figure}\label{fig:2drotation}
 \begin{center}
 \includegraphics[scale=.75]{Rn/rotation.pdf}
 \end{center}
+\end{figure}
 Thus 
 \begin{align*}
 T(\vec{e}_1)&=\begin{bmatrix} \cos \frac{\pi}{6} \\ \sin \frac{\pi}{6}\end{bmatrix}
@@ -508,12 +510,20 @@ $\begin{bmatrix*}[C]
 \cos \theta & -\sin \theta\\
 \sin \theta & \cos \theta
 \end{bmatrix*}$
-and the translation vector is $\mathbal{A}(\vec{0})=\vec{b}$.
+and the translation vector is $\mathcal{A}(\vec{0})=\vec{b}$.
 \end{proposition}
 \begin{proof}
 Let $T:\mathbb{R}^2 \to \mathbb{R}^2$ be a linear transformation of a rotation. A rotation fixes only the center of rotation, so $T(\vec{0})=\vec{0}$ gives us 
-$\vec{0}$ is the center of rotation.
- 
+$\vec{0}$ is the center of rotation for any linear transformation. For an affine transformation $\vec{b}=\mathcal{A}(\vec{0})$ and finding the center from this
+information is equivalent to finding a solution to $\mathcal{A}(\vec{v})=\vec{v}$ or $T(\vec{v})+\vec{b}=\vec{v}$. 
+
+Let $T$ be rotation counter clockwise by $\theta$ around center $\vec{0}$. By Figure~\ref{fig:2drotation} observe:
+\begin{align*}
+T \begin{bmatrix}1 \\ 0 \end{bmatrix}&=\begin{bmatrix} \cos \theta \\ \sin \theta \end{bmatrix}\\
+T \begin{bmatrix}0 \\ 1 \end{bmatrix}&=\begin{bmatrix*}[C] -\sin \theta \\ \cos \theta \end{bmatrix*}\\
+\end{align*}
+
+Thus the standard matrix for $T$ is $\begin{bmatrix*}[C] \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{bmatrix*}$ 
 \end{proof}
 
 \begin{proposition}
@@ -523,7 +533,7 @@ Reflection is an affine transformation. The linear transformations for $\mathbb{
 \item $\begin{bmatrix*}[C] -1 & 0 \\ 0 & 1 \end{bmatrix*}$ for reflection across the $y$-axis.
 \item $\begin{bmatrix*}[C] -1 & 0 \\ 0 & -1 \end{bmatrix*}$ for reflection about the origin.
 \item $\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$ for reflection about $y=x$.
-\item $\dfrac{1}{m^2+1}\begin{bmatrix*}[C] m^2-1 & -2m \\ -2m & 1-m^2 \end{bmatrix*}$ for reflection about $y=mx$.
+\item $\dfrac{1}{m^2+1}\begin{bmatrix} 1-m^2 & 2m \\ 2m & m^2-1 \end{bmatrix}$ for reflection about $y=mx$.
 \end{enumerate}
 \end{proposition}
 
